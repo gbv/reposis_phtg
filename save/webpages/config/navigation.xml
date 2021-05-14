@@ -23,6 +23,10 @@
   <menu id="below" dir="/content/below">
     <label xml:lang="de">Footer-Menü</label>
     <label xml:lang="en">Footer menu</label>
+    <item href="/content/below/disclaimer.xml" type="intern">
+      <label xml:lang="de">Rechtliche Hinweise</label>
+      <label xml:lang="en">Disclaimer</label>
+    </item>
     <item href="/content/below/about.xml" type="intern">
       <label xml:lang="de">Über den Publikationsserver der PHTG</label>
       <label xml:lang="en">About the PHTG publikation server</label>
