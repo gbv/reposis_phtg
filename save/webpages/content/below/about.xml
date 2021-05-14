@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MyCoReWebPage>
+<MyCoReWebPage>
+    <section xml:lang="de" title="Impressum">
+        <div class="row">
+            <div class="col-md-12" lang="de">
+                <h1>Über den Publikationsserver der PHTG</h1>
+                <p>
+                Der Publikationsserver der PHTG wird von der MDZ Bibliothek betrieben und bietet folgende Funktionen:
+            </p>
+                <h2>Institutionelle Publikationsdatenbank</h2>
+                <p>
+                    Der Publikationsserver der PHTG ist eine umfassende Datenbank für den Zugang zu wissenschaftlichen und anwendungsbezogenen 
+                    Publikationen von Mitarbeiterinnen und Mitarbeitern der PHTG. Der Publikationsserver bildet die Quelle für Publikationslisten 
+                    (MA-Profile) sowie für die wiederkehrende Erstellung des Forschungsberichts und der Hochschulbibliografie.
+                </p>
+                <h2>Open-Access-Repositorium</h2>
+                <p>
+                    Der Publikationsserver der PHTG ist das Instrument zur Umsetzung der Open-Access-Policy der PHTG [Link]. Autorinnen und 
+                    Autoren haben die Möglichkeit elektronische Publikationen (Zeitschriftenartikel, Buchkapitel, Monografien, Tagungsberichte, 
+                    Praxismaterialien etc.) kostenlos und zeitlich unbegrenzt auf dem Publikationsserver der PHTG im Sinne von Open-Access zu 
+                    veröffentlichen. [Link auf OA-Seite für weiterführende Informationen]
+                </p>
+                <h2>Forschungsdaten-Repositorium</h2>
+                <p>
+                    Der Publikationsserver der PHTG dient als Plattform für die Publikation bzw. Archivierung von Forschungsdaten von Angehörigen 
+                    der PHTG. Forschungsdaten können als eigenständige Publikation oder im Zusammenhang mit anderen Dokumenten hinterlegt und die 
+                    Zugriffsrechte je nach Bedarf flexibel definiert werden.
+                </p>
+                <h2>Verzeichnis der Diplomarbeiten</h2>
+                <p>
+                    Der Publikationsserver der PHTG verzeichnet Diplomarbeiten der folgenden drei Institutionen: Pädagogische Hochschule Thurgau, 
+                    Pädagogische Maturitätsschule Kreuzlingen, Kantonsschule Kreuzlingen. 
+                </p>
+                <p>
+                    Für Fragen rund um den Publikationsserver der PHTG:
+                    <span class="madress">publikationsserver [at] phtg.ch</span>
+                </p>
+                <p>
+                    Weiterführende Informationen rund um Open Science und Open Access:
+                    <span class="madress">openscience [at] phtg.ch</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <meta></meta>
+</MyCoReWebPage>
