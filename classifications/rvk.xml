@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation="MCRClassification.xsd"
+             ID="rvk">
+    <label xml:lang="x-uri" text="https://www.publikationsserver.phtg.ch/classifications/rvk" />
+    <label xml:lang="de" text="RVK" description="Regensburger Verbundklassifikation" />
+    <label xml:lang="x-auth" text="ddc" />
+    <categories>
+        <category ID="A">
+            <label xml:lang="de" text="A Allgemeines" />
+        </category>
+        <category ID="B">
+            <label xml:lang="de" text="B Theologie und Religionswissenschaften" />
+        </category>
+        <category ID="CA_CK">
+            <label xml:lang="de" text="CA-CK Philosophie" />
+        </category>
+        <category ID="CL_CZ">
+            <label xml:lang="de" text="CL-CZ Psychologie" />
+        </category>
+        <category ID="D">
+            <label xml:lang="de" text="D Pädagogik" />
+        </category>
+        <category ID="E">
+            <label xml:lang="de" text="E Allgemeine und vergleichende Sprach- und Literaturwissenschaft. Indogermanistik. Außereuropäische Sprachen und Literaturen" />
+        </category>
+        <category ID="F">
+            <label xml:lang="de" text="F Klassische Philologie. Byzantinistik. Mittellateinische und Neugriechische Philologie. Neulatein" />
+        </category>
+        <category ID="G">
+            <label xml:lang="de" text="G Germanistik. Niederlandistik. Skandinavistik" />
+        </category>
+        <category ID="H">
+            <label xml:lang="de" text="H Anglistik. Amerikanistik" />
+        </category>
+        <category ID="I">
+            <label xml:lang="de" text="I Romanistik" />
+        </category>
+        <category ID="K">
+            <label xml:lang="de" text="K Slawistik" />
+        </category>
+        <category ID="LA_LC">
+            <label xml:lang="de" text="LA-LC Ethnologie" />
+        </category>
+        <category ID="LD_LG">
+            <label xml:lang="de" text="LD-LG Klassische Archäologie" />
+        </category>
+        <category ID="LD_LH_LO">
+            <label xml:lang="de" text="LD, LH-LO Kunstgeschichte" />
+        </category>
+        <category ID="LD_LP_LY">
+            <label xml:lang="de" text="LD, LP-LY Musikwissenschaft" />
+        </category>
+        <category ID="MA_ML">
+            <label xml:lang="de" text="MA-M Politologie" />
+        </category>
+        <category ID="MN_MS">
+            <label xml:lang="de" text="MN-MS Soziologie" />
+        </category>
+        <category ID="MT">
+            <label xml:lang="de" text="MT Gesundheitswissenschaften" />
+        </category>
+        <category ID="MX_MZ">
+            <label xml:lang="de" text="MX-MZMilitärwissenschaft" />
+        </category>
+        <category ID="N">
+            <label xml:lang="de" text="N Geschichte" />
+        </category>
+        <category ID="P">
+            <label xml:lang="de" text="P Rechtswissenschaft" />
+        </category>
+        <category ID="Q">
+            <label xml:lang="de" text="Q Wirtschaftswissenschaften" />
+        </category>
+        <category ID="R">
+            <label xml:lang="de" text="R Geografie" />
+        </category>
+        <category ID="SA_SP">
+            <label xml:lang="de" text="SA-SP Mathematik" />
+        </category>
+        <category ID="SQ_SU">
+            <label xml:lang="de" text="SQ-SU Informatik" />
+        </category>
+        <category ID="TA_TD">
+            <label xml:lang="de" text="TA-TD Allgemeine Naturwissenschaft" />
+        </category>
+        <category ID="TE_TZ">
+            <label xml:lang="de" text="TE-TZ Geowissenschaften" />
+        </category>
+        <category ID="U">
+            <label xml:lang="de" text="U Physik" />
+        </category>
+        <category ID="V">
+            <label xml:lang="de" text="V Chemie und Pharmazie" />
+        </category>
+        <category ID="W">
+            <label xml:lang="de" text="W Biologie" />
+        </category>
+        <category ID="X_Y">
+            <label xml:lang="de" text="X-Y Medizin" />
+        </category>
+        <category ID="ZA_ZE">
+            <label xml:lang="de" text="ZA-ZE Agrar- und Forstwissenschaft, Gartenbau, Ernährungs- und Haushaltswissenschaft" />
+        </category>
+        <category ID="ZG_ZS">
+            <label xml:lang="de" text="ZG-ZS Technik" />
+        </category>
+        <category ID="ZX_ZY">
+            <label xml:lang="de" text="ZX-ZY Sport" />
+        </category>
+    </categories>
+</mycoreclass>
