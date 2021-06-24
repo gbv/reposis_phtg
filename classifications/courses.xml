@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation="MCRClassification.xsd"
+             ID="courses">
+    <label xml:lang="x-uri" text="https://www.publikationsserver.phtg.ch/classifications/courses" />
+    <label xml:lang="de" text="Studiengänge" />
+    <categories>
+        <category ID="kgu">
+            <label xml:lang="de" text="KGU" />
+        </category>
+        <category ID="ps">
+            <label xml:lang="de" text="PS" />
+        </category>
+        <category ID="sek_i">
+            <label xml:lang="de" text="Sek I" />
+        </category>
+        <category ID="sek_ii">
+            <label xml:lang="de" text="Sek II" />
+        </category>
+        <category ID="mafk">
+            <label xml:lang="de" text="MAFK" />
+        </category>
+        <category ID="ma_se">
+            <label xml:lang="de" text="Master Schulentwicklung" />
+        </category>
+    </categories>
+</mycoreclass>
