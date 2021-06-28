@@ -72,6 +72,10 @@
       <label xml:lang="de">Publizieren</label>
       <label xml:lang="en">Publish</label>
     </item>
+    <item href="/content/publish/publish_with_ppn.xml" type="intern">
+      <label xml:lang="de">mit Metadatenübernahme</label>
+      <label xml:lang="en">with metadata import</label>
+    </item>
     <item href="/content/publish/author_notes.xml" type="intern">
       <label xml:lang="de">Hinweise für Autorinnen und Autoren</label>
       <label xml:lang="en">Notes for authors</label>
