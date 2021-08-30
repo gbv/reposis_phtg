@@ -70,41 +70,35 @@
       <label xml:lang="x-mapping" text="marcgt:thesis diniPublType:doctoralThesis XMetaDissPlusThesisLevel:thesis.doctoral" />
       <label xml:lang="x-hosts" text="standalone series" />
     </category>
-    <category ID="thesis">
-      <label xml:lang="en" text="Thesis" />
-      <label xml:lang="de" text="Diplomarbeiten" />
-      <label xml:lang="x-mapping" text="marcgt:thesis diniPublType:workingPaper XMetaDissPlusThesisLevel:other" />
-      <label xml:lang="x-group" text="true" />
-      <category ID="bachelor_thesis">
-        <label xml:lang="en" text="Bachelor thesis" />
-        <label xml:lang="de" text="Bachelorarbeit" />
-        <label xml:lang="x-mapping" text="marcgt:thesis diniPublType:bachelorThesis XMetaDissPlusThesisLevel:bachelor" />
-        <label xml:lang="x-hosts" text="standalone series" />
-      </category>
-      <category ID="cas">
-        <label xml:lang="en" text="CAS Certificate of Advanced Studies" />
-        <label xml:lang="de" text="CAS Certificate of Advanced Studies" />
-        <label xml:lang="x-mapping" text="marcgt:thesis diniPublType:bachelorThesis XMetaDissPlusThesisLevel:other" />
-        <label xml:lang="x-hosts" text="standalone" />
-      </category>
-      <category ID="mas">
-        <label xml:lang="en" text="MAS Master of Advanced Studies" />
-        <label xml:lang="de" text="MAS Master of Advanced Studies" />
-        <label xml:lang="x-mapping" text="marcgt:thesis diniPublType:bachelorThesis XMetaDissPlusThesisLevel:other" />
-        <label xml:lang="x-hosts" text="standalone" />
-      </category>
-      <category ID="master_thesis">
-        <label xml:lang="en" text="M.A. (Master of Arts)" />
-        <label xml:lang="de" text="M.A. (Master of Arts)" />
-        <label xml:lang="x-mapping" text="marcgt:thesis diniPublType:masterThesis XMetaDissPlusThesisLevel:master" />
-        <label xml:lang="x-hosts" text="standalone series" />
-      </category>
-      <category ID="matura">
-        <label xml:lang="en" text="Maturaarbeit" />
-        <label xml:lang="de" text="Maturaarbeit" />
-        <label xml:lang="x-mapping" text="marcgt:thesis diniPublType:masterThesis XMetaDissPlusThesisLevel:other" />
-        <label xml:lang="x-hosts" text="standalone" />
-      </category>
+    <category ID="bachelor_thesis">
+      <label xml:lang="en" text="Bachelor thesis" />
+      <label xml:lang="de" text="Bachelorarbeit" />
+      <label xml:lang="x-mapping" text="marcgt:thesis diniPublType:bachelorThesis XMetaDissPlusThesisLevel:bachelor" />
+      <label xml:lang="x-hosts" text="standalone series" />
+    </category>
+    <category ID="cas">
+      <label xml:lang="en" text="CAS Certificate of Advanced Studies" />
+      <label xml:lang="de" text="CAS Certificate of Advanced Studies" />
+      <label xml:lang="x-mapping" text="marcgt:thesis diniPublType:bachelorThesis XMetaDissPlusThesisLevel:other" />
+      <label xml:lang="x-hosts" text="standalone" />
+    </category>
+    <category ID="mas">
+      <label xml:lang="en" text="MAS Master of Advanced Studies" />
+      <label xml:lang="de" text="MAS Master of Advanced Studies" />
+      <label xml:lang="x-mapping" text="marcgt:thesis diniPublType:bachelorThesis XMetaDissPlusThesisLevel:other" />
+      <label xml:lang="x-hosts" text="standalone" />
+    </category>
+    <category ID="master_thesis">
+      <label xml:lang="en" text="M.A. (Master of Arts)" />
+      <label xml:lang="de" text="M.A. (Master of Arts)" />
+      <label xml:lang="x-mapping" text="marcgt:thesis diniPublType:masterThesis XMetaDissPlusThesisLevel:master" />
+      <label xml:lang="x-hosts" text="standalone series" />
+    </category>
+    <category ID="matura">
+      <label xml:lang="en" text="Maturaarbeit" />
+      <label xml:lang="de" text="Maturaarbeit" />
+      <label xml:lang="x-mapping" text="marcgt:thesis diniPublType:masterThesis XMetaDissPlusThesisLevel:other" />
+      <label xml:lang="x-hosts" text="standalone" />
     </category>
     <category ID="research_data">
       <label xml:lang="en" text="Research Data" />
