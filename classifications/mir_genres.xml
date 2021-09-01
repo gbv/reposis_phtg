@@ -8,7 +8,7 @@
       <label xml:lang="en" text="Article / Chapter" />
       <label xml:lang="de" text="Artikel / Aufsatz" />
       <label xml:lang="x-mapping" text="marcgt:article diniPublType:article" />
-      <label xml:lang="x-hosts" text="journal series collection proceedings standalone" />
+      <label xml:lang="x-hosts" text="journal newspaper collection proceedings standalone" />
     </category>
     <category ID="chapter">
       <label xml:lang="en" text="Book chapter" />
@@ -44,7 +44,7 @@
       <label xml:lang="en" text="Editing" />
       <label xml:lang="de" text="Herausgeberschaft" />
       <label xml:lang="x-mapping" text="marcgt:series diniPublType:Other" />
-      <label xml:lang="x-hosts" text="series teaching_material standalone" />
+      <label xml:lang="x-hosts" text="journal teaching_material standalone" />
     </category>
     <category ID="teaching_material">
       <label xml:lang="en" text="Teaching material" />
