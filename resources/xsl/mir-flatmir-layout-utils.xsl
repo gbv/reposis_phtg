@@ -137,7 +137,7 @@
       </div>
     </div>
     <div id="project_feedback">
-      <a href="mailto:mdz.bibliothek@phtg.ch">Feedback</a>
+      <a href="mailto:mdz.bibliothek@phtg.ch" class="btn btn-primary">Feedback</a>
     </div>
   </xsl:template>
 

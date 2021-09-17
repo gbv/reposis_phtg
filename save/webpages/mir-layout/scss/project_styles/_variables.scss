@@ -34,7 +34,7 @@ $blue-medium:   #3e609f;
 // --------------------------------------------------
 
 $primary: $green;
-$secondary: $blue-dark;
+$secondary: $green-medium;
 
 $text-color: $black-dark;
 
@@ -59,4 +59,6 @@ $border-radius-sm: $border-radius;
 $border-radius-lg: $border-radius;
 $input-border-radius: $border-radius;
 
-$dropdown-link-hover-bg: $blue-dark;
+$dropdown-link-color: $black-dark;
+$dropdown-link-hover-color: $green;
+$dropdown-link-hover-bg: white;

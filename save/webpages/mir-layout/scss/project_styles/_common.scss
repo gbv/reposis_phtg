@@ -9,29 +9,12 @@
 // no (xl) media query necessary (desktop first)
 
   #project_feedback {
-    cursor: pointer;
     position: fixed;
+    right: -26px;
     bottom: 20%;
-    right: -24px;
-    transform: rotate(-90deg);
-    display: block;
-    background: $green;
-    padding: 8px 0px;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    font-weight: bold;
-    text-decoration: none;
     z-index: 999;
-    width: 80px;
-    text-align: center;
     box-shadow: -2px -2px 5px 0 rgba(0,0,0,.3);
-    a {
-      color: #fff;
-      text-decoration: none;
-    }
-    &:hover {
-      background-color: $blue-dark;
-    }
+    transform: rotate(-90deg);
   }
 
 // Large devices (desktops) and below: <= 1200px

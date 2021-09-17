@@ -6,6 +6,26 @@
 // set the defaults for all responsive levels here
 // no (xl) media query necessary (desktop first)
 
+.mir-prop-nav {
+  .navbar-nav {
+    .nav-item {
+      margin-left: 1rem;
+      .nav-link {
+        font-size: .875rem;
+        color: $gray-dark;
+        &:hover,
+        &:focus {
+          color: $link-color;
+        }
+      }
+    }
+  }
+}
+
+.mir-prop-nav .navbar-nav > li > a:focus {
+  color: #3e609f;
+  background-color: transparent;
+}
 .mir-main-nav {
   background-color: $green-medium;
   .navbar {
@@ -19,7 +39,7 @@
         &:focus,
         &:hover {
           color: $white;
-          background-color: $blue-dark;
+          background-color: darken($green, 10%);
         }
       }
     }
@@ -30,7 +50,7 @@
         border-left: 5px solid white;
         &:focus,
         &:hover {
-          color: $blue-dark;
+          color: darken($green, 10%);
         }
       }
     }
