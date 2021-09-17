@@ -6,6 +6,28 @@
 // set the defaults for all responsive levels here
 // no (xl) media query necessary (desktop first)
 
+.flatmir-footer {
+  color: black;
+  background-color: white;
+  border: none;
+}
+.internal_links {
+  border-top: 1px solid black;
+  .nav-link {
+    a {
+      color: black;
+      &:hover {
+        text-decoration: underline dotted;
+      }
+    }
+  }
+}
+
+#powered_by {
+  background-color: $green;
+  border: none;
+  ;
+}
 
 // Large devices (desktops) and below: <= 1200px
 @include media-breakpoint-down(lg) {

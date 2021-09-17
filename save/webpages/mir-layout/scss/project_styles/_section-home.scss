@@ -6,7 +6,11 @@
 // set the defaults for all responsive levels here
 // no (xl) media query necessary (desktop first)
 
-
+.mir-start_page {
+  .searchfield_box {
+    display: none;
+  }
+}
 
 // Large devices (desktops) and below: <= 1200px
 @include media-breakpoint-down(lg) {

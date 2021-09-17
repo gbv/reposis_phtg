@@ -14,8 +14,49 @@
 //  project settings
 // --------------------------------------------------
 
+$black-dark:    #222222;
+$black-medium:  #333333;
+$black-light:   #414141;
+$gray-dark:     #747474;
+$gray-medium:   #afafaf;
+$gray-light:    #ededed;
+
+$green:         #8cb80d;
+$green-medium:  #e8f1ce;
+$green-light:   #f7faef;
+
+$blue-dark:     #1a3260;
+$blue-medium:   #3e609f;
 
 
 // --------------------------------------------------
 //  overwrite bootstrap
 // --------------------------------------------------
+
+$primary: $green;
+$secondary: $blue-dark;
+
+$text-color: $black-dark;
+
+$link-color: $blue-medium;
+$link-hover-color: $blue-medium;
+$link-hover-decoration: underline dotted;
+
+$font-size-base: 1rem; //.875rem
+$font-family-sans-serif: myriad-pro, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-weight-base: 400;
+$font-weight-normal: 400;
+
+
+$h1-font-size: 1.875rem;
+$h2-font-size: 1.875rem;
+$h3-font-size: 1.5rem;
+$h4-font-size: 1.5rem;
+$headings-font-weight: 400;
+
+$border-radius: 0;
+$border-radius-sm: $border-radius;
+$border-radius-lg: $border-radius;
+$input-border-radius: $border-radius;
+
+$dropdown-link-hover-bg: $blue-dark;
