@@ -23,10 +23,19 @@
     color: $text-color;
     background-color: transparent;
   }
+  &:hover {
+    border-color: $text-color;
+  }
   &:disabled {
     color: $gray-dark;
     background-color: transparent;
   }
+}
+
+.btn-secondary:not(:disabled):not(.disabled):active {
+  color: $text-color;
+  background-color: transparent;
+  border-color: $text-color;
 }
 
 // Large devices (desktops) and below: <= 1200px
