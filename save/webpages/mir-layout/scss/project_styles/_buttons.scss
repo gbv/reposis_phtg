@@ -25,11 +25,12 @@
     background-color: transparent;
   }
   &:hover {
-    border-color: $gray-dark;
+    border-color: $gray-medium;
   }
   &:disabled {
     color: $gray-dark;
     background-color: transparent;
+    border-color: transparent;
   }
 }
 
