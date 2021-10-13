@@ -27,3 +27,36 @@
 @include media-breakpoint-down(xs) {
   // add/overwrite styles for responsive level xs
 }
+
+#more_options_toggle {
+  margin: 0 0 20px 0;
+  #more_options_trigger {
+    cursor: pointer;
+    #more_options_button {
+      font-size: 16px;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+    #more_options_label {
+      padding: 0 0 0 0px;
+      vertical-align: middle;
+      color: $gray-400;
+    }
+    #more_options_label_hide {
+      padding: 0 0 0 0px;
+      vertical-align: middle;
+      color: black;
+    }
+    &:hover {
+      #more_options_button {
+        color: $warning;
+      }
+      #more_options_label {
+        color: $primary;
+      }
+    }
+  }
+}
+#more_options_box {
+  display: none;
+}

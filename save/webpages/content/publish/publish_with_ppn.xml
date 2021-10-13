@@ -6,7 +6,7 @@
   </section>
   <section title="Publizieren" xml:lang="de">
     <form id="submit_publication" class="form-horizontal" role="form" method="get" action="../../editor/editor-dynamic.xed">
-
+      
       <h1>Publizieren mit Metadatenübernahme</h1>
       <div class="row">
         <div class="col-sm-12 col-md-8">
@@ -18,23 +18,17 @@
         </div>
       </div>
       <div class="row form-group">
-        <label for="genre" class="col-sm-3 col-lg-2 control-label">
-          <text i18n="component.mods.genre" />
-        </label>
-        <div class="col-sm-7 col-md-5 col-lg-4">
+        <div class="col-sm-5 col-md-5 col-lg-4">
           <select id="genre" class="form-control" name="genre" size="1"></select>
         </div>
       </div>
-
+      
       <div class="row form-group">
-        <label for="host" class="col-sm-3 col-lg-2 control-label">
-          <text i18n="mir.select.host" />
-        </label>
-        <div class="col-sm-7 col-md-5 col-lg-4">
+        <div class="col-sm-5 col-md-5 col-lg-4">
           <select id="host" class="form-control" name="host" size="1"></select>
         </div>
       </div>
-
+      
       <div id="more_options_toggle" class="row mt-4">
         <h3>
           <span id="more_options_trigger">
@@ -44,7 +38,7 @@
           </span>
         </h3>
       </div>
-
+      
       <!-- more options -->
       <div id="more_options_box">
         <div class="row form-group">
@@ -64,14 +58,15 @@
           </div>
         </div>
       </div>
-      <div class="row form-group mt-2">
-        <div class="col-sm-3 col-md-2"></div>
+
+      <!-- submit -->
+      <div class="row form-group mt-4">
         <div class="col-sm-5 col-md-4">
           <button type="submit" class="btn btn-primary">Weiter</button>
         </div>
       </div>
-
+      
     </form>
   </section>
-
+  
 </MyCoReWebPage>
