@@ -10,7 +10,7 @@
 
 <ol>
 	<li>Den Menüpunkt «Publizieren» aufrufen</li>
-	<li>Mit dem persönlichen Login anmelden (Noch kein Konto? Anfragen bitte an <a href="mailto:open.science@phtg.ch">open.science@phtg.ch</a>)</li>
+	<li>Mit dem persönlichen Login anmelden (Noch kein Konto? Anfragen bitte an <span class="madress">open.science [at] phtg.ch</span><br/>)</li>
 	<li value="3">Dokumententyp aus dem Drop-Down-Menü auswählen u. ggfs. im zweiten Feld spezifizieren</li>
 	<li value="4">Metadatenfelder ausfüllen (mind. Pflichtfelder) und Formular speichern</li>
 	<li value="5">Einverständniserklärung akzeptieren (Haken setzen)</li>
@@ -40,7 +40,7 @@
 
 <p>Die Beratungsstelle Open-Science der PHTG unterstützt Sie gerne bei der Veröffentlichung Ihrer Publikationen und Forschungsdaten.</p>
 
-<p>E-Mail: <a href="mailto:open.science@phtg.ch">open.science@phtg.ch</a></p>
+<p>E-Mail: <span class="madress">open.science [at] phtg.ch</span><br/></p>
 
 <p>Website: <a href="https://bibliothek.phtg.ch/de/services/open-science/" target="_blank">https://bibliothek.phtg.ch/de/services/open-science/</a></p>
 </div>
