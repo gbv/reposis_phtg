@@ -27,10 +27,6 @@
             <label xml:lang="de">Kontakt</label>
             <label xml:lang="en">Contact</label>
         </item>
-        <item href="/content/below/about.xml" type="intern">
-            <label xml:lang="de">Über den Publikationsserver der PHTG</label>
-            <label xml:lang="en">About the PHTG publikation server</label>
-        </item>
     </menu>
     <menu id="search">
         <label xml:lang="de">Suchen</label>
