@@ -5,7 +5,7 @@
              ID="rvk">
     <label xml:lang="x-uri" text="https://www.publikationsserver.phtg.ch/classifications/rvk" />
     <label xml:lang="de" text="RVK" description="Regensburger Verbundklassifikation" />
-    <label xml:lang="x-auth" text="ddc" />
+    <label xml:lang="x-auth" text="rvk" />
     <categories>
         <category ID="A">
             <label xml:lang="de" text="A Allgemeines" />
