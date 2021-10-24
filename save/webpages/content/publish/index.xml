@@ -1,52 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <MyCoReWebPage>
-    <section title="Publizieren" xml:lang="de"/>
-    <section title="New publication" xml:lang="en"/>
-    <section xml:lang="all">
-        <script src='../../js/mir/select-doctype.js'></script>
-        <h1>Publizieren</h1>
-        
-        <!-- introduction -->
-        <div class="row">
-            <div class="col-sm-12 col-md-8">
-                <p>
-                    Zur Veröffentlichung Ihres Beitrags auf dem PHTG Publikationsserver ist zunächst die Erfassung seiner bibliographischen Daten erforderlich.
-                    Dazu kombinieren Sie bitte aus dem zweiteiligen Auswahlmenu die dem Typus Ihrer Publikation entsprechende Erfassungsmaske. Bitte beachten Sie,
-                    dass alle mit einen Asterisk * gekennzeichneten Felder der jeweils gewählten Erfassungsmaske verpflichtend zu befüllen sind. 
-                </p>
-            </div>
+  <section xml:lang="all">
+    <script src='../../js/mir/select-doctype.min.js' />
+  </section>
+  <section title="Publizieren" xml:lang="de">
+    <form id="submit_publication" class="form-horizontal" role="form" method="get" action="../../editor/editor-dynamic.xed">
+      
+      <h1>Publizieren</h1>
+      <div class="row">
+        <div class="col-sm-12 col-md-8">
+          <p>
+            Zur Veröffentlichung Ihres Beitrags auf dem PHTG Publikationsserver ist zunächst die Erfassung seiner bibliographischen Daten erforderlich.
+            Dazu kombinieren Sie bitte aus dem zweiteiligen Auswahlmenu die dem Typus Ihrer Publikation entsprechende Erfassungsmaske. Bitte beachten Sie,
+            dass alle mit einen Asterisk * gekennzeichneten Felder der jeweils gewählten Erfassungsmaske verpflichtend zu befüllen sind. 
+          </p>
         </div>
-        
-        <form id="submit_publication"
-              class="form-horizontal"
-              role="form"
-              method="get"
-              action="../../editor/editor-dynamic.xed">
-            
-            <!-- genre -->
-            <div class="row form-group">
-                <div class="col-sm-5 col-md-5 col-lg-4">
-                    <select id="genre" class="form-control" name="genre" size="1">
-                    </select>
-                </div>
-            </div>
-            
-            <!-- host -->
-            <div class="row form-group">
-                <div class="col-sm-5 col-md-5 col-lg-4">
-                    <select id="host" class="form-control" name="host" size="1">
-                    </select>
-                </div>
-            </div>
-            
-            <!-- submit -->
-            <div class="row form-group mt-4">
-                <div class="col-sm-5 col-md-4">
-                    <button type="submit" class="btn btn-primary">Weiter</button>
-                </div>
-            </div>
-            
-        </form>
-    </section>
+      </div>
+      <div class="row form-group">
+        <div class="col-sm-5 col-md-5 col-lg-4">
+          <select id="genre" class="form-control" name="genre" size="1"></select>
+        </div>
+      </div>
+      
+      <div class="row form-group">
+        <div class="col-sm-5 col-md-5 col-lg-4">
+          <select id="host" class="form-control" name="host" size="1"></select>
+        </div>
+      </div>
+      
+      <div id="more_options_toggle" class="row mt-4">
+        <h3>
+          <span id="more_options_trigger">
+            <span id="more_options_label">Publikation aus anderen Datenquellen importieren</span>
+            <span id="more_options_label_hide" class="d-none">Publikation aus anderen Datenquellen importieren</span>
+            <span id="more_options_button" class="fas fa-chevron-up"></span>
+          </span>
+        </h3>
+      </div>
+      
+      <!-- more options -->
+      <div id="more_options_box">
+        <div class="row form-group">
+          <div class="col-sm-3 col-lg-2 control-label mb-1">
+            <select name="type" class="form-control">
+              <option value="doi">DOI</option>
+              <option value="isbn">ISBN</option>
+              <option value="issn">ISSN</option>
+            </select>
+          </div>
+          <div class="col-md-5 col-lg-4 mb-1">
+            <input class="form-control" type="text" name="modsId" />
+          </div>
+        </div>
+      </div>
+
+      <!-- submit -->
+      <div class="row form-group mt-4">
+        <div class="col-sm-5 col-md-4">
+          <button type="submit" class="btn btn-primary">Weiter</button>
+        </div>
+      </div>
+      
+    </form>
+  </section>
+  
 </MyCoReWebPage>
