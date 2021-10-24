@@ -636,8 +636,29 @@
   </xed:choose>
 </xed:template>
 
+
+<xed:template id="sdnb.repeat">
+  <xed:repeat xpath="mods:classification[@authority='sdnb'][@displayLabel='sdnb']" min="1" max="10" method="build">
+    <div class="form-group row">
+      <label class="col-md-3 col-form-label text-right">
+        <xed:output i18n="editor.search.mir.sdnb" />
+        :
+      </label>
+      <div class="col-md-6">
+        <select class="form-control form-control-inline mir-form__js-select--large">
+          <option value="">
+            <xed:output i18n="mir.select" />
+          </option>
+          <xed:include uri="xslStyle:items2options:classification:editor:-1:children:SDNB" />
+        </select>
+      </div>
+      <mir:help-pmud help-text="{i18n:mir.help.sdnb}" pmud="true" />
+    </div>
+  </xed:repeat>
+</xed:template>
+
 <xed:template id="project.rvk.required">
-  <xed:bind xpath="mods:classification[@authority='rvk'][@displayLabel='rvk']">
+  <xed:repeat xpath="mods:classification[@authority='rvk'][@displayLabel='rvk']" min="1" max="10" method="build">
     <div class="form-group row required {$xed-validation-marker}">
       <label class="col-md-3 col-form-label text-right">
         <xed:output i18n="project.form.label.rvk" />
@@ -651,30 +672,31 @@
           <xed:include uri="xslStyle:items2options:classification:editor:-1:children:rvk" />
         </select>
       </div>
-      <mir:help-pmud help-text="{i18n:project.help.rvk}" />
+      <mir:help-pmud help-text="{i18n:project.help.rvk}" pmud="true"/>
     </div>
-  </xed:bind>
+  </xed:repeat>
   <xed:validate xpath="//mods:mods/mods:classification[@authority='rvk'][@displayLabel='rvk']" required="true" i18n="project.validation.rvk"
                 display="global" />
 </xed:template>
 
 <xed:template id="project.rvk.not_required">
-  <xed:bind xpath="mods:classification[@authority='rvk'][@displayLabel='rvk']">
-    <div class="form-group row {$xed-validation-marker}">
+  <xed:repeat xpath="mods:classification[@authority='rvk'][@displayLabel='rvk']" min="1" max="10" method="build">
+    <div class="form-group row">
       <label class="col-md-3 col-form-label text-right">
         <xed:output i18n="project.form.label.rvk" />
+        :
       </label>
       <div class="col-md-6">
-        <select class="form-control form-control-inline">
+        <select class="form-control form-control-inline mir-form__js-select--large">
           <option value="">
             <xed:output i18n="mir.select" />
           </option>
           <xed:include uri="xslStyle:items2options:classification:editor:-1:children:rvk" />
         </select>
       </div>
-      <mir:help-pmud help-text="{i18n:project.help.rvk}" pmud="false" />
+      <mir:help-pmud help-text="{i18n:project.help.rvk}" pmud="true" />
     </div>
-  </xed:bind>
+  </xed:repeat>
 </xed:template>
 
 <xed:template id="project.ddc">
