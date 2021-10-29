@@ -211,7 +211,6 @@
   <xed:modify ref="hosts.journal">
     <xed:remove ref="identifier.isbn.journal.relItemsearch" />
     <xed:remove ref="shelfmark.journal.relItemsearch" />
-    <xed:remove ref="host.issue" />
   </xed:modify>
   
   <xed:modify ref="hosts.newspaper">
