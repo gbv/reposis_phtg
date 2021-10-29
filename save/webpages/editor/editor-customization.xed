@@ -58,7 +58,11 @@
       <xed:include ref="year.issued" />
       <xed:include ref="extent" />
     </xed:if>
+    <xed:include ref="place" />
+    <xed:include ref="publisher" />
+    <xed:include ref="edition" />
     <xed:include ref="language" />
+    <xed:include ref="identifier.isbn" />
     <xed:include ref="identifier.managed" />
     <xed:include ref="doi.handle.urn.repeated" />
     <xed:include ref="project.rvk" />
