@@ -208,6 +208,24 @@
     <xed:include ref="comment" />
   </xed:template>
   
+  <xed:template id="genres.journal">
+    <xed:include ref="title.journal" />
+    <xed:include ref="title.abbreviated" />
+    <xed:include ref="editor.repeated" />
+    <xed:include ref="date.onlyrange.issued.datetimepicker" />
+    <xed:include ref="identifier.zdbid" />
+    <xed:include ref="identifier.issn" />
+    <xed:include ref="language" />
+    <xed:include ref="place" />
+    <xed:include ref="publisher" />
+    <xed:include ref="project.rvk" />
+    <xed:include ref="subject.simple" />
+    <xed:include ref="identifier.managed" />
+    <xed:include ref="shelfmark" />
+    <xed:include ref="abstract.simple" />
+    <xed:include ref="comment" />
+  </xed:template>
+
   <xed:modify ref="hosts.journal">
     <xed:remove ref="identifier.isbn.journal.relItemsearch" />
     <xed:remove ref="shelfmark.journal.relItemsearch" />

@@ -23,9 +23,3 @@ $(document).ready(function() {
   $("a[href='https://reposis-test.gbv.de/PROJECT/servlets/solr/select?q=createdby:USERNAME']").attr('href', newHref);
 
 });
-
-$( document ).ajaxComplete(function() {
-  // remove series and journal as option from publish/index.xml
-  $("select#genre option[value='series']").remove();
-  $("select#genre option[value='journal']").remove();
-});
