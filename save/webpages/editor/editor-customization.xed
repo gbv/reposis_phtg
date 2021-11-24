@@ -575,7 +575,7 @@
     </xed:repeat>
   </xed:template>
   
-<xed:template id="project.author.repeated.required">
+<xed:template id="project.author.repeated.required2">
   <mir:role.repeated role="aut"
                      label="mir.role.author"
                      help-text="{i18n:mir.help.role.author}"
@@ -815,5 +815,98 @@
     </div>
   </xed:repeat>
 </xed:template>
+
+  <xed:template id="project.author.repeated.required">
+    <xed:repeat xpath="mods:name[@type='personal' or not(@type) or (@type='corporate' and not(@authorityURI='https://www.publikationsserver.phtg.ch/classifications/identifier'))][mods:role/mods:roleTerm[@type='code'][@authority='marcrelator']='aut']" min="1" max="10">
+      <xed:bind xpath="@type" initially="personal" />
+      <xed:bind xpath="@simpleEditor" default="true" />
+      <xed:bind xpath="mods:displayForm">
+        <div class="form-group row {$xed-validation-marker} ">
+          <xed:bind xpath=".."> 
+            <label class="col-md-3 col-form-label text-right">
+              <xed:output i18n="mir.role.author" />
+            </label>
+            <div class="col-md-6">
+              <div class="controls">
+                <xed:include ref="person.fields" />
+              </div>
+            </div>
+            <mir:help-pmud help-text="{i18n:project.help.employee_abbreviation}" pmud="true" />
+          </xed:bind>
+        </div>
+      </xed:bind>
+      
+      <div class="form-group row {$xed-validation-marker} ">
+        <xed:bind xpath="mods:nameIdentifier[@type='phtg']">
+          <label class="col-md-3 col-form-label text-right">
+            <xed:output i18n="project.form.label.employee_abbreviation" />
+          </label>
+          <xed:bind xpath="@type" initially="phtg">
+            <input type="hidden" class="nameType" />
+          </xed:bind>
+          <div class="col-md-6">
+            <xed:bind xpath="@value">
+              <input type="text" size="20" class="form-control form-control-inline {$xed-validation-marker} nameIdentifier" />
+            </xed:bind>
+          </div>
+        </xed:bind>
+      </div>
+    </xed:repeat>
+    <!-- <xed:validate xpath="//mods:mods/mods:nameIdentifier[@type='phtg']" required="true" i18n="project.validation.employee_abbreviation" display="global" /> -->
+  </xed:template>
+
+  <xed:template id="topicIdentifier">
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label text-right">
+          <xed:output i18n="mir.subject.topic.gnd.type" />
+        </label>
+        <div class="col-md-6">
+          <xed:bind xpath="@valueURIxEditor">
+            <input type="text" size="20" class="form-control form-control-inline topic_gnd" />
+          </xed:bind>
+          <xed:bind xpath="@authority" initially="gnd">
+            <input type="hidden" class="topic_gndType" />
+          </xed:bind>
+        </div>
+        <mir:help-pmud help-text="{i18n:mir.help.topicIdentifier}" pmud="false" />
+      </div>
+  </xed:template>
+
+
+  <!--
+        <xed:repeat
+      xpath="mods:name[@type='personal' or not(@type) or (@type='corporate' and not(@authorityURI='{$institutesURI}'))][mods:role/mods:roleTerm[@type='code'][@authority='marcrelator']='{@role}']"
+      min="1" max="100">
+      <xed:bind xpath="@type" initially="personal" />
+      <xed:bind xpath="@simpleEditor" default="true" />
+      <xed:bind xpath="mods:displayForm"> 
+        <div class="form-group row {@class} {$xed-val-marker}">
+          <xed:bind xpath=".."> 
+            <label class="col-md-3 col-form-label text-right">
+              <xed:output i18n="{@label}" />
+            </label>
+            <div class="col-md-6">
+              <div class="controls">
+                <xed:include
+                  uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed"
+                  ref="person.fields" />
+              </div>
+            </div>
+            <div class="col-md-3">
+              <xsl:if test="string-length(@help-text) &gt; 0">
+                <xsl:call-template name="mir-helpbutton" />
+              </xsl:if>
+              <xsl:call-template name="mir-pmud" />
+            </div>
+          </xed:bind>
+        </div>
+        <xsl:call-template name="mir-required" />
+      </xed:bind>
+    </xed:repeat>
+    und dann noch ein entsprechendes <xed:bind xpath="mods:nameIdentifier"> mit dem richtigen @type-Attribut ergänzen
+    Und das ganze vermutlich als fieldset, damit der Zusammenhang klar wird
+    Du kannst ja mal schauen wir weit du kommst und ich schau mir das dann heute Nachmittag nochmal mit an
+  -->
+
 
 </xed:template>
