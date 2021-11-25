@@ -841,13 +841,8 @@
           <label class="col-md-3 col-form-label text-right">
             <xed:output i18n="project.form.label.employee_abbreviation" />
           </label>
-          <xed:bind xpath="@type" initially="phtg">
-            <input type="hidden" class="nameType" />
-          </xed:bind>
           <div class="col-md-6">
-            <xed:bind xpath="@value">
-              <input type="text" size="20" class="form-control form-control-inline {$xed-validation-marker} nameIdentifier" />
-            </xed:bind>
+            <input type="text" size="20" class="form-control form-control-inline {$xed-validation-marker} nameIdentifier" />
           </div>
         </xed:bind>
       </div>
