@@ -851,7 +851,7 @@
       </fieldset>
     </xed:repeat>
     <xed:validate xpath="//mods:mods/mods:name[mods:role/mods:roleTerm[@authority='marcrelator'][@type='code']='aut']/mods:displayForm" i18n="mir.validation.author" required="true" display="global" />
-    <!-- <xed:validate xpath="//mods:nameIdentifier[@type='phtg']"  matches="\S+/\S+" i18n="project.validation.employee_abbreviation"  required="true" display="global" /> -->
+    <xed:validate xpath="//mods:nameIdentifier[@type='phtg']"  matches="[öÖäÄüÜßA-Za-z]{3}" i18n="project.validation.employee_abbreviation"  display="global" />
   </xed:template>
   
 </xed:template>
