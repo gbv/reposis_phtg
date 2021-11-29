@@ -225,7 +225,7 @@
     <xed:include ref="abstract.simple" />
     <xed:include ref="comment" />
   </xed:template>
-
+  
   <xed:modify ref="hosts.journal">
     <xed:remove ref="identifier.isbn.journal.relItemsearch" />
     <xed:remove ref="shelfmark.journal.relItemsearch" />
@@ -575,333 +575,283 @@
     </xed:repeat>
   </xed:template>
   
-<xed:template id="project.author.repeated.required2">
-  <mir:role.repeated role="aut"
-                     label="mir.role.author"
-                     help-text="{i18n:mir.help.role.author}"
-                     class="required"
-                     required="true"
-                     required-i18n="mir.validation.author" />
-</xed:template>
-
-<xed:template id="project.peerReviewed">
-  <xed:bind xpath="mods:note[@type='peerReviewed']" initially="notSpecified">
-    <div class="form-group row">
-      <label class="col-md-3 col-form-label text-right">
-        <xed:output i18n="project.form.peerReviewed.label" />
-      </label>
-      <div class="col-md-6">
-        <div class="controls">
-          <select class="form-control form-control-inline nameType">
-            <option value="notSpecified"><xed:output i18n="project.form.notSpecified" /></option>
-            <option value="yes"><xed:output i18n="project.form.peerReviewed.yes" /></option>
-            <option value="no"><xed:output i18n="project.form.peerReviewed.no" /></option>
+  <xed:template id="project.peerReviewed">
+    <xed:bind xpath="mods:note[@type='peerReviewed']" initially="notSpecified">
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label text-right">
+          <xed:output i18n="project.form.peerReviewed.label" />
+        </label>
+        <div class="col-md-6">
+          <div class="controls">
+            <select class="form-control form-control-inline nameType">
+              <option value="notSpecified"><xed:output i18n="project.form.notSpecified" /></option>
+              <option value="yes"><xed:output i18n="project.form.peerReviewed.yes" /></option>
+              <option value="no"><xed:output i18n="project.form.peerReviewed.no" /></option>
+            </select>
+          </div>
+        </div>
+        <mir:help-pmud help-text="{i18n:project.form.help.peerReviewed}" />
+      </div>
+    </xed:bind>
+  </xed:template>
+  
+  <xed:template id="project.ageRange">
+    <xed:bind xpath="mods:note[@type='ageRange']" initially="notSpecified">
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label text-right">
+          <xed:output i18n="project.form.ageRange.label" />
+        </label>
+        <div class="col-md-6">
+          <div class="controls">
+            <select class="form-control form-control-inline nameType">
+              <option value="notSpecified"><xed:output i18n="project.form.notSpecified" /></option>
+              <option value="Zyklus 1"><xed:output i18n="project.form.ageRange.1" /></option>
+              <option value="Zyklus 2"><xed:output i18n="project.form.ageRange.2" /></option>
+              <option value="Zyklus 3"><xed:output i18n="project.form.ageRange.3" /></option>
+            </select>
+          </div>
+        </div>
+        <mir:help-pmud help-text="{i18n:project.form.help.ageRange}" />
+      </div>
+    </xed:bind>
+  </xed:template>
+  
+  <xed:template id="project.title.proceedings.relItemsearch.required">
+    <mir:relItemsearch searchengine="title" genre="proceedings" responsefield="mods.title" xpath="mods:titleInfo/mods:title" label="mir.title" 
+                       class="required" required="true" required-i18n="mir.validation.title.proceedings"/>
+  </xed:template>
+  
+  <xed:template id="project.monografie.repeated.required">
+    <mir:role.repeated role="aut" label="mir.role.author" help-text="{i18n:mir.help.role.author}" class="required"
+                       required="true" required-i18n="mir.validation.author" />
+  </xed:template>
+  
+  <xed:template id="title.series.relItemsearch">
+    <mir:relItemsearch searchengine="title" genre="book" responsefield="mods.title" xpath="mods:titleInfo/mods:title"
+                       label="mir.series.title" help-text="{i18n:mir.help.series.title}" />
+  </xed:template>
+  
+  <xed:template id="project.title.series.relItemsearch.required">
+    <mir:relItemsearch searchengine="title" genre="book" responsefield="mods.title" xpath="mods:titleInfo/mods:title" 
+                       label="mir.series.title" class="required" required="true"
+                       required-i18n="mir.validation.title.book" help-text="{i18n:mir.help.series.title}" />
+  </xed:template>
+  
+  <xed:template id="project.rvk">
+    <xed:choose>
+      <xed:when test="xed:call-java('org.mycore.common.xml.MCRXMLFunctions','isCurrentUserInRole','admin') or xed:call-java('org.mycore.common.xml.MCRXMLFunctions','isCurrentUserInRole','editor')">
+        <xed:include ref="project.rvk.required" />
+      </xed:when>
+      <xed:otherwise>
+        <xed:include ref="project.rvk.not_required" />
+      </xed:otherwise>
+    </xed:choose>
+  </xed:template>
+  
+  
+  <xed:template id="sdnb.repeat">
+    <xed:repeat xpath="mods:classification[@authority='sdnb'][@displayLabel='sdnb']" min="1" max="10" method="build">
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label text-right">
+          <xed:output i18n="editor.search.mir.sdnb" />
+          :
+        </label>
+        <div class="col-md-6">
+          <select class="form-control form-control-inline mir-form__js-select--large">
+            <option value="">
+              <xed:output i18n="mir.select" />
+            </option>
+            <xed:include uri="xslStyle:items2options:classification:editor:-1:children:SDNB" />
           </select>
         </div>
+        <mir:help-pmud help-text="{i18n:mir.help.sdnb}" pmud="true" />
       </div>
-      <mir:help-pmud help-text="{i18n:project.form.help.peerReviewed}" />
-    </div>
-  </xed:bind>
-</xed:template>
-
-<xed:template id="project.ageRange">
-  <xed:bind xpath="mods:note[@type='ageRange']" initially="notSpecified">
-    <div class="form-group row">
-      <label class="col-md-3 col-form-label text-right">
-        <xed:output i18n="project.form.ageRange.label" />
-      </label>
-      <div class="col-md-6">
-        <div class="controls">
-          <select class="form-control form-control-inline nameType">
-            <option value="notSpecified"><xed:output i18n="project.form.notSpecified" /></option>
-            <option value="Zyklus 1"><xed:output i18n="project.form.ageRange.1" /></option>
-            <option value="Zyklus 2"><xed:output i18n="project.form.ageRange.2" /></option>
-            <option value="Zyklus 3"><xed:output i18n="project.form.ageRange.3" /></option>
+    </xed:repeat>
+  </xed:template>
+  
+  <xed:template id="project.rvk.required">
+    <xed:repeat xpath="mods:classification[@authority='rvk'][@displayLabel='rvk']" min="1" max="10" method="build">
+      <div class="form-group row required {$xed-validation-marker}">
+        <label class="col-md-3 col-form-label text-right">
+          <xed:output i18n="project.form.label.rvk" />
+          :
+        </label>
+        <div class="col-md-6">
+          <select class="form-control form-control-inline mir-form__js-select--large">
+            <option value="">
+              <xed:output i18n="mir.select" />
+            </option>
+            <xed:include uri="xslStyle:items2options:classification:editor:-1:children:rvk" />
           </select>
         </div>
+        <mir:help-pmud help-text="{i18n:project.help.rvk}" pmud="true"/>
       </div>
-      <mir:help-pmud help-text="{i18n:project.form.help.ageRange}" />
-    </div>
-  </xed:bind>
-</xed:template>
-
-<xed:template id="project.title.proceedings.relItemsearch.required">
-  <mir:relItemsearch searchengine="title" genre="proceedings" responsefield="mods.title" xpath="mods:titleInfo/mods:title" label="mir.title" 
-                     class="required" required="true" required-i18n="mir.validation.title.proceedings"/>
-</xed:template>
-
-<xed:template id="project.monografie.repeated.required">
-  <mir:role.repeated role="aut" label="mir.role.author" help-text="{i18n:mir.help.role.author}" class="required"
-                     required="true" required-i18n="mir.validation.author" />
-</xed:template>
-
-<xed:template id="title.series.relItemsearch">
-  <mir:relItemsearch searchengine="title" genre="book" responsefield="mods.title" xpath="mods:titleInfo/mods:title"
-                     label="mir.series.title" help-text="{i18n:mir.help.series.title}" />
-</xed:template>
-
-<xed:template id="project.title.series.relItemsearch.required">
-  <mir:relItemsearch searchengine="title" genre="book" responsefield="mods.title" xpath="mods:titleInfo/mods:title" 
-                     label="mir.series.title" class="required" required="true"
-                     required-i18n="mir.validation.title.book" help-text="{i18n:mir.help.series.title}" />
-</xed:template>
-
-<xed:template id="project.rvk">
-  <xed:choose>
-    <xed:when test="xed:call-java('org.mycore.common.xml.MCRXMLFunctions','isCurrentUserInRole','admin') or xed:call-java('org.mycore.common.xml.MCRXMLFunctions','isCurrentUserInRole','editor')">
-      <xed:include ref="project.rvk.required" />
-    </xed:when>
-    <xed:otherwise>
-      <xed:include ref="project.rvk.not_required" />
-    </xed:otherwise>
-  </xed:choose>
-</xed:template>
-
-
-<xed:template id="sdnb.repeat">
-  <xed:repeat xpath="mods:classification[@authority='sdnb'][@displayLabel='sdnb']" min="1" max="10" method="build">
-    <div class="form-group row">
-      <label class="col-md-3 col-form-label text-right">
-        <xed:output i18n="editor.search.mir.sdnb" />
-        :
-      </label>
-      <div class="col-md-6">
-        <select class="form-control form-control-inline mir-form__js-select--large">
-          <option value="">
-            <xed:output i18n="mir.select" />
-          </option>
-          <xed:include uri="xslStyle:items2options:classification:editor:-1:children:SDNB" />
-        </select>
+    </xed:repeat>
+    <xed:validate xpath="//mods:mods/mods:classification[@authority='rvk'][@displayLabel='rvk']" required="true" i18n="project.validation.rvk"
+                  display="global" />
+  </xed:template>
+  
+  <xed:template id="project.rvk.not_required">
+    <xed:repeat xpath="mods:classification[@authority='rvk'][@displayLabel='rvk']" min="1" max="10" method="build">
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label text-right">
+          <xed:output i18n="project.form.label.rvk" />
+          :
+        </label>
+        <div class="col-md-6">
+          <select class="form-control form-control-inline mir-form__js-select--large">
+            <option value="">
+              <xed:output i18n="mir.select" />
+            </option>
+            <xed:include uri="xslStyle:items2options:classification:editor:-1:children:rvk" />
+          </select>
+        </div>
+        <mir:help-pmud help-text="{i18n:project.help.rvk}" pmud="true" />
       </div>
-      <mir:help-pmud help-text="{i18n:mir.help.sdnb}" pmud="true" />
-    </div>
-  </xed:repeat>
-</xed:template>
-
-<xed:template id="project.rvk.required">
-  <xed:repeat xpath="mods:classification[@authority='rvk'][@displayLabel='rvk']" min="1" max="10" method="build">
-    <div class="form-group row required {$xed-validation-marker}">
-      <label class="col-md-3 col-form-label text-right">
-        <xed:output i18n="project.form.label.rvk" />
-        :
-      </label>
-      <div class="col-md-6">
-        <select class="form-control form-control-inline mir-form__js-select--large">
-          <option value="">
-            <xed:output i18n="mir.select" />
-          </option>
-          <xed:include uri="xslStyle:items2options:classification:editor:-1:children:rvk" />
-        </select>
+    </xed:repeat>
+  </xed:template>
+  
+  <xed:template id="project.ddc">
+    <xed:bind xpath="mods:classification[@authorityURI='https://www.publikationsserver.phtg.ch/classifications/DDC'][@displayLabel='DDC']/@valueURIxEditor">
+      <div class="form-group row {$xed-validation-marker}">
+        <label class="col-md-3 col-form-label text-right">
+          <xed:output i18n="project.form.label.ddc" />
+        </label>
+        <div class="col-md-6">
+          <select class="form-control form-control-inline">
+            <option value="">
+              <xed:output i18n="mir.select.optional" />
+            </option>
+            <xed:include uri="xslStyle:items2options:classification:editor:-1:children:DDC" />
+          </select>
+        </div>
+        <mir:help-pmud help-text="{i18n:project.help.ddc}" pmud="false" />
       </div>
-      <mir:help-pmud help-text="{i18n:project.help.rvk}" pmud="true"/>
-    </div>
-  </xed:repeat>
-  <xed:validate xpath="//mods:mods/mods:classification[@authority='rvk'][@displayLabel='rvk']" required="true" i18n="project.validation.rvk"
-                display="global" />
-</xed:template>
-
-<xed:template id="project.rvk.not_required">
-  <xed:repeat xpath="mods:classification[@authority='rvk'][@displayLabel='rvk']" min="1" max="10" method="build">
-    <div class="form-group row">
-      <label class="col-md-3 col-form-label text-right">
-        <xed:output i18n="project.form.label.rvk" />
-        :
-      </label>
-      <div class="col-md-6">
-        <select class="form-control form-control-inline mir-form__js-select--large">
-          <option value="">
-            <xed:output i18n="mir.select" />
-          </option>
-          <xed:include uri="xslStyle:items2options:classification:editor:-1:children:rvk" />
-        </select>
+    </xed:bind>
+  </xed:template>
+  
+  <xed:template id="project.courses">
+    <xed:bind xpath="mods:classification[@authorityURI='https://www.publikationsserver.phtg.ch/classifications/courses'][@displayLabel='courses']/@valueURIxEditor">
+      <div class="form-group row {$xed-validation-marker}">
+        <label class="col-md-3 col-form-label text-right">
+          <xed:output i18n="project.form.label.courses" />
+        </label>
+        <div class="col-md-6">
+          <select class="form-control form-control-inline">
+            <option value="">
+              <xed:output i18n="mir.select.optional" />
+            </option>
+            <xed:include uri="xslStyle:items2options:classification:editor:-1:children:courses" />
+          </select>
+        </div>
+        <mir:help-pmud help-text="{i18n:project.help.courses}" pmud="false" />
       </div>
-      <mir:help-pmud help-text="{i18n:project.help.rvk}" pmud="true" />
-    </div>
-  </xed:repeat>
-</xed:template>
-
-<xed:template id="project.ddc">
-  <xed:bind xpath="mods:classification[@authorityURI='https://www.publikationsserver.phtg.ch/classifications/DDC'][@displayLabel='DDC']/@valueURIxEditor">
-    <div class="form-group row {$xed-validation-marker}">
-      <label class="col-md-3 col-form-label text-right">
-        <xed:output i18n="project.form.label.ddc" />
-      </label>
-      <div class="col-md-6">
-        <select class="form-control form-control-inline">
-          <option value="">
-            <xed:output i18n="mir.select.optional" />
-          </option>
-          <xed:include uri="xslStyle:items2options:classification:editor:-1:children:DDC" />
-        </select>
+    </xed:bind>
+  </xed:template>
+  
+  <xed:template id="project.research_fields">
+    <xed:bind xpath="mods:classification[@authorityURI='https://www.publikationsserver.phtg.ch/classifications/research_fields'][@displayLabel='research_fields']/@valueURIxEditor">
+      <div class="form-group row {$xed-validation-marker}">
+        <label class="col-md-3 col-form-label text-right">
+          <xed:output i18n="project.form.label.research_fields" />
+        </label>
+        <div class="col-md-6">
+          <select class="form-control form-control-inline">
+            <option value="">
+              <xed:output i18n="mir.select.optional" />
+            </option>
+            <xed:include uri="xslStyle:items2options:classification:editor:-1:children:research_fields" />
+          </select>
+        </div>
+        <mir:help-pmud help-text="{i18n:project.help.research_fields}" pmud="false" />
       </div>
-      <mir:help-pmud help-text="{i18n:project.help.ddc}" pmud="false" />
-    </div>
-  </xed:bind>
-</xed:template>
-
-<xed:template id="project.courses">
-  <xed:bind xpath="mods:classification[@authorityURI='https://www.publikationsserver.phtg.ch/classifications/courses'][@displayLabel='courses']/@valueURIxEditor">
-    <div class="form-group row {$xed-validation-marker}">
-      <label class="col-md-3 col-form-label text-right">
-        <xed:output i18n="project.form.label.courses" />
-      </label>
-      <div class="col-md-6">
-        <select class="form-control form-control-inline">
-          <option value="">
-            <xed:output i18n="mir.select.optional" />
-          </option>
-          <xed:include uri="xslStyle:items2options:classification:editor:-1:children:courses" />
-        </select>
+    </xed:bind>
+  </xed:template>
+  
+  <xed:template id="project.research_projects">
+    <xed:bind xpath="mods:classification[@authorityURI='https://www.publikationsserver.phtg.ch/classifications/research_projects'][@displayLabel='research_projects']/@valueURIxEditor">
+      <div class="form-group row {$xed-validation-marker}">
+        <label class="col-md-3 col-form-label text-right">
+          <xed:output i18n="project.form.label.research_projects" />
+        </label>
+        <div class="col-md-6">
+          <select class="form-control form-control-inline">
+            <option value="">
+              <xed:output i18n="mir.select.optional" />
+            </option>
+            <xed:include uri="xslStyle:items2options:classification:editor:-1:children:research_projects" />
+          </select>
+        </div>
+        <mir:help-pmud help-text="{i18n:project.help.research_projects}" pmud="false" />
       </div>
-      <mir:help-pmud help-text="{i18n:project.help.courses}" pmud="false" />
-    </div>
-  </xed:bind>
-</xed:template>
-
-<xed:template id="project.research_fields">
-  <xed:bind xpath="mods:classification[@authorityURI='https://www.publikationsserver.phtg.ch/classifications/research_fields'][@displayLabel='research_fields']/@valueURIxEditor">
-    <div class="form-group row {$xed-validation-marker}">
-      <label class="col-md-3 col-form-label text-right">
-        <xed:output i18n="project.form.label.research_fields" />
-      </label>
-      <div class="col-md-6">
-        <select class="form-control form-control-inline">
-          <option value="">
-            <xed:output i18n="mir.select.optional" />
-          </option>
-          <xed:include uri="xslStyle:items2options:classification:editor:-1:children:research_fields" />
-        </select>
+    </xed:bind>
+  </xed:template>
+  
+  <xed:template id="sdnb.repeat">
+    <xed:repeat xpath="mods:classification[@authority='sdnb'][@displayLabel='sdnb']" min="1" max="10" method="build">
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label text-right">
+          <xed:output i18n="editor.search.mir.sdnb" />
+          :
+        </label>
+        <div class="col-md-6">
+          <select class="form-control form-control-inline mir-form__js-select--large">
+            <option value="">
+              <xed:output i18n="mir.select" />
+            </option>
+            <xed:include uri="xslStyle:items2options:classification:editor:-1:children:SDNB" />
+          </select>
+        </div>
+        <mir:help-pmud help-text="{i18n:mir.help.sdnb}" pmud="true" />
       </div>
-      <mir:help-pmud help-text="{i18n:project.help.research_fields}" pmud="false" />
-    </div>
-  </xed:bind>
-</xed:template>
-
-<xed:template id="project.research_projects">
-  <xed:bind xpath="mods:classification[@authorityURI='https://www.publikationsserver.phtg.ch/classifications/research_projects'][@displayLabel='research_projects']/@valueURIxEditor">
-    <div class="form-group row {$xed-validation-marker}">
-      <label class="col-md-3 col-form-label text-right">
-        <xed:output i18n="project.form.label.research_projects" />
-      </label>
-      <div class="col-md-6">
-        <select class="form-control form-control-inline">
-          <option value="">
-            <xed:output i18n="mir.select.optional" />
-          </option>
-          <xed:include uri="xslStyle:items2options:classification:editor:-1:children:research_projects" />
-        </select>
-      </div>
-      <mir:help-pmud help-text="{i18n:project.help.research_projects}" pmud="false" />
-    </div>
-  </xed:bind>
-</xed:template>
-
-<xed:template id="sdnb.repeat">
-  <xed:repeat xpath="mods:classification[@authority='sdnb'][@displayLabel='sdnb']" min="1" max="10" method="build">
-    <div class="form-group row">
-      <label class="col-md-3 col-form-label text-right">
-        <xed:output i18n="editor.search.mir.sdnb" />
-        :
-      </label>
-      <div class="col-md-6">
-        <select class="form-control form-control-inline mir-form__js-select--large">
-          <option value="">
-            <xed:output i18n="mir.select" />
-          </option>
-          <xed:include uri="xslStyle:items2options:classification:editor:-1:children:SDNB" />
-        </select>
-      </div>
-      <mir:help-pmud help-text="{i18n:mir.help.sdnb}" pmud="true" />
-    </div>
-  </xed:repeat>
-</xed:template>
-
+    </xed:repeat>
+  </xed:template>
+  
   <xed:template id="project.author.repeated.required">
     <xed:repeat xpath="mods:name[@type='personal' or not(@type) or (@type='corporate' and not(@authorityURI='https://www.publikationsserver.phtg.ch/classifications/identifier'))][mods:role/mods:roleTerm[@type='code'][@authority='marcrelator']='aut']" min="1" max="10">
       <xed:bind xpath="@type" initially="personal" />
       <xed:bind xpath="@simpleEditor" default="true" />
-      <xed:bind xpath="mods:displayForm">
-        <div class="form-group row {$xed-validation-marker} ">
-          <xed:bind xpath=".."> 
-            <label class="col-md-3 col-form-label text-right">
-              <xed:output i18n="mir.role.author" />
-            </label>
-            <div class="col-md-6">
-              <div class="controls">
-                <xed:include ref="person.fields" />
-              </div>
+      <fieldset class="personExtended_box">
+        <legend class="mir-fieldset-legend">
+          <xed:bind xpath="mods:displayForm">
+            <div class="form-group required row {$xed-validation-marker} ">
+              <xed:bind xpath="..">
+                <label class="col-md-3 col-form-label text-right">
+                  <xed:output i18n="mir.role.author" />
+                </label>
+                <div class="col-md-6 center-vertical">
+                  <xed:include ref="person.fields" />
+                  <span class="fas fa-chevron-up expand-item" title="{i18n:translate('mir.help.expand')}" aria-hidden="true"></span>
+                </div>
+                <mir:help-pmud help-text="{i18n:mir.help.role.author}" pmud="true" />
+              </xed:bind>
             </div>
-            <mir:help-pmud help-text="{i18n:project.help.employee_abbreviation}" pmud="true" />
           </xed:bind>
-        </div>
-      </xed:bind>
-      
-      <div class="form-group row {$xed-validation-marker} ">
-        <xed:bind xpath="mods:nameIdentifier[@type='phtg']">
-          <label class="col-md-3 col-form-label text-right">
-            <xed:output i18n="project.form.label.employee_abbreviation" />
-          </label>
-          <div class="col-md-6">
-            <input type="text" size="20" class="form-control form-control-inline {$xed-validation-marker} nameIdentifier" />
+        </legend>
+        <div class="mir-fieldset-content personExtended-container">
+          <!-- diese Includes funktionieren in der Form nicht, da sie einen Fehler bei der Wiederholung verursachen  -->
+          <!-- <xed:include ref="nameType" />-->
+          <!-- <xed:include ref="namePart.repeated" />-->
+          <!-- <xed:include ref="person.affiliation" />-->
+          <!-- <xed:include ref="nameIdentifier.repeated" />-->
+          <div class="form-group row {$xed-validation-marker} ">
+          <!-- <div class="form-group required row {$xed-validation-marker} "> -->
+          <!-- Unklar, ob es das Kürzel obligatorisch ist, deswegen erst einmal deaktiviert -->
+            <xed:bind xpath="mods:nameIdentifier[@type='phtg']">
+              <label class="col-md-3 col-form-label text-right">
+                <xed:output i18n="project.form.label.employee_abbreviation" />
+              </label>
+              <div class="col-md-6">
+                <input type="text" size="20" class="form-control form-control-inline {$xed-validation-marker} nameIdentifier" />
+              </div>
+              <mir:help-pmud help-text="{i18n:project.help.employee_abbreviation}" pmud="false" />
+            </xed:bind>
           </div>
-        </xed:bind>
-      </div>
-    </xed:repeat>
-    <!-- <xed:validate xpath="//mods:mods/mods:nameIdentifier[@type='phtg']" required="true" i18n="project.validation.employee_abbreviation" display="global" /> -->
-  </xed:template>
-
-  <xed:template id="topicIdentifier">
-      <div class="form-group row">
-        <label class="col-md-3 col-form-label text-right">
-          <xed:output i18n="mir.subject.topic.gnd.type" />
-        </label>
-        <div class="col-md-6">
-          <xed:bind xpath="@valueURIxEditor">
-            <input type="text" size="20" class="form-control form-control-inline topic_gnd" />
-          </xed:bind>
-          <xed:bind xpath="@authority" initially="gnd">
-            <input type="hidden" class="topic_gndType" />
-          </xed:bind>
         </div>
-        <mir:help-pmud help-text="{i18n:mir.help.topicIdentifier}" pmud="false" />
-      </div>
-  </xed:template>
-
-
-  <!--
-        <xed:repeat
-      xpath="mods:name[@type='personal' or not(@type) or (@type='corporate' and not(@authorityURI='{$institutesURI}'))][mods:role/mods:roleTerm[@type='code'][@authority='marcrelator']='{@role}']"
-      min="1" max="100">
-      <xed:bind xpath="@type" initially="personal" />
-      <xed:bind xpath="@simpleEditor" default="true" />
-      <xed:bind xpath="mods:displayForm"> 
-        <div class="form-group row {@class} {$xed-val-marker}">
-          <xed:bind xpath=".."> 
-            <label class="col-md-3 col-form-label text-right">
-              <xed:output i18n="{@label}" />
-            </label>
-            <div class="col-md-6">
-              <div class="controls">
-                <xed:include
-                  uri="xslStyle:editor/mir2xeditor:webapp:editor/editor-includes.xed"
-                  ref="person.fields" />
-              </div>
-            </div>
-            <div class="col-md-3">
-              <xsl:if test="string-length(@help-text) &gt; 0">
-                <xsl:call-template name="mir-helpbutton" />
-              </xsl:if>
-              <xsl:call-template name="mir-pmud" />
-            </div>
-          </xed:bind>
-        </div>
-        <xsl:call-template name="mir-required" />
-      </xed:bind>
+      </fieldset>
     </xed:repeat>
-    und dann noch ein entsprechendes <xed:bind xpath="mods:nameIdentifier"> mit dem richtigen @type-Attribut ergänzen
-    Und das ganze vermutlich als fieldset, damit der Zusammenhang klar wird
-    Du kannst ja mal schauen wir weit du kommst und ich schau mir das dann heute Nachmittag nochmal mit an
-  -->
-
-
+    <xed:validate xpath="//mods:mods/mods:name[mods:role/mods:roleTerm[@authority='marcrelator'][@type='code']='aut']/mods:displayForm" i18n="mir.validation.author" required="true" display="global" />
+    <!-- <xed:validate xpath="//mods:nameIdentifier[@type='phtg']"  matches="\S+/\S+" i18n="project.validation.employee_abbreviation"  required="true" display="global" /> -->
+  </xed:template>
+  
 </xed:template>
