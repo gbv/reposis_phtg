@@ -23,3 +23,12 @@ $(document).ready(function() {
   $("a[href='https://reposis-test.gbv.de/PROJECT/servlets/solr/select?q=createdby:USERNAME']").attr('href', newHref);
 
 });
+
+$( document ).ajaxComplete(function() {
+  // change default selection of host to journal from publish/index.xml
+  if($("select#host option[value='journal']").length > 0){
+    $("select#host option[value='standalone']").removeAttr("selected");
+    $("select#host option[value='journal']").attr("selected", "selected");
+  };
+
+});
