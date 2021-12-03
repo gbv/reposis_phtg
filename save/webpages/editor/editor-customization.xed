@@ -14,6 +14,7 @@
   <xed:template id="genres.article">
     <xed:include ref="title.original" />
     <xed:include ref="project.author.repeated.required" />
+    <xed:include ref="institutes" />
     <xed:if test="$host='standalone'">
       <xed:include ref="year.issued" />
       <xed:include ref="extent" />
@@ -27,13 +28,13 @@
     <xed:include ref="rights" />
     <xed:include ref="embargo.datetimepicker" />
     <xed:include ref="project.peerReviewed" />
-    <xed:include ref="institutes" />
     <xed:include ref="comment" />
   </xed:template>
   
   <xed:template id="genres.chapter">
     <xed:include ref="title.original" />
     <xed:include ref="project.author.repeated.required" />
+    <xed:include ref="institutes" />
     <xed:if test="$host='standalone'">
       <xed:include ref="year.issued" />
       <xed:include ref="extent" />
@@ -47,13 +48,13 @@
     <xed:include ref="rights" />
     <xed:include ref="embargo.datetimepicker" />
     <xed:include ref="project.peerReviewed" />
-    <xed:include ref="institutes" />
     <xed:include ref="comment" />
   </xed:template>
   
   <xed:template id="genres.book">
     <xed:include ref="title.original" />
     <xed:include ref="project.author.repeated.required" />
+    <xed:include ref="institutes" />
     <xed:if test="$host='standalone'">
       <xed:include ref="year.issued" />
       <xed:include ref="extent" />
@@ -70,7 +71,6 @@
     <xed:include ref="abstract.simple" />
     <xed:include ref="rights" />
     <xed:include ref="project.peerReviewed" />
-    <xed:include ref="institutes" />
     <xed:include ref="comment" />
   </xed:template>
   
@@ -80,6 +80,7 @@
       <xed:include ref="conference" />
     </xed:if>
     <xed:include ref="project.author.repeated.required" />
+    <xed:include ref="institutes" />
     <xed:if test="$host='standalone'">
       <xed:include ref="year.issued" />
     </xed:if>
@@ -90,7 +91,6 @@
     <xed:include ref="subject.simple" />
     <xed:include ref="abstract.simple" />
     <xed:include ref="rights" />
-    <xed:include ref="institutes" />
     <xed:include ref="comment" />
   </xed:template>
   
@@ -113,6 +113,7 @@
   <xed:template id="genres.report">
     <xed:include ref="title.original" />
     <xed:include ref="project.author.repeated.required" />
+    <xed:include ref="institutes" />
     <xed:include ref="year.issued" />
     <xed:include ref="language" />
     <xed:include ref="identifier.managed" />
@@ -121,13 +122,13 @@
     <xed:include ref="subject.simple" />
     <xed:include ref="abstract.simple" />
     <xed:include ref="rights" />
-    <xed:include ref="institutes" />
     <xed:include ref="comment" />
   </xed:template>
   
   <xed:template id="genres.review">
     <xed:include ref="title.original" />
     <xed:include ref="project.author.repeated.required" />
+    <xed:include ref="institutes" />
     <xed:if test="$host='standalone'">
       <xed:include ref="year.issued" />
       <xed:include ref="extent" />
@@ -141,7 +142,6 @@
     <xed:include ref="rights" />
     <xed:include ref="embargo.datetimepicker" />
     <xed:include ref="project.peerReviewed" />
-    <xed:include ref="institutes" />
     <xed:include ref="comment" />
     <xed:include ref="related.item.reviewOf" />
   </xed:template>
@@ -311,6 +311,7 @@
   <xed:template id="genres.teaching_material">
     <xed:include ref="title.original" />
     <xed:include ref="project.author.repeated.required" />
+    <xed:include ref="institutes" />
     <xed:include ref="year.issued" />
     <xed:include ref="place" />
     <xed:include ref="publisher" />
@@ -327,13 +328,13 @@
     <xed:include ref="abstract.simple" />
     <xed:include ref="embargo.datetimepicker" />
     <xed:include ref="rights" />
-    <xed:include ref="institutes" />
     <xed:include ref="comment" />
   </xed:template>
   
   <xed:template id="genres.research_material">
     <xed:include ref="title.original" />
     <xed:include ref="project.author.repeated.required" />
+    <xed:include ref="institutes" />
     <xed:include ref="editor.repeated" />
     <xed:include ref="host.volume" />
     <xed:include ref="year.issued" />
@@ -344,13 +345,13 @@
     <xed:include ref="subject.simple" />
     <xed:include ref="abstract.simple" />
     <xed:include ref="rights" />
-    <xed:include ref="institutes" />
     <xed:include ref="comment" />
   </xed:template>
   
   <xed:template id="genres.practice_material">
     <xed:include ref="title.original" />
     <xed:include ref="project.author.repeated.required" />
+    <xed:include ref="institutes" />
     <xed:include ref="editor.repeated" />
     <xed:include ref="host.volume" />
     <xed:include ref="year.issued" />
@@ -361,7 +362,6 @@
     <xed:include ref="subject.simple" />
     <xed:include ref="abstract.simple" />
     <xed:include ref="rights" />
-    <xed:include ref="institutes" />
     <xed:include ref="comment" />
   </xed:template>
   
@@ -808,6 +808,12 @@
   </xed:template>
   
   <xed:template id="project.author.repeated.required">
+    <mir:person.extended.repeated help-text="{i18n:mir.help.name.repeated}">
+      <xed:include uri="xslStyle:items2options:classification:editor:-1:children:marcrelator" />
+    </mir:person.extended.repeated>
+  </xed:template>
+
+  <xed:template id="project.author.repeated.required2">
     <xed:repeat xpath="mods:name[@type='personal' or not(@type) or (@type='corporate' and not(@authorityURI='https://www.publikationsserver.phtg.ch/classifications/identifier'))][mods:role/mods:roleTerm[@type='code'][@authority='marcrelator']='aut']" min="1" max="10">
       <xed:bind xpath="@type" initially="personal" />
       <xed:bind xpath="@simpleEditor" default="true" />

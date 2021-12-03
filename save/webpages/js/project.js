@@ -22,6 +22,12 @@ $(document).ready(function() {
   var newHref = 'https://reposis-test.gbv.de/PROJECT/servlets/solr/select?q=createdby:' + userID + '&fq=objectType:mods';
   $("a[href='https://reposis-test.gbv.de/PROJECT/servlets/solr/select?q=createdby:USERNAME']").attr('href', newHref);
 
+  // unhide person extended box at reload
+  $('.personExtended-container').removeClass('d-none');
+  $('.mir-fieldset-legend').removeClass('hiddenDetail');
+  $('.mir-fieldset-expand-item').removeClass('fa-chevron-down');
+  $('.mir-fieldset-expand-item').addClass('fa-chevron-up');
+
 });
 
 $( document ).ajaxComplete(function() {
