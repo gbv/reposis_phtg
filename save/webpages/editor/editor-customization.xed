@@ -68,6 +68,7 @@
     <xed:include ref="doi.handle.urn.repeated" />
     <xed:include ref="project.rvk" />
     <xed:include ref="subject.simple" />
+    <xed:include ref="shelfmark" />
     <xed:include ref="abstract.simple" />
     <xed:include ref="rights" />
     <xed:include ref="project.peerReviewed" />
@@ -234,10 +235,6 @@
   <xed:modify ref="hosts.newspaper">
     <xed:remove ref="identifier.issn.newspaper.relItemsearch" />
     <xed:remove ref="identifier.isbn.newspaper.relItemsearch" />
-  </xed:modify>
-  
-  <xed:modify ref="hosts.book">
-    <xed:remove ref="shelfmark.book.relItemsearch" />
   </xed:modify>
   
   <xed:modify ref="hosts.collection">
