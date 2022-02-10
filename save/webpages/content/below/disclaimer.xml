@@ -1,28 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MyCoReWebPage>
-    <section xml:lang="de" title="HAFTUNGSHINWEISE">
-        <div class="row">
-            <div class="col-md-12" lang="de">
-                <h1>Rechtliche Hinweise</h1>
-                <h2>Haftungsausschluss</h2>
-                <p>
-                    Für die Verwendung von Informationen aus dem Publikationsserver der PHTG gelten folgende Hinweise und Bedingungen: 
-                    Für Schäden oder Folgeschäden materieller oder ideeller Art, die aus dem Zugriff, der Nutzung oder Nichtnutzung der 
-                    angebotenen Informationen sowie der missbräuchlichen Verwendung oder technischen Störungen entstehen, haftet die PHTG 
-                    in keinem Fall (auch nicht bei Fahrlässigkeit).
-                </p>
-                <p>
-                    Für die Einhaltung von Urheber-, Verwertungs- und Persönlichkeitsrechten Dritter sind die Autorinnen und Autoren 
-                    verantwortlich. Liegen trotz sorgfältiger Prüfung Verstösse gegen das Urheber- oder das Persönlichkeitsrecht vor, werden 
-                    die entsprechenden Inhalte aus dem Angebot entfernt.
-                </p>
-                <p>
-                    Social Plugins: Der Publikationsserver der PHTG enthält Links zu sozialen Netzwerken (z.B. Facebook, Pinterest). 
-                    Nach dem Anklicken dieser Links hat die PHTG keinen Einfluss mehr auf die Datenbearbeitung von möglicherweise direkt 
-                    übertragenen Daten an Dritte. Für die Bearbeitung solcher Daten durch Dritte übernimmt die PHTG keine Verantwortung.
-                </p>
-            </div>
-        </div>
-    </section>
-    <meta></meta>
-</MyCoReWebPage>
+<MyCoReWebPage><section xml:lang="de" title="HAFTUNGSHINWEISE"><div class="row">
+<div class="col-md-12" lang="de">
+<h1>Rechtliche Hinweise</h1>
+
+<p>Für den Zugriff auf den Publikationsserver der PHTG und die darin enthaltenen Online-Dokumente gelten die nachstehenden Hinweise und Bedingungen:</p>
+
+<h3>Haftungsausschluss</h3>
+
+<p>Die Inhalte des Publikationsservers stellen ein unverbindliches Informationsangebot dar. Die PHTG gewährleistet weder Aktualität, Richtigkeit, Vollständigkeit noch Qualität. Die Nutzung geschieht auf eigene Gefahr der Nutzerin oder des Nutzers. Für Schäden oder Folgeschäden materieller oder ideeller Art, die aus dem Zugriff, der Nutzung oder Nichtnutzung der angebotenen Informationen sowie der missbräuchlichen Verwendung oder technischen Störungen entstehen, haftet die PHTG in keinem Fall (auch nicht bei Fahrlässigkeit). Die PHTG behält sich die Veränderung oder Löschung der Informationen jederzeit und ohne vorherige Ankündigung vor. Die PHTG hat fremde, d.h. nicht auf ihren Servern oder in ihrem Einflussbereich liegende Websites, die mit den Websites der PHTG verlinkt sind, nicht überprüft und übernimmt für deren Inhalte keine Verantwortung. Das Aktivieren von Links erfolgt damit auf eigene Verantwortung der Nutzerin oder des Nutzers.</p>
+
+<h3>Datenbearbeitung für die Analyse der Nutzung des Publikationsservers der PHTG</h3>
+
+<p>Beim Aufrufen des Publikationsservers werden Nutzerinnen und Nutzer darauf aufmerksam gemacht, dass Cookies verwendet werden. Nutzerinnen und Nutzer können per Klick im Banner wählen, ob sie damit einverstanden sind oder nicht.</p>
+
+<p>Wird dazu das Einverständnis («Akzeptieren ») gegeben, geschieht danach Folgendes im Hintergrund: Die zuvor genannten Cookies (kleine Textdateien) werden auf dem Endgerät der betroffenen Nutzerin bzw. des betroffenen Nutzers gespeichert. Diese gespeicherten Cookies können sowohl eine Kennung (Cookie-ID), die zur Wiedererkennung dient, als auch inhaltliche Angaben oder Informationen zum Publikationsserver enthalten. Der Browser der betroffenen Nutzerin bzw. des betroffenen Nutzers sendet diese Cookie-Informationen bei erneuten Besuchen des Publikationsservers an den entsprechenden Webserver. Dabei handelt es sich um die nachfolgenden Daten:</p>
+
+<ul>
+	<li>Sitzungsdauer (Datum &amp; Uhrzeit des Zugriffs)</li>
+	<li>Betriebssystem</li>
+	<li>Gerätemodell</li>
+	<li>IP-Adresse</li>
+	<li>Start der erstmaligen Sitzung (Datum &amp; Uhrzeit)</li>
+</ul>
+
+<p>Für die Auswertung dieser Daten setzt die PHTG das Tool Google Analytics (GA) ein. GA «beobachtet», mit welcher Logik durch die Website navigiert wird. Diese Informationen werden von GA für alle Nut-zerinnen und Nutzer gesammelt und zur Auswertung der PHTG zur Verfügung gestellt. Diese Daten können bei der PHTG gespeichert werden. Durch die Auswertung hat die PHTG die Möglichkeit zu erkennen, welche Themen interessieren (und welche nicht), was gesucht wird, wie lange auf einer Seite verweilt wird, etc. Dies hilft dabei, die Website aktueller, nutzerfreundlicher und effektiver zu gestalten.</p>
+
+<p>GA erfasst diese Daten nicht nur und übergibt sie an die PHTG zur Analyse, GA speichert sie auch auf einem eigenen Server ab. Speicherort sind die USA. Die Firma Google kann diese Daten auch für eigene Zwecke einsetzen. Mehr Details dazu sind in der Datenschutzerklärung von Google zu finden.</p>
+
+<p>Im Falle, dass der Cookie-Einsatz nicht akzeptiert wird, kann es sein, dass nicht alle Informationen angezeigt werden.</p>
+
+<h3>Datenbearbeitung für die Nutzbarkeit des Publikationsservers der PHTG und die technische Sicherheit</h3>
+
+<p>Der Provider des Publikationsservers der PHTG (Sitz in Deutschland) speichert automatisch Informationen in sogenannten Server-Log-Dateien, die vom Browser des Endgeräts der Nutzerin oder des Nutzers automatisch übermittelt werden, sobald der Publikationsserver aufgerufen wird. Dies sind:</p>
+
+<ul>
+	<li>die aufgerufene URL (Domain)</li>
+	<li>Browsertyp und Browserversion</li>
+	<li>verwendetes Betriebssystem</li>
+	<li>Referrer URL (Website, über die Sie zum Publikationsserver gelangt sind)</li>
+	<li>Hostname des zugreifenden Rechners (eindeutige Bezeichnung Ihres Endgerätes)</li>
+	<li>Uhrzeit des Zugriffs</li>
+	<li>IP-Adresse Ihres Endgeräts (eindeutige Adresse/Nummer Ihres Rechners)</li>
+</ul>
+
+<p>Diese Informationen werden benötigt,</p>
+
+<ul>
+	<li>um die Inhalte des Publikationsservers auf Ihrem Endgerät korrekt darzustellen,</li>
+	<li>um die Funktionsfähigkeit der Website sicherzustellen</li>
+	<li>um Angriffe auf die IT-Infrastruktur abzuwehren und auch um Strafverfolgungsbehörden im Falle eines tatsächlichen Cyberangriffes die zur Strafverfolgung notwendigen Informationen bereitzustellen.</li>
+</ul>
+
+<p>Eine Zusammenführung dieser Daten mit anderen Datenquellen wird weder von der PHTG noch vom Provider vorgenommen. Bei der Nutzung dieser allgemeinen Daten zieht weder die PHTG noch der Provider Rückschlüsse auf die Nutzerin oder den Nutzer. Die Daten werden ausschliesslich beim Provider der PHTG gespeichert. Der Provider untersteht einer gesetzlichen Aufbewahrungspflicht. Nach Ablauf dieser Aufbewahrungspflicht werden die Daten gelöscht.</p>
+
+<h3>Social Plugins</h3>
+
+<p>Der Publikationsserver der PHTG enthält auch Links zu sozialen Netzwerken (z.B. Twitter, Facebook). Nachdem diese Links angeklickt wurden, hat die PHTG keinen Einfluss mehr auf die Datenbearbeitung von möglicherweise direkt übertragenen Daten an Dritte. Für die Bearbeitung solcher Daten durch Dritte übernimmt die PHTG keine Verantwortung. Es besteht die Möglichkeit, sich bei den Datenschutzhinweisen der jeweiligen Dritten über die dort geltenden Datenschutzbestimmungen zu informieren.</p>
+
+<h3>Urheberrechte</h3>
+
+<p>Das Bildmaterial und das Logo der PHTG, ist urheberrechtlich geschützt und steht ohne vorgängige schriftliche Zustimmung der PHTG lediglich für den persönlichen Gebrauch der Nutzenden, d.h. weder für eine kommerzielle oder andere öffentliche Verwendung, offen. Eine Reproduktion der Inhalte in elektronischen oder gedruckten Publikationen ist je nach hinterlegter Lizenz möglich. Ausdrücklich erlaubt sind das Zitieren unter korrekter Quellenangabe sowie das Setzen von Links auf die PH-Websites bis auf Widerruf durch die PHTG. Sämtliche Rechte verbleiben bei der PHTG. Eine Zwischenspeicherung zur Verbesserung der Zugriffsgeschwindigkeit ist allgemein zulässig.</p>
+
+<p>Kreuzlingen, Februar 2022</p>
+</div>
+</div>
+</section><meta><log lastEditor="administrator" date="2022-02-09" time="15:00" /></meta></MyCoReWebPage>
