@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="mir_institutes">
   <label xml:lang="de" text="Organisationseinheit" description="Liste der Prorektorate und Bereiche" />
-  <label xml:lang="x-uri" text="https://www.publikationsserver.phtg.ch/classifications/mir_institutes" />
+  <label xml:lang="x-uri" text="https://publikationsserver.phtg.ch/classifications/mir_institutes" />
   <label xml:lang="en" text="organization structure" description="List of prorerates and areas" />
   <categories>
     <category ID="leitung">

@@ -709,7 +709,7 @@
   </xed:template>
   
   <xed:template id="project.ddc">
-    <xed:bind xpath="mods:classification[@authorityURI='https://www.publikationsserver.phtg.ch/classifications/DDC'][@displayLabel='DDC']/@valueURIxEditor">
+    <xed:bind xpath="mods:classification[@authorityURI='https://publikationsserver.phtg.ch/classifications/DDC'][@displayLabel='DDC']/@valueURIxEditor">
       <div class="form-group row {$xed-validation-marker}">
         <label class="col-md-3 col-form-label text-right">
           <xed:output i18n="project.form.label.ddc" />
@@ -728,7 +728,7 @@
   </xed:template>
   
   <xed:template id="project.courses">
-    <xed:bind xpath="mods:classification[@authorityURI='https://www.publikationsserver.phtg.ch/classifications/courses'][@displayLabel='courses']/@valueURIxEditor">
+    <xed:bind xpath="mods:classification[@authorityURI='https://publikationsserver.phtg.ch/classifications/courses'][@displayLabel='courses']/@valueURIxEditor">
       <div class="form-group row {$xed-validation-marker}">
         <label class="col-md-3 col-form-label text-right">
           <xed:output i18n="project.form.label.courses" />
@@ -747,7 +747,7 @@
   </xed:template>
   
   <xed:template id="project.research_fields">
-    <xed:bind xpath="mods:classification[@authorityURI='https://www.publikationsserver.phtg.ch/classifications/research_fields'][@displayLabel='research_fields']/@valueURIxEditor">
+    <xed:bind xpath="mods:classification[@authorityURI='https://publikationsserver.phtg.ch/classifications/research_fields'][@displayLabel='research_fields']/@valueURIxEditor">
       <div class="form-group row {$xed-validation-marker}">
         <label class="col-md-3 col-form-label text-right">
           <xed:output i18n="project.form.label.research_fields" />
@@ -766,7 +766,7 @@
   </xed:template>
   
   <xed:template id="project.research_projects">
-    <xed:bind xpath="mods:classification[@authorityURI='https://www.publikationsserver.phtg.ch/classifications/research_projects'][@displayLabel='research_projects']/@valueURIxEditor">
+    <xed:bind xpath="mods:classification[@authorityURI='https://publikationsserver.phtg.ch/classifications/research_projects'][@displayLabel='research_projects']/@valueURIxEditor">
       <div class="form-group row {$xed-validation-marker}">
         <label class="col-md-3 col-form-label text-right">
           <xed:output i18n="project.form.label.research_projects" />
@@ -811,7 +811,7 @@
   </xed:template>
 
   <xed:template id="project.author.repeated.required2">
-    <xed:repeat xpath="mods:name[@type='personal' or not(@type) or (@type='corporate' and not(@authorityURI='https://www.publikationsserver.phtg.ch/classifications/identifier'))][mods:role/mods:roleTerm[@type='code'][@authority='marcrelator']='aut']" min="1" max="10">
+    <xed:repeat xpath="mods:name[@type='personal' or not(@type) or (@type='corporate' and not(@authorityURI='https://publikationsserver.phtg.ch/classifications/identifier'))][mods:role/mods:roleTerm[@type='code'][@authority='marcrelator']='aut']" min="1" max="10">
       <xed:bind xpath="@type" initially="personal" />
       <xed:bind xpath="@simpleEditor" default="true" />
       <fieldset class="personExtended_box">

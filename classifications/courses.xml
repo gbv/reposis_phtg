@@ -3,7 +3,7 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:noNamespaceSchemaLocation="MCRClassification.xsd"
              ID="courses">
-    <label xml:lang="x-uri" text="https://www.publikationsserver.phtg.ch/classifications/courses" />
+    <label xml:lang="x-uri" text="https://publikationsserver.phtg.ch/classifications/courses" />
     <label xml:lang="de" text="Studiengänge" />
     <categories>
         <category ID="kgu">

@@ -3,7 +3,7 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:noNamespaceSchemaLocation="MCRClassification.xsd"
              ID="research_fields">
-    <label xml:lang="x-uri" text="https://www.publikationsserver.phtg.ch/classifications/research_fields" />
+    <label xml:lang="x-uri" text="https://publikationsserver.phtg.ch/classifications/research_fields" />
     <label xml:lang="de" text="Forschungsfelder" />
     <categories>
         <category ID="ff01">
