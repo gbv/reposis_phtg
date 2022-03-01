@@ -847,14 +847,75 @@
               <div class="col-md-6">
                 <input type="text" size="20" class="form-control form-control-inline {$xed-validation-marker} nameIdentifier" />
               </div>
-              <mir:help-pmud help-text="{i18n:project.help.employee_abbreviation}" pmud="false" />
+              <mir:help-pmud help-text="{i18n:project.help.employee_abbreviation}" pmud="false"/>
             </xed:bind>
           </div>
         </div>
       </fieldset>
     </xed:repeat>
-    <xed:validate xpath="//mods:mods/mods:name[mods:role/mods:roleTerm[@authority='marcrelator'][@type='code']='aut']/mods:displayForm" i18n="mir.validation.author" required="true" display="global" />
-    <xed:validate xpath="//mods:nameIdentifier[@type='phtg']"  matches="[öÖäÄüÜßA-Za-z]{3}" i18n="project.validation.employee_abbreviation"  display="global" />
+    <xed:validate
+            xpath="//mods:mods/mods:name[mods:role/mods:roleTerm[@authority='marcrelator'][@type='code']='aut']/mods:displayForm"
+            i18n="mir.validation.author" required="true" display="global"/>
+    <xed:validate xpath="//mods:nameIdentifier[@type='phtg']" matches="[öÖäÄüÜßA-Za-z]{3}"
+                  i18n="project.validation.employee_abbreviation" display="global"/>
   </xed:template>
-  
+
+  <xed:template id="cancel.submit">
+    <!-- Code für den Autorenvertrag  -->
+    <!-- todo: genres ergänzen -->
+
+    <xed:if test="not(../../../../service/servflags[@class='MCRMetaLangText']/servflag[@type='agreement']/text()='Einverständniserklärung_20220114_v1.0.pdf')">
+      <xed:if test="xed:call-java('de.gbv.reposis.phtg.VZGAgreementUtil','isOnlySubmitter')">
+        <xed:bind xpath="../../../../service/servflags[@class='MCRMetaLangText']/servflag[@type='agreement']">
+          <fieldset>
+            <legend class="mir-fieldset-legend">
+              <xed:output i18n="project.form.agreement"/>
+            </legend>
+            <div class="row mt-4 mb-4" id="autor-agreement">
+              <div class="offset-3 col-md-9">
+                <div class="form-check {$xed-validation-marker}">
+                  <!-- how to translate ??? -->
+                  <input class="form-check-input" type="checkbox" value="Einverständniserklärung_20220114_v1.0.pdf"
+                         id="autor-agreement-check"></input>
+                  <label for="autor-agreement-check" class="form-check-label" id="autor-agreement-link">
+                    Ich habe die <a
+                          href="{$WebApplicationBaseURL}content/publish/Einverständniserklärung_20220114_v1.0.pdf"
+                          target="_blank">Einverständniserklärung zur Hinterlegung von Werken im Publikationsserver der
+                    PHTG
+                  </a> gelesen und Akzeptiere diese
+                  </label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <xed:validate display="global" xpath="//servflag[@type='agreement']" required="true"
+                        matches="Einverständniserklärung_[0-9]+_v[0-9]+.[0-9]+.pdf"
+                        i18n="project.form.validation.agreement"/>
+        </xed:bind>
+      </xed:if>
+    </xed:if>
+    <xed:cleanup-rule xpath="//servflag[@type='agreement']" relevant-if="string-length(text())&gt;0"/>
+    <!-- Code aus MIR kopiert -->
+    <div class="form-group row" id="editor-buttons">
+      <div class="offset-md-2 col-md-6">
+        <button type="submit" class="btn btn-secondary" xed:target="cancel">
+          <xed:output i18n="button.cancel"/>
+        </button>
+        <xed:choose>
+          <!-- xed:when test="/mycoreobject/@ID = 'mir_mods_00000000'" -->
+          <xed:when test="contains(/mycoreobject/@ID, '_00000000')">
+            <button type="submit" class="btn btn-primary" xed:target="servlet" xed:href="CreateObjectServlet">
+              <xed:output i18n="button.save"/>
+            </button>
+          </xed:when>
+          <xed:otherwise>
+            <button type="submit" class="btn btn-primary" xed:target="servlet" xed:href="UpdateObjectServlet">
+              <xed:output i18n="button.save"/>
+            </button>
+          </xed:otherwise>
+        </xed:choose>
+      </div>
+    </div>
+  </xed:template>
+
 </xed:template>
