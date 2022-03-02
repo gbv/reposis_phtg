@@ -42,6 +42,8 @@ import org.mycore.frontend.MCRFrontendUtil;
 
 public class VZGMailAgreementEventHandler extends MCREventHandlerBase {
 
+    private static final boolean MAILER_PROPERTY_SET = MCRConfiguration2.getString("MCR.Mail.Server").isPresent();
+
     @Override
     protected void handleObjectCreated(MCREvent evt, MCRObject obj) {
         this.handleObjectUpdated(evt, obj);
@@ -50,6 +52,10 @@ public class VZGMailAgreementEventHandler extends MCREventHandlerBase {
     @Override
     protected void handleObjectUpdated(MCREvent evt, MCRObject obj) {
         final ArrayList<String> currentAgreements = obj.getService().getFlags("agreement");
+
+        if(!MAILER_PROPERTY_SET){
+            return;
+        }
 
         if (currentAgreements.size() == 0) {
             return;
