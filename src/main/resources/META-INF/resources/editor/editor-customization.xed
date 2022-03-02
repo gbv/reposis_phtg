@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <xed:template xmlns:xed="http://www.mycore.de/xeditor" xmlns:mir="http://www.mycore.de/mir">
-  
+
   <!-- ========== extend editor-genres.xed ========== -->
   <xed:modify ref="admin.fields">
     <xed:include ref="project.rvk.not_required"                 before="sdnb.repeat" />
@@ -866,32 +866,34 @@
 
     <xed:if test="not(../../../../service/servflags[@class='MCRMetaLangText']/servflag[@type='agreement']/text()='Einverständniserklärung_20220114_v1.0.pdf')">
       <xed:if test="xed:call-java('de.gbv.reposis.phtg.VZGAgreementUtil','isOnlySubmitter')">
-        <xed:bind xpath="../../../../service/servflags[@class='MCRMetaLangText']/servflag[@type='agreement']">
-          <fieldset>
-            <legend class="mir-fieldset-legend">
-              <xed:output i18n="project.form.agreement"/>
-            </legend>
-            <div class="row mt-4 mb-4" id="autor-agreement">
-              <div class="offset-3 col-md-9">
-                <div class="form-check {$xed-validation-marker}">
-                  <!-- how to translate ??? -->
-                  <input class="form-check-input" type="checkbox" value="Einverständniserklärung_20220114_v1.0.pdf"
-                         id="autor-agreement-check"></input>
-                  <label for="autor-agreement-check" class="form-check-label" id="autor-agreement-link">
-                    Ich habe die <a
-                          href="{$WebApplicationBaseURL}content/publish/Einverständniserklärung_20220114_v1.0.pdf"
-                          target="_blank">Einverständniserklärung zur Hinterlegung von Werken im Publikationsserver der
-                    PHTG
-                  </a> gelesen und Akzeptiere diese
-                  </label>
+        <xed:if test="not(contains($MIR.Agreement.Genres.Skip, concat(',',$genre,',')))">
+            <xed:bind xpath="../../../../service/servflags[@class='MCRMetaLangText']/servflag[@type='agreement']">
+              <fieldset>
+                <legend class="mir-fieldset-legend">
+                  <xed:output i18n="project.form.agreement"/>
+                </legend>
+                <div class="row mt-4 mb-4" id="autor-agreement">
+                  <div class="offset-3 col-md-9">
+                    <div class="form-check {$xed-validation-marker}">
+                      <!-- how to translate ??? -->
+                      <input class="form-check-input" type="checkbox" value="Einverständniserklärung_20220114_v1.0.pdf"
+                             id="autor-agreement-check"></input>
+                      <label for="autor-agreement-check" class="form-check-label" id="autor-agreement-link">
+                        Ich habe die <a
+                              href="{$WebApplicationBaseURL}content/publish/Einverständniserklärung_20220114_v1.0.pdf"
+                              target="_blank">Einverständniserklärung zur Hinterlegung von Werken im Publikationsserver der
+                        PHTG
+                      </a> gelesen und Akzeptiere diese
+                      </label>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </fieldset>
-          <xed:validate display="global" xpath="//servflag[@type='agreement']" required="true"
-                        matches="Einverständniserklärung_[0-9]+_v[0-9]+.[0-9]+.pdf"
-                        i18n="project.form.validation.agreement"/>
-        </xed:bind>
+              </fieldset>
+              <xed:validate display="global" xpath="//servflag[@type='agreement']" required="true"
+                            matches="Einverständniserklärung_[0-9]+_v[0-9]+.[0-9]+.pdf"
+                            i18n="project.form.validation.agreement"/>
+            </xed:bind>
+          </xed:if>
       </xed:if>
     </xed:if>
     <xed:cleanup-rule xpath="//servflag[@type='agreement']" relevant-if="string-length(text())&gt;0"/>
