@@ -864,7 +864,7 @@
     <!-- Code für den Autorenvertrag  -->
     <!-- todo: genres ergänzen -->
 
-    <xed:if test="not(../../../../service/servflags[@class='MCRMetaLangText']/servflag[@type='agreement']/text()='Einverständniserklärung_20220114_v1.0.pdf')">
+    <xed:if test="not(../../../../service/servflags[@class='MCRMetaLangText']/servflag[@type='agreement']/text()=$MIR.Agreement.File)">
       <xed:if test="xed:call-java('de.gbv.reposis.phtg.VZGAgreementUtil','isOnlySubmitter')">
         <xed:if test="not(contains($MIR.Agreement.Genres.Skip, concat(',',$genre,',')))">
             <xed:bind xpath="../../../../service/servflags[@class='MCRMetaLangText']/servflag[@type='agreement']">
@@ -876,11 +876,11 @@
                   <div class="offset-3 col-md-9">
                     <div class="form-check {$xed-validation-marker}">
                       <!-- how to translate ??? -->
-                      <input class="form-check-input" type="checkbox" value="Einverständniserklärung_20220114_v1.0.pdf"
+                      <input class="form-check-input" type="checkbox" value="{$MIR.Agreement.File}"
                              id="autor-agreement-check"></input>
                       <label for="autor-agreement-check" class="form-check-label" id="autor-agreement-link">
                         Ich habe die <a
-                              href="{$WebApplicationBaseURL}content/publish/Einverständniserklärung_20220114_v1.0.pdf"
+                              href="{$WebApplicationBaseURL}content/publish/{$MIR.Agreement.File}"
                               target="_blank">Einverständniserklärung zur Hinterlegung von Werken im Publikationsserver der
                         PHTG
                       </a> gelesen und Akzeptiere diese
