@@ -883,7 +883,7 @@
                               href="{$WebApplicationBaseURL}content/publish/{$MIR.Agreement.File}"
                               target="_blank">Einverständniserklärung zur Hinterlegung von Werken im Publikationsserver der
                         PHTG
-                      </a> gelesen und Akzeptiere diese
+                      </a> gelesen und akzeptiere diese
                       </label>
                     </div>
                   </div>
