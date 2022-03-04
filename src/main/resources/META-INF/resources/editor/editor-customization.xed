@@ -862,8 +862,6 @@
 
   <xed:template id="cancel.submit">
     <!-- Code für den Autorenvertrag  -->
-    <!-- todo: genres ergänzen -->
-
     <xed:if test="not(../../../../service/servflags[@class='MCRMetaLangText']/servflag[@type='agreement']/text()=$MIR.Agreement.File)">
       <xed:if test="xed:call-java('de.gbv.reposis.phtg.VZGAgreementUtil','isOnlySubmitter')">
         <xed:if test="not(contains($MIR.Agreement.Genres.Skip, concat(',',$genre,',')))">
