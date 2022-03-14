@@ -10,7 +10,7 @@ pipeline {
             when {
                not {
                    anyOf {
-                        branch 'master'
+                        branch 'main'
                    }
                }
             }
@@ -24,7 +24,7 @@ pipeline {
         stage('Build, Test and Deploy') {
             when {
                anyOf {
-                    branch 'master'
+                    branch 'main'
                }
             }
             steps {
