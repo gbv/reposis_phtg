@@ -33,7 +33,7 @@
           </div>
         </div>
         <div class="col text-right">
-          <a href="https://www.bibliothek.phtg.ch/" class="btn btn-primary">MDZ Bibliothek</a>
+          <a href="https://www.bibliothek.phtg.ch/" class="btn btn-primary">Campus-Bibliothek</a>
         </div>
       </div>
 

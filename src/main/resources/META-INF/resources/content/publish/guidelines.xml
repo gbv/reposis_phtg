@@ -2,7 +2,7 @@
 <MyCoReWebPage><section xml:lang="de" title="Leitlinie Publikationsserver"><div>
 <h2>Leitlinien zum Publizieren im Publikationsserver der PHTG</h2>
 
-<p>Der Publikationsserver der PHTG ist das institutionelle Repositorium der Pädagogischen Hochschule Thurgau (PHTG) mit dem Zweck, wissenschaftliche und anwendungsbezogene Publikationen und Forschungsergebnisse von Mitarbeitenden der PHTG dauerhaft und unter Einhaltung gängiger Standards zu veröffentlichen. Der Betrieb des Publikationsservers der PHTG erfolgt durch die MDZ Bibliothek, die damit den technischen und organisatorischen Rahmen sicherstellt, um die in der Open-Access-Policy der PHTG [Link] formulierten Richtlinien umzusetzen.</p>
+<p>Der Publikationsserver der PHTG ist das institutionelle Repositorium der Pädagogischen Hochschule Thurgau (PHTG) mit dem Zweck, wissenschaftliche und anwendungsbezogene Publikationen und Forschungsergebnisse von Mitarbeitenden der PHTG dauerhaft und unter Einhaltung gängiger Standards zu veröffentlichen. Der Betrieb des Publikationsservers der PHTG erfolgt durch die Campus-Bibliothek, die damit den technischen und organisatorischen Rahmen sicherstellt, um die in der <a href="https://qm.phtg.ch/File/CoreDownload?id=2768&amp;filename=Open_Access-Policy_PHTG_20220101.pdf&amp;langId=1">Open-Access-Policy der PHTG</a> formulierten Richtlinien umzusetzen.</p>
 
 <h3>Inhaltliche Ausrichtung</h3>
 
@@ -16,13 +16,13 @@
 
 <p>Die formalen und inhaltsbezogenen Metadaten der veröffentlichten Beiträge werden über eine standardisierte Schnittstelle (OAI-PMH 2.0) an etablierte wissenschaftliche Suchmaschinen (z.B. BASE und OAIster) weitergegeben. Daneben werden Suchbots über spezielle Tags in der Website unterstützt, um beispielsweise die Sichtbarkeit bei Google Scholar zu erhöhen. Dies gewährt eine globale Sichtbarkeit der im Publikationsserver der PHTG eingestellten Dokumente und Daten. Die Archivierungsdauer der Formate hängt von der Verfügbarkeit des Formates, der Betrachtungssoftware sowie den Konvertierungsmöglichkeiten ab. Die Archivierungsdauer beträgt mindestens fünf Jahre.</p>
 
-<h3>Services der MDZ Bibliothek</h3>
+<h3>Services der Campus-Bibliothek</h3>
 
-<p>Die Veröffentlichung auf dem Publikationsserver der PHTG ist kostenfrei. Für die Veröffentlichung notwendige Tätigkeiten (z.B. Anreicherung der Metadaten, Formatkonvertierung) werden von der MDZ Bibliothek durchgeführt, falls nötig mit vorheriger Absprache mit den Autorinnen und Autoren. Die Bibliothek übernimmt bei Zweitveröffentlichungen auch die nötigen Rechteabklärungen bei den Verlagen oder unterstützt bei der Auswahl geeigneter Zeitschriften, die eine Open-Access-Option anbieten.</p>
+<p>Die Veröffentlichung auf dem Publikationsserver der PHTG ist kostenfrei. Für die Veröffentlichung notwendige Tätigkeiten (z.B. Anreicherung der Metadaten, Formatkonvertierung) werden von der Campus-Bibliothek durchgeführt, falls nötig mit vorheriger Absprache mit den Autorinnen und Autoren. Die Bibliothek übernimmt bei Zweitveröffentlichungen auch die nötigen Rechteabklärungen bei den Verlagen oder unterstützt bei der Auswahl geeigneter Zeitschriften, die eine Open-Access-Option anbieten.</p>
 
-<p>Der Bereich <a href="https://bibliothek.phtg.ch/de/services/open-science/" target="_blank">Open Science der MDZ Bibliothek</a> bietet Beratung und Unterstützung bei allen Fragen zum Publizieren auf dem Publikationsserver der PHTG an. Die Bibliothek vergibt dauerhafte, persistente und zitierfähige Identifier wie URL, URN und DOI, um die Dokumente langfristig zugänglich und auffindbar zu machen. Sie übernimmt sowohl die formale als auch die inhaltliche Erschließung der Dokumente (mittels RVK-Klassifikation) sowie die Prüfung und Pflege der Metadaten. Zusätzliche Schlagwörter können von den Autorinnen bzw. Autoren selbst vergeben werden.</p>
+<p>Der Bereich <a href="https://bibliothek.phtg.ch/de/services/open-science/" target="_blank">Open Science der Campus-Bibliothek</a> bietet Beratung und Unterstützung bei allen Fragen zum Publizieren auf dem Publikationsserver der PHTG an. Die Campus-Bibliothek vergibt dauerhafte, persistente und zitierfähige Identifier wie URL, URN und DOI, um die Dokumente langfristig zugänglich und auffindbar zu machen. Sie übernimmt sowohl die formale als auch die inhaltliche Erschließung der Dokumente (mittels RVK-Klassifikation) sowie die Prüfung und Pflege der Metadaten. Zusätzliche Schlagwörter können von den Autorinnen bzw. Autoren selbst vergeben werden.</p>
 
-<p>Die Metadaten der Dokumente und deren Link zum Volltext werden in <a href="https://search.ebscohost.com/login.aspx?authtype=ip,guest&amp;custid=ns206865&amp;groupid=main&amp;profid=eds" target="_blank">find’s</a>, der Suchmaschine für wissenschaftliche Zeitschriftenartikel der PHTG und in anderen Katalogen öffentlich-rechtlicher Einrichtungen nachgewiesen. Die MDZ Bibliothek garantiert für elektronische Publikationen einen Archivierungszeitraum von mindestens fünf Jahren. Im Rahmen der gesetzlich geregelten Pflichtabgabe von Netzpublikationen erfolgt die Weitergabe der Metadaten sowie der elektronischen Dokumente an die Schweizerische Nationalbibliothek (SNB). Für diese Dokumente werden die Anforderungen an eine Langzeitarchivierung durch die Ablieferung an die SNB erfüllt.</p>
+<p>Die Metadaten der Dokumente und deren Link zum Volltext werden in <a href="https://search.ebscohost.com/login.aspx?authtype=ip,guest&amp;custid=ns206865&amp;groupid=main&amp;profid=eds" target="_blank">find’s</a>, der Suchmaschine für wissenschaftliche Zeitschriftenartikel der PHTG und in anderen Katalogen öffentlich-rechtlicher Einrichtungen nachgewiesen. Die Campus-Bibliothek garantiert für elektronische Publikationen einen Archivierungszeitraum von mindestens fünf Jahren. Im Rahmen der gesetzlich geregelten Pflichtabgabe von Netzpublikationen erfolgt die Weitergabe der Metadaten sowie der elektronischen Dokumente an die Schweizerische Nationalbibliothek (SNB). Für diese Dokumente werden die Anforderungen an eine Langzeitarchivierung durch die Ablieferung an die SNB erfüllt.</p>
 
 <h3>Kontakt</h3>
 
@@ -42,4 +42,4 @@
 
 <p>E-Mail: <span class="madress">dms-list [at] lists.gbv.de</span></p>
 </div>
-</section><meta><log lastEditor="administrator" date="2021-10-08" time="11:45" /></meta></MyCoReWebPage>
+</section><meta><log lastEditor="administrator" date="2022-03-17" time="13:58" /></meta></MyCoReWebPage>
