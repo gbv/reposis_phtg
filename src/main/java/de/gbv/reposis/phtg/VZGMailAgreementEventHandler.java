@@ -80,7 +80,7 @@ public class VZGMailAgreementEventHandler extends MCREventHandlerBase {
                 "Einverständniserklärung von " + MCRSessionMgr.getCurrentSession().getUserInformation().getUserID()
                     + " für " + obj.getId().toString(),
                 html,
-                MCRFrontendUtil.getBaseURL() + "content/publish/Einverständniserklärung_20220114_v1.0.pdf");
+                MCRFrontendUtil.getBaseURL() + "content/publish/Einverstaendniserklaerung_20220317_v2.0.pdf");
             try {
                 MCRMailer.send(mailElement, true);
             } catch (Exception e) {

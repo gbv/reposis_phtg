@@ -888,7 +888,7 @@
                 </div>
               </fieldset>
               <xed:validate display="global" xpath="//servflag[@type='agreement']" required="true"
-                            matches="Einverständniserklärung_[0-9]+_v[0-9]+.[0-9]+.pdf"
+                            matches="Einverstaendniserklaerung_[0-9]+_v[0-9]+.[0-9]+.pdf"
                             i18n="project.form.validation.agreement"/>
             </xed:bind>
           </xed:if>
