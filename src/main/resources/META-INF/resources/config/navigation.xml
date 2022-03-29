@@ -106,7 +106,7 @@
                 <label xml:lang="de">ACL-Editor</label>
                 <label xml:lang="en">ACL Editor</label>
             </item>
-            <item href="/servlets/solr/find?XSL.Transformer=solr2csv" type="extern" replaceMenu="false" constrainPopUp="false">
+            <item href="/servlets/solr/find?&amp;rows=1000000&amp;XSL.Transformer=solr2csv&amp;fl=*" type="extern" replaceMenu="false" constrainPopUp="false">
                 <label xml:lang="de">Dokumente nach CSV exportieren</label>
                 <label xml:lang="en">Export documents to CSV</label>
             </item>
