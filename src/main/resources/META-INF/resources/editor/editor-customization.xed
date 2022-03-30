@@ -9,6 +9,7 @@
     <xed:include ref="project.research_fields"                  after="project.ddc" />
     <xed:include ref="project.research_projects"                after="project.research_fields" />
     <xed:include ref="project.courses"                          after="project.research_projects" />
+    <xed:include ref="project.peerReviewed"                     after="project.courses" />
   </xed:modify>
   
   <xed:template id="genres.article">
