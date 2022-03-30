@@ -7,9 +7,12 @@
     exclude-result-prefixes="i18n mcrver mcrxsl">
 
   <xsl:import href="resource:xsl/layout/mir-common-layout.xsl" />
+  <xsl:param name="MIR.TestInstance" />
 
   <xsl:template name="mir.navigation">
-
+    <xsl:if test="contains($MIR.TestInstance, 'true')">
+      <div id="watermark_testenvironment">Testumgebung</div>
+    </xsl:if>
     <div id="header_box" class="clearfix container">
       <div class="row">
         <div class="col-12">
