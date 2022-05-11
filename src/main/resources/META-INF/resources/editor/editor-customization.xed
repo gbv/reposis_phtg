@@ -365,7 +365,9 @@
   
   <xed:template id="genres.dissertation">
     <xed:include ref="titles.thesis" />
-    <xed:include ref="thesis.advisor.reviewer.all.repeated" />
+    <xed:include ref="author.repeated" />
+    <xed:include ref="referent.repeated" />
+    <xed:include ref="coreferent.repeated" />
     <xed:include ref="year.issued" />
     <xed:include ref="date.submitted.datetimepicker" />
     <xed:include ref="date.accepted.datetimepicker" />
@@ -388,7 +390,9 @@
   
   <xed:template id="genres.bachelor_thesis">
     <xed:include ref="titles.thesis" />
-    <xed:include ref="thesis.advisor.reviewer.all.repeated" />
+    <xed:include ref="author.repeated" />
+    <xed:include ref="referent.repeated" />
+    <xed:include ref="coreferent.repeated" />
     <xed:include ref="year.issued" />
     <xed:include ref="project.courses" />
     <xed:include ref="date.submitted.datetimepicker" />
@@ -412,7 +416,9 @@
   
   <xed:template id="genres.cas">
     <xed:include ref="titles.thesis" />
-    <xed:include ref="thesis.advisor.reviewer.all.repeated" />
+    <xed:include ref="author.repeated" />
+    <xed:include ref="referent.repeated" />
+    <xed:include ref="coreferent.repeated" />
     <xed:include ref="year.issued" />
     <xed:include ref="project.courses" />
     <xed:include ref="date.submitted.datetimepicker" />
@@ -436,7 +442,9 @@
   
   <xed:template id="genres.mas">
     <xed:include ref="titles.thesis" />
-    <xed:include ref="thesis.advisor.reviewer.all.repeated" />
+    <xed:include ref="author.repeated" />
+    <xed:include ref="referent.repeated" />
+    <xed:include ref="coreferent.repeated" />
     <xed:include ref="year.issued" />
     <xed:include ref="project.courses" />
     <xed:include ref="date.submitted.datetimepicker" />
@@ -460,7 +468,9 @@
   
   <xed:template id="genres.master_thesis">
     <xed:include ref="titles.thesis" />
-    <xed:include ref="thesis.advisor.reviewer.all.repeated" />
+    <xed:include ref="author.repeated" />
+    <xed:include ref="referent.repeated" />
+    <xed:include ref="coreferent.repeated" />
     <xed:include ref="year.issued" />
     <xed:include ref="project.courses" />
     <xed:include ref="date.submitted.datetimepicker" />
@@ -484,7 +494,9 @@
   
   <xed:template id="genres.matura">
     <xed:include ref="titles.thesis" />
-    <xed:include ref="thesis.advisor.reviewer.all.repeated" />
+    <xed:include ref="author.repeated" />
+    <xed:include ref="referent.repeated" />
+    <xed:include ref="coreferent.repeated" />
     <xed:include ref="year.issued" />
     <xed:include ref="project.courses" />
     <xed:include ref="date.submitted.datetimepicker" />
@@ -573,6 +585,14 @@
     </xed:repeat>
   </xed:template>
   
+  <xed:template id="referent.repeated">
+    <mir:role.repeated role="ths" label="mir.role.referent" help-text="{i18n:mir.help.role.referent}" />
+  </xed:template>
+
+  <xed:template id="coreferent.repeated">
+    <mir:role.repeated role="dgs" label="mir.role.coreferent" help-text="{i18n:mir.help.role.coreferent}" />
+  </xed:template>
+
   <xed:template id="comment.complex">
     <fieldset>
       <legend class="mir-fieldset-legend">
@@ -672,7 +692,6 @@
       </xed:otherwise>
     </xed:choose>
   </xed:template>
-  
   
   <xed:template id="sdnb.repeat">
     <xed:repeat xpath="mods:classification[@authority='sdnb'][@displayLabel='sdnb']" min="1" max="10" method="build">
