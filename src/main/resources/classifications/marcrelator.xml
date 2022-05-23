@@ -59,7 +59,7 @@
       </category>
       <category ID="dgs">
         <label xml:lang="en" text="Degree supervisor" description="A person overseeing a higher level academic degree." />
-        <label xml:lang="de" text="Koreferent(in)" description="Eine Person, die einen akademischen Abschluss auf höherem Niveau überwacht." />
+        <label xml:lang="de" text="Korreferent(in)" description="Eine Person, die einen akademischen Abschluss auf höherem Niveau überwacht." />
         <label xml:lang="x-miless" text="referee" />
       </category>
       <category ID="rev">

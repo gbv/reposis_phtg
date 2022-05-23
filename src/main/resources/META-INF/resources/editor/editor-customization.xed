@@ -374,7 +374,6 @@
     <xed:include ref="shelfmark" />
     <xed:include ref="creator.place.college" />
     <xed:include ref="creator.college" />
-    <xed:include ref="place" />
     <xed:include ref="publisher" />
     <xed:include ref="extent" />
     <xed:include ref="type.of.resource.repeated" />
@@ -400,7 +399,6 @@
     <xed:include ref="shelfmark" />
     <xed:include ref="creator.place.college" />
     <xed:include ref="creator.college" />
-    <xed:include ref="place" />
     <xed:include ref="publisher" />
     <xed:include ref="extent" />
     <xed:include ref="type.of.resource.repeated" />
@@ -426,7 +424,6 @@
     <xed:include ref="shelfmark" />
     <xed:include ref="creator.place.college" />
     <xed:include ref="creator.college" />
-    <xed:include ref="place" />
     <xed:include ref="publisher" />
     <xed:include ref="extent" />
     <xed:include ref="type.of.resource.repeated" />
@@ -452,7 +449,6 @@
     <xed:include ref="shelfmark" />
     <xed:include ref="creator.place.college" />
     <xed:include ref="creator.college" />
-    <xed:include ref="place" />
     <xed:include ref="publisher" />
     <xed:include ref="extent" />
     <xed:include ref="type.of.resource.repeated" />
@@ -478,7 +474,6 @@
     <xed:include ref="shelfmark" />
     <xed:include ref="creator.place.college" />
     <xed:include ref="creator.college" />
-    <xed:include ref="place" />
     <xed:include ref="publisher" />
     <xed:include ref="extent" />
     <xed:include ref="type.of.resource.repeated" />
@@ -504,7 +499,6 @@
     <xed:include ref="shelfmark" />
     <xed:include ref="creator.place.college" />
     <xed:include ref="creator.college" />
-    <xed:include ref="place" />
     <xed:include ref="publisher" />
     <xed:include ref="extent" />
     <xed:include ref="type.of.resource.repeated" />
