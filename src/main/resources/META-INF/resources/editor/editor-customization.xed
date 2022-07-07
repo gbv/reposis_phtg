@@ -616,21 +616,20 @@
   </xed:template>
   
   <xed:template id="project.peerReviewed">
-    <xed:bind xpath="mods:note[@type='peerReviewed']" initially="notSpecified">
-      <div class="form-group row">
+    <xed:bind xpath="mods:classification[@authorityURI='https://publikationsserver.phtg.ch/classifications/peer_review'][@displayLabel='peer_review']/@valueURIxEditor">
+      <div class="form-group row {$xed-validation-marker}">
         <label class="col-md-3 col-form-label text-right">
           <xed:output i18n="project.form.peerReviewed.label" />
         </label>
         <div class="col-md-6">
-          <div class="controls">
-            <select class="form-control form-control-inline nameType">
-              <option value="notSpecified"><xed:output i18n="project.form.notSpecified" /></option>
-              <option value="yes"><xed:output i18n="project.form.peerReviewed.yes" /></option>
-              <option value="no"><xed:output i18n="project.form.peerReviewed.no" /></option>
-            </select>
-          </div>
+          <select class="form-control form-control-inline nameType">
+            <option value="">
+              <xed:output i18n="mir.select.optional" />
+            </option>
+            <xed:include uri="xslStyle:items2options:classification:editor:-1:children:peer_review" />
+          </select>
         </div>
-        <mir:help-pmud help-text="{i18n:project.form.help.peerReviewed}" />
+        <mir:help-pmud help-text="{i18n:project.form.help.peerReviewed}" pmud="false" />
       </div>
     </xed:bind>
   </xed:template>

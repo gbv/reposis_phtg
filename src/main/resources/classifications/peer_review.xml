@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation="MCRClassification.xsd"
+             ID="peer_review">
+    <label xml:lang="x-uri" text="https://publikationsserver.phtg.ch/classifications/peer_review" />
+    <label xml:lang="de" text="Studiengänge" />
+    <categories>
+        <category ID="yes">
+            <label xml:lang="en" text="Yes" />
+            <label xml:lang="de" text="Ja" />
+        </category>
+        <category ID="no">
+            <label xml:lang="en" text="No" />
+            <label xml:lang="de" text="Nein" />
+        </category>
+        <category ID="not">
+            <label xml:lang="en" text="Not specified" />
+            <label xml:lang="de" text="Keine Angaben" />
+        </category>
+    </categories>
+</mycoreclass>
