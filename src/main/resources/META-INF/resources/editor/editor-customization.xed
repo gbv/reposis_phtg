@@ -6,10 +6,12 @@
   <xed:modify ref="admin.fields">
     <xed:include ref="project.rvk.not_required"                 before="sdnb.repeat" />
     <xed:include ref="project.ddc"                              after="sdnb.repeat" />
+    <xed:remove ref="sdnb.repeat" />
     <xed:include ref="project.research_fields"                  after="project.ddc" />
     <xed:include ref="project.research_projects"                after="project.research_fields" />
     <xed:include ref="project.courses"                          after="project.research_projects" />
     <xed:include ref="project.peerReviewed"                     after="project.courses" />
+    <xed:include ref="project.oa_status"                        after="rights" />
   </xed:modify>
   
   <xed:template id="genres.article">
@@ -612,7 +614,6 @@
       </xed:repeat>
     </fieldset>
   </xed:template>
-
   
   <xed:template id="project.peerReviewed">
     <xed:bind xpath="mods:note[@type='peerReviewed']" initially="notSpecified">
@@ -783,6 +784,25 @@
           </select>
         </div>
         <mir:help-pmud help-text="{i18n:project.help.courses}" pmud="false" />
+      </div>
+    </xed:bind>
+  </xed:template>
+
+  <xed:template id="project.oa_status">
+    <xed:bind xpath="mods:classification[@authority='oa'][@displayLabel='oa']">
+      <div class="form-group row {$xed-validation-marker}">
+        <label class="col-md-3 col-form-label text-right">
+          <xed:output i18n="project.form.label.oa_status" />
+        </label>
+        <div class="col-md-6">
+          <select class="form-control form-control-inline">
+            <option value="">
+              <xed:output i18n="mir.select.optional" />
+            </option>
+            <xed:include uri="xslStyle:items2options:classification:editor:-1:children:oa" />
+          </select>
+        </div>
+        <mir:help-pmud help-text="{i18n:project.help.oa_status}" pmud="false" />
       </div>
     </xed:bind>
   </xed:template>
