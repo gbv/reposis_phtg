@@ -402,7 +402,7 @@
     <xed:include ref="language" />
     <xed:include ref="rights" />
     <xed:include ref="abstract.repeated" />
-    <xed:include ref="comment" />
+    <xed:include ref="comment.public" />
   </xed:template>
   
   <xed:template id="genres.cas">
@@ -468,7 +468,7 @@
     <xed:include ref="language" />
     <xed:include ref="rights" />
     <xed:include ref="abstract.repeated" />
-    <xed:include ref="comment" />
+    <xed:include ref="comment.public" />
   </xed:template>
   
   <xed:template id="genres.matura">
@@ -484,7 +484,7 @@
     <xed:include ref="language" />
     <xed:include ref="rights" />
     <xed:include ref="abstract.repeated" />
-    <xed:include ref="comment" />
+    <xed:include ref="comment.public" />
   </xed:template>
   
   <xed:template id="genres.research_data">
@@ -560,6 +560,10 @@
 
   <xed:template id="coreferent.repeated">
     <mir:role.repeated role="dgs" label="mir.role.coreferent" help-text="{i18n:mir.help.role.coreferent}" />
+  </xed:template>
+
+  <xed:template id="comment.public">
+    <mir:textarea xpath="mods:note[@type='comment']" label="mir.comment" help-text="{i18n:mir.help.comment}" rows="2" />
   </xed:template>
 
   <xed:template id="comment.complex">

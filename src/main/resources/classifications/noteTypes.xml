@@ -4,15 +4,20 @@
   <label xml:lang="en" text="Type of note" />
   <label xml:lang="x-uri" text="http://www.mycore.org/classifications/noteTypes" />
   <categories>
+    <category ID="bestand_phtg">
+      <label xml:lang="de" text="Bestand Campus-Bibliothek" />
+      <label xml:lang="en" text="Campus library inventory" />
+      <label xml:lang="x-access" text="guest" />
+    </category>
     <category ID="peerReviewed">
-      <label xml:lang="de" text="Peer Reviewed" />
       <label xml:lang="en" text="Peer Reviewed" />
       <label xml:lang="x-access" text="guest" />
+      <label xml:lang="de" text="Peer Reviewed" />
     </category>
     <category ID="ageRange">
       <label xml:lang="de" text="Altersstufe" />
-      <label xml:lang="en" text="Age range" />
       <label xml:lang="x-access" text="guest" />
+      <label xml:lang="en" text="Age range" />
     </category>
     <category ID="version_identification">
       <label xml:lang="en" text="version identification" />
@@ -155,9 +160,9 @@
       <label xml:lang="en" text="content" />
     </category>
     <category ID="conservation_history">
+      <label xml:lang="en" text="open_access_status" />
       <label xml:lang="x-access" text="guest" />
-      <label xml:lang="de" text="Konservierungs Geschichte" />
-      <label xml:lang="en" text="conservation history" />
+      <label xml:lang="de" text="OA-Status" />
     </category>
     <category ID="citation/reference">
       <label xml:lang="x-access" text="guest" />
@@ -203,6 +208,11 @@
       <label xml:lang="en" text="accrual method" />
       <label xml:lang="x-access" text="guest" />
       <label xml:lang="de" text="Periodenrechnung" />
+    </category>
+    <category ID="comment">
+      <label xml:lang="en" text="comment" />
+      <label xml:lang="de" text="Kommentar" />
+      <label xml:lang="x-access" text="guest" />
     </category>
     <category ID="admin">
       <label xml:lang="en" text="intern comment" />
