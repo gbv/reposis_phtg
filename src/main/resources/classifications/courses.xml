@@ -7,10 +7,13 @@
     <label xml:lang="de" text="Studiengänge" />
     <categories>
         <category ID="kgu">
-            <label xml:lang="de" text="KGU" />
+            <label xml:lang="de" text="Kindergarten-Unterstufe (KGU)" />
+        </category>
+        <category ID="vs">
+            <label xml:lang="de" text="Vorschulstufe (VS)" />
         </category>
         <category ID="ps">
-            <label xml:lang="de" text="PS" />
+            <label xml:lang="de" text="Primarstufe (PS)" />
         </category>
         <category ID="sek_i">
             <label xml:lang="de" text="Sek I" />
@@ -19,7 +22,7 @@
             <label xml:lang="de" text="Sek II" />
         </category>
         <category ID="mafk">
-            <label xml:lang="de" text="MAFK" />
+            <label xml:lang="de" text="Master frühe Kindheit (MAFK)" />
         </category>
         <category ID="ma_se">
             <label xml:lang="de" text="Master Schulentwicklung" />
