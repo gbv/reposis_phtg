@@ -396,22 +396,13 @@
     <xed:include ref="coreferent.repeated" />
     <xed:include ref="year.issued" />
     <xed:include ref="project.courses" />
-    <xed:include ref="date.submitted.datetimepicker" />
-    <xed:include ref="date.accepted.datetimepicker" />
-    <xed:include ref="shelfmark" />
     <xed:include ref="creator.place.college" />
     <xed:include ref="creator.college" />
-    <xed:include ref="publisher" />
-    <xed:include ref="extent" />
     <xed:include ref="type.of.resource.repeated" />
     <xed:include ref="language" />
-    <xed:include ref="identifier.isbn" />
-    <xed:include ref="project.rvk" />
-    <xed:include ref="subject.simple" />
-    <xed:include ref="abstract.repeated" />
     <xed:include ref="rights" />
-    <xed:include ref="embargo.datetimepicker" />
-    <xed:include ref="institutes.repeat" />
+    <xed:include ref="abstract.repeated" />
+    <xed:include ref="comment" />
   </xed:template>
   
   <xed:template id="genres.cas">
@@ -471,22 +462,13 @@
     <xed:include ref="coreferent.repeated" />
     <xed:include ref="year.issued" />
     <xed:include ref="project.courses" />
-    <xed:include ref="date.submitted.datetimepicker" />
-    <xed:include ref="date.accepted.datetimepicker" />
-    <xed:include ref="shelfmark" />
     <xed:include ref="creator.place.college" />
     <xed:include ref="creator.college" />
-    <xed:include ref="publisher" />
-    <xed:include ref="extent" />
     <xed:include ref="type.of.resource.repeated" />
     <xed:include ref="language" />
-    <xed:include ref="identifier.isbn" />
-    <xed:include ref="project.rvk" />
-    <xed:include ref="subject.simple" />
-    <xed:include ref="abstract.repeated" />
     <xed:include ref="rights" />
-    <xed:include ref="embargo.datetimepicker" />
-    <xed:include ref="institutes.repeat" />
+    <xed:include ref="abstract.repeated" />
+    <xed:include ref="comment" />
   </xed:template>
   
   <xed:template id="genres.matura">
@@ -496,22 +478,13 @@
     <xed:include ref="coreferent.repeated" />
     <xed:include ref="year.issued" />
     <xed:include ref="project.courses" />
-    <xed:include ref="date.submitted.datetimepicker" />
-    <xed:include ref="date.accepted.datetimepicker" />
-    <xed:include ref="shelfmark" />
     <xed:include ref="creator.place.college" />
     <xed:include ref="creator.college" />
-    <xed:include ref="publisher" />
-    <xed:include ref="extent" />
     <xed:include ref="type.of.resource.repeated" />
     <xed:include ref="language" />
-    <xed:include ref="identifier.isbn" />
-    <xed:include ref="project.rvk" />
-    <xed:include ref="subject.simple" />
-    <xed:include ref="abstract.repeated" />
     <xed:include ref="rights" />
-    <xed:include ref="embargo.datetimepicker" />
-    <xed:include ref="institutes.repeat" />
+    <xed:include ref="abstract.repeated" />
+    <xed:include ref="comment" />
   </xed:template>
   
   <xed:template id="genres.research_data">
