@@ -12,7 +12,7 @@
   <!-- ************************************************************************************ -->
 
   <xsl:template match="/">
-    <xsl:text>Titel;Nebensachtitel;Autoren;Herausgeber;Koreferent;erschienen in;Buch-Autoren;Konferenz;Konferenz-Zeitraum;Veranstaltungsort;Publikationstyp;Seitenangaben;Heftangaben;Bandangaben;ISBN / ISSN;LinkURL;VerlagDOI;PHTGDOI;Verlag;Verlagsort;Veröffentlichungsdatum;OrgEinheit;Studiengang;Lizenz;Embargo;Sprache;OAStatus;PeerReviewed;&#xA;</xsl:text>
+    <xsl:text>Titel;Nebensachtitel;Autoren;Herausgeber;Referent;Korreferent;erschienen in;in Publikationstyp;Buch-Autoren;Konferenz;Konferenz-Zeitraum;Veranstaltungsort;Publikationstyp;Seitenangaben;Heftangaben;Bandangaben;ISBN / ISSN;LinkURL;VerlagDOI;PHTGDOI;Verlag;Verlagsort;Veröffentlichungsdatum;OrgEinheit;Studiengang;Lizenz;Embargo;Sprache;OAStatus;PeerReviewed;Mitarbeitenden-Kürzel&#xA;</xsl:text>
     <xsl:for-each select="//mods:mods">
       <xsl:call-template name="convertToCsv" />
       <xsl:text>&#xA;</xsl:text>
@@ -53,6 +53,16 @@
     </xsl:for-each>
     <xsl:text>&quot;;</xsl:text>
 
+    <!-- Referent -->
+    <xsl:text>&quot;</xsl:text>
+    <xsl:for-each select="mods:name[mods:role/mods:roleTerm/text()='ths']">
+      <xsl:if test="position()!=1">
+        <xsl:value-of select="'; '" />
+      </xsl:if>
+      <xsl:apply-templates select="." mode="printName" />
+    </xsl:for-each>
+    <xsl:text>&quot;;</xsl:text>
+
     <!-- Koreferent -->
     <xsl:text>&quot;</xsl:text>
     <xsl:for-each select="mods:name[mods:role/mods:roleTerm/text()='dgs']">
@@ -66,6 +76,14 @@
     <!-- Titel des Elternelementes -->
     <xsl:call-template name="convertStringToCsv">
       <xsl:with-param name="cstring" select="mods:relatedItem[@type='host']/mods:titleInfo/mods:title" />
+    </xsl:call-template>
+
+    <!-- in Publikationtyp -->
+    <xsl:variable name="modsType">
+      <xsl:value-of select="substring-after(mods:relatedItem[@type='host']/mods:genre[@type='intern']/@valueURI,'#')" />
+    </xsl:variable>
+    <xsl:call-template name="convertStringToCsv">
+      <xsl:with-param name="cstring" select="document(concat('classification:metadata:0:children:mir_genres:',$modsType))//category/label[@xml:lang=$CurrentLang]/@text" />
     </xsl:call-template>
 
     <!-- Autoren  des Elternelementes - XPath prüfen! -->
@@ -255,6 +273,12 @@
     <xsl:call-template name="convertStringToCsv">
       <xsl:with-param name="cstring" select="document(concat('classification:metadata:0:children:peer_review:',$peerReviewed))//category/label[@xml:lang=$CurrentLang]/@text" />
     </xsl:call-template>
+
+    <!-- Mitarbeitenden-Kürzel -->
+    <xsl:call-template name="convertStringToCsv">
+      <xsl:with-param name="cstring" select="mods:name[@type='personal']/mods:nameIdentifier[@type='phtg']" />
+    </xsl:call-template>
+
 
   </xsl:template>
 
