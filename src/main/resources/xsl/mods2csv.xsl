@@ -275,9 +275,14 @@
     </xsl:call-template>
 
     <!-- Mitarbeitenden-Kürzel -->
-    <xsl:call-template name="convertStringToCsv">
-      <xsl:with-param name="cstring" select="mods:name[@type='personal']/mods:nameIdentifier[@type='phtg']" />
-    </xsl:call-template>
+    <xsl:text>&quot;</xsl:text>
+    <xsl:for-each select="mods:name[@type='personal']/mods:nameIdentifier[@type='phtg']">
+      <xsl:if test="position()!=1">
+        <xsl:value-of select="'; '" />
+      </xsl:if>
+      <xsl:apply-templates select="." mode="printName" />
+    </xsl:for-each>
+    <xsl:text>&quot;;</xsl:text>
 
 
   </xsl:template>
