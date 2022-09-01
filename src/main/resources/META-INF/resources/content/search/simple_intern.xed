@@ -66,6 +66,7 @@
                         <i class="fas fa-info-circle  input-group-text" />
                       </span>
                     </xed:bind>
+                    <xed:bind xpath="boolean[@operator='not']/condition[@field='mods.genre'][1]/@value" default="speech" />
                   </div>
                 </div>
               </div>

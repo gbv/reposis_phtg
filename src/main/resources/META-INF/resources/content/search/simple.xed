@@ -39,9 +39,11 @@
                 </label>
                 <div class="col-md-9">
                   <div class="input-group">
+
                     <xed:bind xpath="condition[@field='derCount'][@value='0'][@operator='&gt;'][@selectable='true'][@id='condFullText']" />
                     <xed:bind xpath="condition[@field='worldReadableComplete'][@value='true'][@operator='='][@selectable='true'][@id='condOpenAccess']" />
                     <!-- selectCondition must always be after @selectable conditions for xed:cleanup-rule to work -->
+
                     <xed:bind xpath="selectCondition[@delete='true']/@keep">
                       <select class="form-control input-md" id="inputFulltext1">
                         <option value="">
@@ -57,6 +59,8 @@
                       <span class="input-group-append" data-toggle="tooltip" data-html="true" title="{i18n:editor.search.fulltext.tooltip}">
                         <i class="fas fa-info-circle input-group-text" />
                       </span>
+                    </xed:bind>
+                    <xed:bind xpath="boolean[@operator='not']/condition[@field='mods.genre'][1]/@value" default="speech" >
                     </xed:bind>
                   </div>
                 </div>

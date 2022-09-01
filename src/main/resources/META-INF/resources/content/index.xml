@@ -19,6 +19,7 @@
                 type="text"
                 aria-label=""
                 aria-describedby="" />
+                <input name="fq" type="hidden" value="NOT(mods.genre:speech)" />
               <div class="input-group-append">
                 <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
               </div>
@@ -32,7 +33,7 @@
       $( document ).ready(function() {
         $.ajax({
           type: "GET",
-          url: "../api/v1/search?q=objectType:mods AND state:published&amp;rows=0&amp;wt=json&amp;json.wrf=?",
+          url: "../api/v1/search?q=objectType:mods AND state:published AND NOT(mods.genre:speech)&amp;rows=0&amp;wt=json&amp;json.wrf=?",
           dataType: "jsonp",
           success: function (data) {
             $('#project-searchInput').attr('placeholder', 'Suche in ' + $.number(data.response.numFound,0, ',', '.') + ' Dokumenten');
