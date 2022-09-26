@@ -25,6 +25,7 @@
     <xed:include ref="language" />
     <xed:include ref="identifier.managed" />
     <xed:include ref="doi.handle.urn.repeated" />
+    <xed:include ref="link.repeated" />
     <xed:include ref="project.rvk" />
     <xed:include ref="subject.simple" />
     <xed:include ref="abstract.simple" />
@@ -45,6 +46,7 @@
     <xed:include ref="language" />
     <xed:include ref="identifier.managed" />
     <xed:include ref="doi.handle.urn.repeated" />
+    <xed:include ref="link.repeated" />
     <xed:include ref="project.rvk" />
     <xed:include ref="subject.simple" />
     <xed:include ref="abstract.simple" />
@@ -69,6 +71,7 @@
     <xed:include ref="identifier.isbn" />
     <xed:include ref="identifier.managed" />
     <xed:include ref="doi.handle.urn.repeated" />
+    <xed:include ref="link.repeated" />
     <xed:include ref="project.rvk" />
     <xed:include ref="subject.simple" />
     <xed:include ref="shelfmark" />
@@ -91,6 +94,7 @@
     <xed:include ref="language" />
     <xed:include ref="identifier.managed" />
     <xed:include ref="doi.handle.urn.repeated" />
+    <xed:include ref="link.repeated" />
     <xed:include ref="project.rvk" />
     <xed:include ref="subject.simple" />
     <xed:include ref="abstract.simple" />
@@ -109,6 +113,7 @@
     <xed:include ref="language" />
     <xed:include ref="project.rvk" />
     <xed:include ref="identifier.zdbid" />
+    <xed:include ref="link.repeated" />
     <xed:include ref="subject.simple" />
     <xed:include ref="abstract.simple" />
     <xed:include ref="comment" />
@@ -122,6 +127,7 @@
     <xed:include ref="language" />
     <xed:include ref="identifier.managed" />
     <xed:include ref="doi.handle.urn.repeated" />
+    <xed:include ref="link.repeated" />
     <xed:include ref="project.rvk" />
     <xed:include ref="subject.simple" />
     <xed:include ref="abstract.simple" />
@@ -140,6 +146,7 @@
     <xed:include ref="language" />
     <xed:include ref="identifier.managed" />
     <xed:include ref="doi.handle.urn.repeated" />
+    <xed:include ref="link.repeated" />
     <xed:include ref="project.rvk" />
     <xed:include ref="subject.simple" />
     <xed:include ref="abstract.simple" />
@@ -161,6 +168,7 @@
     <xed:include ref="project.rvk" />
     <xed:include ref="identifier.issn" />
     <xed:include ref="identifier.zdbid" />
+    <xed:include ref="link.repeated" />
     <xed:include ref="subject.simple" />
     <xed:include ref="shelfmark" />
     <xed:include ref="abstract.simple" />
@@ -180,6 +188,7 @@
     <xed:include ref="identifier.isbn" />
     <xed:include ref="identifier.managed" />
     <xed:include ref="doi.handle.urn.repeated" />
+    <xed:include ref="link.repeated" />
     <xed:include ref="subject.simple" />
     <xed:include ref="shelfmark" />
     <xed:include ref="abstract.simple" />
@@ -203,6 +212,7 @@
     <xed:include ref="identifier.isbn" />
     <xed:include ref="identifier.managed" />
     <xed:include ref="doi.handle.urn.repeated" />
+    <xed:include ref="link.repeated" />
     <xed:include ref="subject.simple" />
     <xed:include ref="shelfmark" />
     <xed:include ref="abstract.simple" />
@@ -219,6 +229,7 @@
     <xed:include ref="date.onlyrange.issued.datetimepicker" />
     <xed:include ref="identifier.zdbid" />
     <xed:include ref="identifier.issn" />
+    <xed:include ref="link.repeated" />
     <xed:include ref="language" />
     <xed:include ref="place" />
     <xed:include ref="publisher" />
@@ -285,6 +296,7 @@
     <xed:include ref="identifier.isbn" />
     <xed:include ref="identifier.managed" />
     <xed:include ref="doi.handle.urn.repeated" />
+    <xed:include ref="link.repeated" />
     <xed:include ref="subject.simple" />
     <xed:include ref="shelfmark" />
     <xed:include ref="abstract.simple" />
@@ -323,6 +335,7 @@
     <xed:include ref="identifier.isbn" />
     <xed:include ref="identifier.managed" />
     <xed:include ref="doi.handle.urn.repeated" />
+    <xed:include ref="link.repeated" />
     <xed:include ref="subject.simple" />
     <xed:include ref="shelfmark" />
     <xed:include ref="abstract.simple" />
