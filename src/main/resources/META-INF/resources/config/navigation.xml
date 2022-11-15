@@ -47,6 +47,10 @@
             <label xml:lang="de">Erweiterte Suche</label>
             <label xml:lang="en">Advanced Search</label>
         </item>
+        <item href="/search/search-expert.xed" type="intern" replaceMenu="false" constrainPopUp="false">
+            <label xml:lang="de">Expertensuche</label>
+            <label xml:lang="en">expert search</label>
+        </item>
         <item href="/content/browse/rvk.xml" type="intern" replaceMenu="false" constrainPopUp="false">
             <label xml:lang="de">Nach Sachgebiet</label>
             <label xml:lang="en">by subject area</label>
