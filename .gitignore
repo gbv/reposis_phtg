@@ -50,6 +50,9 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
+## VSCode
+*.vscode
+
 ## Eclipse https://github.com/github/gitignore/blob/master/Global/Eclipse.gitignore
 .metadata
 bin/
