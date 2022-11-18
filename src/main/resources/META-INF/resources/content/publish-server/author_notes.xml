@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MyCoReWebPage><section xml:lang="de" title="Hinweise für Autoren"><div>
+<h2>Hinweise für Autorinnen und Autoren</h2>
+
+<p>Als Mitarbeiterin bzw. Mitarbeiter der PHTG können Sie Ihre elektronischen Publikationen (z.B. Zeitschriftenartikel, Buchkapitel, Monografien, Tagungsberichte, Praxismaterialien, Forschungsdaten etc.) auf dem Publikationsserver der PHTG im Sinne von Open Access veröffentlichen. Jeder Eintrag erhält dabei einen persistenten Identifikator (DOI, URN). Die Volltexte sind frei und dauerhaft zugänglich, falls die jeweiligen Verlagsbestimmungen dies erlauben (die entsprechenden Rechte können teilweise oder vollständig eingeschränkt sein). Die Metadaten werden in internationalen Fachdatenbanken und Suchmaschinen indexiert (z.B. GoogleScholar, BASE, OpenAire u.a.) und über eine Schnittstelle an die Mitarbeitenden-Profile auf der Website der PHTG geliefert.</p>
+
+<h3>Publikation erfassen</h3>
+
+<p>Publikationen können direkt über den <a href="https://publikationsserver.phtg.ch/">Publikationsserver der PHTG</a> eingereicht werden. Folgende Schritte sind dazu nötig:</p>
+
+<ol>
+	<li>Den Menüpunkt «Publizieren» aufrufen</li>
+	<li>Mit dem persönlichen Login anmelden (Noch kein Konto? Anfragen bitte an <span class="madress">open.science [at] phtg.ch</span>)</li>
+	<li value="3">Dokumententyp aus dem Drop-Down-Menü auswählen u. ggfs. im zweiten Feld spezifizieren</li>
+	<li value="4">Metadatenfelder ausfüllen (mind. Pflichtfelder) und Formular speichern</li>
+	<li value="5">Einverständniserklärung akzeptieren (Haken setzen)</li>
+	<li value="6">Volltext hochladen (bitte nur Dokumente ohne Zugriffsbeschränkung)</li>
+</ol>
+
+<p>Im Anschluss an den Einreichungsvorgang prüft das Team Open-Science der Campus-Bibliothek Ihre Angaben redaktionell. Anschliessend wird das Dokument freigeschaltet. Sie erhalten eine Benachrichtigung per E-Mail, in der auch der stabile zitierfähige Link zu Ihrer Publikation angegeben wird.</p>
+
+<h3>Voraussetzungen und Empfehlungen</h3>
+
+<ul>
+	<li><strong>Zugehörigkeit:</strong> Sie sind Angehörige bzw. Angehöriger der PHTG oder publizieren mit Bezug zur Forschung an der PHTG.</li>
+	<li><strong>Wahrung des Urheberrechts:</strong> Stellen Sie sicher, dass Sie über die Urheberrechte des Werkes verfügen bzw. bei einer Co-Autorenschaft das Einverständnis zur Veröffentlichung durch Ihre Co-Autorinnen bzw. Co-Autoren eingeholt haben.</li>
+	<li><strong>Zustimmung zur Einverständniserklärung:</strong> Sie müssen der Einverständniserklärung zur Veröffentlichung Ihrer Dokumente im Publikationsserver der PHTG zustimmen. Dies geschieht durch das Setzen eines Hakens vor dem Upload bzw. Speichern eines Werkes.</li>
+	<li><strong>Technische Formate:</strong> Sie haben die Möglichkeit, jegliche Dokumenttypen (Text, Grafik, Audio- oder Videosequenzen, Forschungsdaten, etc.) zu veröffentlichen. Die Dokumente dürfen nicht zugriffsbeschränkt sein (z.B. passwortgeschützt). Der Publikationsserver unterstützt alle Dateiformate, empfiehlt jedoch die Nutzung offener Formate (z. B. PDF/A, TeX, XML), die zur Langzeitarchivierung geeignet sind und über frei zugängliche Darstellungsprogramme angezeigt werden können.</li>
+	<li><strong>Veränderungen am Dokument:</strong> Sind Veränderungen am Dokument notwendig, wird das geänderte Dokument als neue Version gespeichert und mit der vorgängigen Version verlinkt. Bereits publizierte Dokumente werden nicht gelöscht oder verändert, es sei denn, es liegen schwerwiegende rechtliche Gründe vor. Laden Sie bitte keine dynamischen Dokumente hoch.</li>
+	<li><strong>Forschungsdaten:</strong> Beachten Sie bei einer Publikation bzw. Archivierung Ihrer Forschungsdaten eine nachvollziehbare Ordnerstruktur und Dateibenennung. Zudem sollte Ihrem Datensatz eine README-Datei mit beschreibenden Metadaten beiliegen.</li>
+	<li><strong>Zweitveröffentlichung (Grün-OA):</strong> Beim Abschluss von Verlagsverträgen wird empfohlen, sich ein entsprechendes Nutzungsrecht für die Zweitveröffentlichung auf dem Publikationsserver der PHTG zu sichern.</li>
+	<li><strong>Lizenzen:</strong> Versehen Sie ihr Dokument falls möglich mit einer möglichst offenen <a href="https://creativecommons.org/" target="_blank">Creative-Commons-Lizenz</a>.</li>
+</ul>
+
+<h3>Rechtliche Rahmenbedingungen</h3>
+
+<p>Ihre Publikationen werden unter Wahrung des geltenden schweizerischen Urheberrechts veröffentlicht. Das Urheberrecht verbleibt bei Ihnen. Mit Ihrer Zustimmung zu einer Veröffentlichung auf dem Publikationsserver der PHTG übertragen Sie der Campus-Bibliothek lediglich das einfache (nicht ausschliessliche), zeitlich unbefristete Nutzungsrecht (gemäss Einverständniserklärung). Dies ist nötig, um die eingereichten Publikationen auf dem Publikationsserver zu speichern und öffentlich zugänglich zu machen. Eine weitere Veröffentlichung einer Publikation, beispielsweise in einer Fachzeitschrift, bleibt möglich. Bitte beachten Sie, dass Sie für eine Veröffentlichung ggf. das Einverständnis von Co-Autorinnen bzw. Co-Autoren einholen müssen. Die Einhaltung von Urheber- und Verwertungsrechten Dritter liegt in Ihrer Verantwortung.</p>
+
+<h3>Kontakt und Beratung</h3>
+
+<p>Die Beratungsstelle Open-Science der PHTG unterstützt Sie gerne bei der Veröffentlichung Ihrer Publikationen und Forschungsdaten.</p>
+
+<p>E-Mail: <span class="madress">open.science [at] phtg.ch</span></p>
+
+<p>Website: <a href="https://bibliothek.phtg.ch/de/services/open-science/" target="_blank">https://bibliothek.phtg.ch/de/services/open-science/</a></p>
+</div>
+</section><meta><log lastEditor="administrator" date="2022-03-17" time="13:49" /></meta></MyCoReWebPage>
