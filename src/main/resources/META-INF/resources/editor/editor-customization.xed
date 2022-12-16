@@ -7,6 +7,7 @@
     <xed:include ref="project.rvk.not_required"                 before="sdnb.repeat" />
     <xed:include ref="project.ddc"                              after="sdnb.repeat" />
     <xed:remove ref="sdnb.repeat" />
+    <xed:remove ref="sdnb.repeat" />
     <xed:include ref="project.research_fields"                  after="project.ddc" />
     <xed:include ref="project.research_projects"                after="project.research_fields" />
     <xed:include ref="project.courses"                          after="project.research_projects" />
@@ -855,6 +856,14 @@
   </xed:template>
   
   <xed:template id="project.author.repeated.required">
+    <mir:person.extended.repeated help-text="{i18n:mir.help.name.repeated}" >
+      <xed:include uri="xslStyle:items2options:classification:editor:-1:children:marcrelator" />
+    </mir:person.extended.repeated>
+    <xed:validate xpath="//mods:nameIdentifier[@type='gnd']" matches="\d{9}[\d|\-]?[\d|x|X]?" i18n="mir.validation.gnd" display="global" />
+    <xed:validate xpath="//mods:nameIdentifier[@type='orcid']" matches="\d{4}\-\d{4}\-\d{4}\-\d{3}[\d|x|X]" i18n="mir.validation.orcid" display="global" />
+  </xed:template>
+
+  <xed:template id="name.extended.repeated">
     <mir:person.extended.repeated help-text="{i18n:mir.help.name.repeated}" >
       <xed:include uri="xslStyle:items2options:classification:editor:-1:children:marcrelator" />
     </mir:person.extended.repeated>
