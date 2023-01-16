@@ -859,20 +859,20 @@
     <mir:person.extended.repeated help-text="{i18n:mir.help.name.repeated}" >
       <xed:include uri="xslStyle:items2options:classification:editor:-1:children:marcrelator" />
     </mir:person.extended.repeated>
-    <xed:validate xpath="//mods:nameIdentifier[@type='gnd']" matches="\d{9}[\d|\-]?[\d|x|X]?" i18n="mir.validation.gnd" display="global" />
+    <xed:validate xpath="//mods:nameIdentifier[@type='gnd']" matches="\d{8}[\d|\-]?[\dxX]?" i18n="mir.validation.gnd" display="global" />
     <xed:validate xpath="//mods:nameIdentifier[@type='orcid']" matches="\d{4}\-\d{4}\-\d{4}\-\d{3}[\d|x|X]" i18n="mir.validation.orcid" display="global" />
     <xed:validate xpath="//mods:nameIdentifier[@type='phtg']" matches="[äöüÄÖÜA-Za-z]{3,9}" i18n="mir.validation.phtg" display="global" />
-    <xed:validate xpath="//mods:nameIdentifier[@type='viaf']" matches="\d{9}[\d|\-]?[\d|x|X]?" i18n="mir.validation.viaf" display="global" />
+    <xed:validate xpath="//mods:nameIdentifier[@type='viaf']" matches="\d{8cp }[\d|\-]?[\d|x|X]?" i18n="mir.validation.viaf" display="global" />
   </xed:template>
 
   <xed:template id="name.extended.repeated">
     <mir:person.extended.repeated help-text="{i18n:mir.help.name.repeated}" >
       <xed:include uri="xslStyle:items2options:classification:editor:-1:children:marcrelator" />
     </mir:person.extended.repeated>
-    <xed:validate xpath="//mods:nameIdentifier[@type='gnd']" matches="\d{9}[\d|\-]?[\d|x|X]?" i18n="mir.validation.gnd" display="global" />
+    <xed:validate xpath="//mods:nameIdentifier[@type='gnd']" matches="\d{8}[\d|\-]?[\dxX]?" i18n="mir.validation.gnd" display="global" />
     <xed:validate xpath="//mods:nameIdentifier[@type='orcid']" matches="\d{4}\-\d{4}\-\d{4}\-\d{3}[\d|x|X]" i18n="mir.validation.orcid" display="global" />
     <xed:validate xpath="//mods:nameIdentifier[@type='phtg']" matches="[äöüÄÖÜA-Za-z]{3,9}" i18n="mir.validation.phtg" display="global" />
-    <xed:validate xpath="//mods:nameIdentifier[@type='viaf']" matches="\d{9}[\d|\-]?[\d|x|X]?" i18n="mir.validation.viaf" display="global" />
+    <xed:validate xpath="//mods:nameIdentifier[@type='viaf']" matches="\d{8}[\d|\-]?[\d|x|X]?" i18n="mir.validation.viaf" display="global" />
   </xed:template>
 
   <xed:template id="project.author.repeated.required2">
