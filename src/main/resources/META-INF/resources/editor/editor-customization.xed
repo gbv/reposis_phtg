@@ -119,7 +119,26 @@
     <xed:include ref="abstract.simple" />
     <xed:include ref="comment" />
   </xed:template>
-  
+
+  <xed:template id="genres.poster">
+    <xed:include ref="title.original" />
+    <xed:if test="$host='standalone'">
+      <xed:include ref="conference" />
+    </xed:if>
+    <xed:include ref="author.repeated" />
+    <xed:if test="$host='standalone'">
+      <xed:include ref="year.issued" />
+      <xed:include ref="place" />
+    </xed:if>
+    <xed:include ref="language" />
+    <xed:include ref="project.rvk" />
+    <xed:include ref="subject.simple" />
+    <xed:include ref="abstract.simple" />
+    <xed:include ref="rights" />
+    <xed:include ref="institutes.repeat" />
+    <xed:include ref="comment" />
+  </xed:template>
+
   <xed:template id="genres.report">
     <xed:include ref="title.original" />
     <xed:include ref="project.author.repeated.required" />

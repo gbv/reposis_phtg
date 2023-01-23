@@ -132,5 +132,11 @@
       <label xml:lang="en" text="Maturaarbeit" />
       <label xml:lang="x-mapping" text="marcgt:thesis diniPublType:masterThesis XMetaDissPlusThesisLevel:other" />
     </category>
+        <category ID="poster">
+      <label xml:lang="x-mapping" text="marcgt:technical_drawing diniPublType:ResearchData" />
+      <label xml:lang="en" text="Poster" />
+      <label xml:lang="de" text="Poster" />
+      <label xml:lang="x-hosts" text="proceedings standalone" />
+    </category>
   </categories>
 </mycoreclass>
