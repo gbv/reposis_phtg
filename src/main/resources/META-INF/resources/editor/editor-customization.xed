@@ -125,17 +125,18 @@
     <xed:if test="$host='standalone'">
       <xed:include ref="conference" />
     </xed:if>
-    <xed:include ref="author.repeated" />
+    <xed:include ref="project.author.repeated.required" />
+    <xed:include ref="creator" />
     <xed:if test="$host='standalone'">
+      <xed:include ref="creator.place" />
       <xed:include ref="year.issued" />
-      <xed:include ref="place" />
     </xed:if>
+    <xed:include ref="institutes.repeat" />
     <xed:include ref="language" />
     <xed:include ref="project.rvk" />
     <xed:include ref="subject.simple" />
     <xed:include ref="abstract.simple" />
     <xed:include ref="rights" />
-    <xed:include ref="institutes.repeat" />
     <xed:include ref="comment" />
   </xed:template>
 
