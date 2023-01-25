@@ -219,7 +219,7 @@
     <xed:include ref="comment" />
   </xed:template>
   
-  <xed:template ref="genres.proceedings">
+  <xed:template id="genres.proceedings">
     <xed:include ref="title.original" />
     <xed:include ref="conference" />
     <xed:include ref="editor.repeated" />
@@ -276,11 +276,19 @@
     <xed:include ref="shelfmark.book.relItemsearch" />
   </xed:modify>
   
-  <xed:modify ref="hosts.proceedings">
-    <xed:include ref="project.title.proceedings.relItemsearch.required"   after="title.proceedings.relItemsearch" />
-    <xed:remove  ref="title.proceedings.relItemsearch" />
-  </xed:modify>
-  
+  <xed:template id="hosts.proceedings">
+      <xed:bind xpath="mods:relatedItem[@type='host']">
+        <xed:bind xpath="@xlink:href" initially="{$MIR.projectid.default}_mods_00000000"> <input id="relItem-proceedings" type="hidden" /> </xed:bind>
+        <xed:include ref="project.title.proceedings.relItemsearch.required" />
+        <xed:include ref="subtitle" />
+        <xed:include ref="conference" />
+        <xed:include ref="editor.repeated" />
+        <xed:include ref="hosts.collection.common.publisher" />
+        <xed:include ref="identifier.isbn.proceedings.relItemsearch" />
+        <xed:include ref="host.pages" />
+      </xed:bind>
+  </xed:template>
+
   <xed:modify ref="hosts.series">
     <xed:if test="xed:call-java('org.mycore.common.xml.MCRXMLFunctions','isCurrentUserInRole','admin') or xed:call-java('org.mycore.common.xml.MCRXMLFunctions','isCurrentUserInRole','editor')">
       <xed:include ref="project.title.series.relItemsearch.required"                 after="title.series.relItemsearch" />
