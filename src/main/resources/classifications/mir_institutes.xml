@@ -1,43 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="mir_institutes">
-  <label xml:lang="de" text="Organisationseinheit" description="Liste der Prorektorate und Bereiche" />
-  <label xml:lang="x-uri" text="https://publikationsserver.phtg.ch/classifications/mir_institutes" />
+  <label xml:lang="de" text="Organisationsstruktur" description="Liste der Prorektorate und Bereiche" />
   <label xml:lang="en" text="organization structure" description="List of prorerates and areas" />
+  <label xml:lang="x-uri" text="https://www.publikationsserver.phtg.ch/classifications/mir_institutes" />
   <categories>
     <category ID="leitung">
       <label xml:lang="de" text="Hochschulleitung" />
     </category>
     <category ID="p_fw">
-      <label xml:lang="de" text="Forschung" />
-      <category ID="forschung">
-        <label xml:lang="de" text="Forschung" />
-        <category ID="forschungsabteilung">
-          <label xml:lang="de" text="Forschungsabteilung" />
+      <label xml:lang="de" text="Prorektorat Forschung und Wissensmanagement" />
+      <category ID="doz_forschung">
+        <label xml:lang="de" text="Dozierendenforschung" />
+      </category>
+      <category ID="forschungsbereiche">
+        <label xml:lang="de" text="Forschungsbereiche" />
+        <category ID="frühe_sprachbildung">
+          <label xml:lang="de" text="Frühe Sprachbildung" />
         </category>
-        <category ID="dozierendenforschung">
-          <label xml:lang="de" text="Dozierendenforschung" />
+        <category ID="bildungssoziologie">
+          <label xml:lang="de" text="Bildungssoziologie" />
         </category>
-        <category ID="mathematikdidaktik">
+        <category ID="päd_psychologie">
+          <label xml:lang="de" text="Pädagogische Psychologie" />
+        </category>
+        <category ID="allg_erziehungswissenschaft">
+          <label xml:lang="de" text="Allgemeine Erziehungswissenschaft" />
+        </category>
+        <category ID="math_didaktik">
           <label xml:lang="de" text="Mathematikdidaktik" />
         </category>
         <category ID="medienpädagogik">
           <label xml:lang="de" text="Medienpädagogik" />
         </category>
-        <category ID="bildungsforschung">
-          <label xml:lang="de" text="Empirische Bildungsforschung" />
+        <category ID="fd_naturwissenschaften">
+          <label xml:lang="de" text="Fachdidaktik Naturwissenschaften" />
         </category>
-        <category ID="entw_bildung">
+        <category ID="eb_frühe_kindheit">
           <label xml:lang="de" text="Entwicklung und Bildung in der Frühen Kindheit" />
         </category>
-        <category ID="fachdidaktik_nat">
-          <label xml:lang="de" text="Fachdidaktik der Naturwissenschaften" />
+        <category ID="erziehungswissenschaft">
+          <label xml:lang="de" text="Erziehungswissenschaft" />
         </category>
-      </category>
-      <category ID="bzqm">
-        <label xml:lang="de" text="Binationales Zentrum für Qualitative Methoden (BZQM)" />
-      </category>
-      <category ID="mdz">
-        <label xml:lang="de" text="Medien- und Didaktikzentrum" />
       </category>
     </category>
     <category ID="p_ap">
