@@ -9,7 +9,11 @@
           <h1>
             Publikationsserver der PHTG
           </h1>
-          <form action="../servlets/solr/find" id="project-searchMainPage" class="form-inline mt-3" role="search">
+          <form
+            id="project-searchMainPage"
+            class="form-inline mt-3 justify-content-center"
+            action="../servlets/solr/find"
+            role="search">
             <div class="input-group w-100">
               <input
                 name="condQuery"
@@ -19,10 +23,13 @@
                 type="text"
                 aria-label=""
                 aria-describedby="" />
-                <input name="fq" type="hidden" value="NOT(mods.genre:speech)" />
               <div class="input-group-append">
                 <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
               </div>
+            </div>
+            <div class="custom-control custom-switch mt-3">
+              <input type="checkbox" class="custom-control-input" id="switchPaper" />
+              <label class="custom-control-label" for="switchPaper">Referate einbeziehen</label>
             </div>
           </form>
         </div>
@@ -31,13 +38,43 @@
     <script type="text/javascript" src="../js/jquery.number.js"></script>
     <script>
       $( document ).ready(function() {
+        var documentsAll = 0;
+        var documentsFiltered = 0;
         $.ajax({
           type: "GET",
           url: "../api/v1/search?q=objectType:mods AND state:published AND NOT(mods.genre:speech)&amp;rows=0&amp;wt=json&amp;json.wrf=?",
           dataType: "jsonp",
           success: function (data) {
-            $('#project-searchInput').attr('placeholder', 'Suche in ' + $.number(data.response.numFound,0, ',', '.') + ' Dokumenten');
+            documentsFiltered = $.number(data.response.numFound,0, ',', '.');
+            if ( documentsFiltered ) {
+              $('#project-searchInput').attr('placeholder', 'Suche in ' + documentsFiltered + ' Dokumenten');
+            }
+
           },
+        });
+        $.ajax({
+          type: "GET",
+          url: "../api/v1/search?q=objectType:mods AND state:published&amp;rows=0&amp;wt=json&amp;json.wrf=?",
+          dataType: "jsonp",
+          success: function (data) {
+            documentsAll = $.number(data.response.numFound,0, ',', '.');
+          },
+        });
+        var paperFilter = '<input name="fq" type="hidden" value="NOT(mods.genre:speech)" id="filterPaper" />';
+        $("#project-searchMainPage").append( paperFilter );
+
+        $("#switchPaper").change(function() {
+          if ( $("#switchPaper").prop("checked") === true ) {
+            $("#filterPaper").remove();
+            if ( documentsAll ) {
+              $('#project-searchInput').attr('placeholder', 'Suche in ' + documentsAll + ' Dokumenten');
+            }
+          } else {
+            $("#project-searchMainPage").append( paperFilter );
+            if ( documentsFiltered ) {
+              $('#project-searchInput').attr('placeholder', 'Suche in ' + documentsFiltered + ' Dokumenten');
+            }
+          }
         });
       });
     </script>
