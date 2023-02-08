@@ -6,7 +6,42 @@
 // set the defaults for all responsive levels here
 // no (xl) media query necessary (desktop first)
 
+  #more_options_toggle {
+    margin: 0 0 20px 0;
+    #more_options_trigger {
+      cursor: pointer;
+      #more_options_button {
+        font-size: 16px;
+        margin-left: 10px;
+        vertical-align: middle;
+      }
+      #more_options_label {
+        padding: 0 0 0 0px;
+        vertical-align: middle;
+        color: $gray-400;
+      }
+      #more_options_label_hide {
+        padding: 0 0 0 0px;
+        vertical-align: middle;
+        color: black;
+      }
+      &:hover {
+        #more_options_button {
+          color: $warning;
+        }
+        #more_options_label {
+          color: $primary;
+        }
+      }
+    }
+  }
+  #more_options_box {
+    display: none;
+  }
 
+  .custom-switch .custom-control-label {
+    cursor: pointer;
+  }
 
 // Large devices (desktops) and below: <= 1200px
 @include media-breakpoint-down(lg) {
@@ -26,37 +61,4 @@
 // Extra small devices (portrait phones): <= 576px
 @include media-breakpoint-down(xs) {
   // add/overwrite styles for responsive level xs
-}
-
-#more_options_toggle {
-  margin: 0 0 20px 0;
-  #more_options_trigger {
-    cursor: pointer;
-    #more_options_button {
-      font-size: 16px;
-      margin-left: 10px;
-      vertical-align: middle;
-    }
-    #more_options_label {
-      padding: 0 0 0 0px;
-      vertical-align: middle;
-      color: $gray-400;
-    }
-    #more_options_label_hide {
-      padding: 0 0 0 0px;
-      vertical-align: middle;
-      color: black;
-    }
-    &:hover {
-      #more_options_button {
-        color: $warning;
-      }
-      #more_options_label {
-        color: $primary;
-      }
-    }
-  }
-}
-#more_options_box {
-  display: none;
 }
