@@ -613,7 +613,7 @@
       <legend class="mir-fieldset-legend">
         <xed:output i18n="mir.comment" />
       </legend>
-      <xed:repeat xpath="mods:note[@type!='peerReviewed']" min="1" max="5">
+      <xed:repeat xpath="mods:note[not(@type='peerReviewed')]" min="1" max="5">
         <div class="mir-fieldset-content">
           <div class="form-group row">
             <label class="col-md-3 col-form-label text-right">
