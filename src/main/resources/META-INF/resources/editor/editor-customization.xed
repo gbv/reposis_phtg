@@ -14,7 +14,7 @@
     <xed:include ref="project.peerReviewed"                     after="project.courses" />
     <xed:include ref="project.oa_status"                        after="rights" />
   </xed:modify>
-  
+
   <xed:template id="genres.article">
     <xed:include ref="title.original" />
     <xed:include ref="project.author.repeated.required" />
@@ -33,9 +33,9 @@
     <xed:include ref="rights" />
     <xed:include ref="embargo.datetimepicker" />
     <xed:include ref="project.peerReviewed" />
-    <xed:include ref="comment" />
+    <xed:include ref="comment.complex" />
   </xed:template>
-  
+
   <xed:template id="genres.chapter">
     <xed:include ref="title.original" />
     <xed:include ref="project.author.repeated.required" />
@@ -54,9 +54,9 @@
     <xed:include ref="rights" />
     <xed:include ref="embargo.datetimepicker" />
     <xed:include ref="project.peerReviewed" />
-    <xed:include ref="comment" />
+    <xed:include ref="comment.complex" />
   </xed:template>
-  
+
   <xed:template id="genres.book">
     <xed:include ref="title.original" />
     <xed:include ref="project.author.repeated.required" />
@@ -79,9 +79,9 @@
     <xed:include ref="abstract.simple" />
     <xed:include ref="rights" />
     <xed:include ref="project.peerReviewed" />
-    <xed:include ref="comment" />
+    <xed:include ref="comment.complex" />
   </xed:template>
-  
+
   <xed:template id="genres.speech">
     <xed:include ref="title.original" />
     <xed:if test="$host='standalone'">
@@ -100,9 +100,9 @@
     <xed:include ref="subject.simple" />
     <xed:include ref="abstract.simple" />
     <xed:include ref="rights" />
-    <xed:include ref="comment" />
+    <xed:include ref="comment.complex" />
   </xed:template>
-  
+
   <xed:template id="genres.series">
     <xed:include ref="series.title" />
     <xed:include ref="title.abbreviated" />
@@ -117,7 +117,7 @@
     <xed:include ref="link.repeated" />
     <xed:include ref="subject.simple" />
     <xed:include ref="abstract.simple" />
-    <xed:include ref="comment" />
+    <xed:include ref="comment.complex" />
   </xed:template>
 
   <xed:template id="genres.poster">
@@ -137,7 +137,7 @@
     <xed:include ref="subject.simple" />
     <xed:include ref="abstract.simple" />
     <xed:include ref="rights" />
-    <xed:include ref="comment" />
+    <xed:include ref="comment.complex" />
   </xed:template>
 
   <xed:template id="genres.report">
@@ -153,9 +153,9 @@
     <xed:include ref="subject.simple" />
     <xed:include ref="abstract.simple" />
     <xed:include ref="rights" />
-    <xed:include ref="comment" />
+    <xed:include ref="comment.complex" />
   </xed:template>
-  
+
   <xed:template id="genres.review">
     <xed:include ref="title.original" />
     <xed:include ref="project.author.repeated.required" />
@@ -174,10 +174,10 @@
     <xed:include ref="rights" />
     <xed:include ref="embargo.datetimepicker" />
     <xed:include ref="project.peerReviewed" />
-    <xed:include ref="comment" />
+    <xed:include ref="comment.complex" />
     <xed:include ref="related.item.reviewOf" />
   </xed:template>
-  
+
   <xed:template id="genres.newspaper">
     <xed:include ref="title.newspaper" />
     <xed:include ref="title.abbreviated" />
@@ -193,9 +193,9 @@
     <xed:include ref="subject.simple" />
     <xed:include ref="shelfmark" />
     <xed:include ref="abstract.simple" />
-    <xed:include ref="comment" />
+    <xed:include ref="comment.complex" />
   </xed:template>
-  
+
   <xed:template id="genres.collection">
     <xed:include ref="title.original" />
     <xed:include ref="editor.repeated" />
@@ -216,9 +216,9 @@
     <xed:include ref="embargo.datetimepicker" />
     <xed:include ref="rights" />
     <xed:include ref="institutes.repeat" />
-    <xed:include ref="comment" />
+    <xed:include ref="comment.complex" />
   </xed:template>
-  
+
   <xed:template id="genres.proceedings">
     <xed:include ref="title.original" />
     <xed:include ref="conference" />
@@ -240,9 +240,9 @@
     <xed:include ref="embargo.datetimepicker" />
     <xed:include ref="rights" />
     <xed:include ref="institutes.repeat" />
-    <xed:include ref="comment" />
+    <xed:include ref="comment.complex" />
   </xed:template>
-  
+
   <xed:template id="genres.journal">
     <xed:include ref="title.journal" />
     <xed:include ref="title.abbreviated" />
@@ -259,34 +259,34 @@
     <xed:include ref="identifier.managed" />
     <xed:include ref="shelfmark" />
     <xed:include ref="abstract.simple" />
-    <xed:include ref="comment" />
+    <xed:include ref="comment.complex" />
   </xed:template>
-  
+
   <xed:modify ref="hosts.journal">
     <xed:remove ref="identifier.isbn.journal.relItemsearch" />
     <xed:remove ref="shelfmark.journal.relItemsearch" />
   </xed:modify>
-  
+
   <xed:modify ref="hosts.newspaper">
     <xed:remove ref="identifier.issn.newspaper.relItemsearch" />
     <xed:remove ref="identifier.isbn.newspaper.relItemsearch" />
   </xed:modify>
-  
+
   <xed:modify ref="hosts.collection">
     <xed:include ref="shelfmark.book.relItemsearch" />
   </xed:modify>
-  
+
   <xed:template id="hosts.proceedings">
-      <xed:bind xpath="mods:relatedItem[@type='host']">
-        <xed:bind xpath="@xlink:href" initially="{$MIR.projectid.default}_mods_00000000"> <input id="relItem-proceedings" type="hidden" /> </xed:bind>
-        <xed:include ref="project.title.proceedings.relItemsearch.required" />
-        <xed:include ref="subtitle" />
-        <xed:include ref="conference" />
-        <xed:include ref="editor.repeated" />
-        <xed:include ref="hosts.collection.common.publisher" />
-        <xed:include ref="identifier.isbn.proceedings.relItemsearch" />
-        <xed:include ref="host.pages" />
-      </xed:bind>
+    <xed:bind xpath="mods:relatedItem[@type='host']">
+      <xed:bind xpath="@xlink:href" initially="{$MIR.projectid.default}_mods_00000000"> <input id="relItem-proceedings" type="hidden" /> </xed:bind>
+      <xed:include ref="project.title.proceedings.relItemsearch.required" />
+      <xed:include ref="subtitle" />
+      <xed:include ref="conference" />
+      <xed:include ref="editor.repeated" />
+      <xed:include ref="hosts.collection.common.publisher" />
+      <xed:include ref="identifier.isbn.proceedings.relItemsearch" />
+      <xed:include ref="host.pages" />
+    </xed:bind>
   </xed:template>
 
   <xed:modify ref="hosts.series">
@@ -297,9 +297,9 @@
     <xed:remove  ref="shelfmark.book.relItemsearch" />
     <xed:remove  ref="identifier.issn.series.relItemsearch" />
   </xed:modify>
-  
+
   <!-- ========== project specific host and genre templates ========== -->
-  
+
   <xed:template id="hosts.editing">
     <xed:bind xpath="mods:relatedItem[@type='host']">
       <xed:bind xpath="@xlink:href" initially="{$MIR.projectid.default}_mods_00000000"><input id="relItem-collection" type="hidden" /></xed:bind>
@@ -311,7 +311,7 @@
       <xed:include ref="host.pages" />
     </xed:bind>
   </xed:template>
-  
+
   <xed:template id="genres.editing">
     <xed:include ref="title.original" />
     <xed:include ref="editor.repeated" />
@@ -333,9 +333,9 @@
     <xed:include ref="project.peerReviewed" />
     <xed:include ref="rights" />
     <xed:include ref="institutes.repeat" />
-    <xed:include ref="comment" />
+    <xed:include ref="comment.complex" />
   </xed:template>
-  
+
   <xed:template id="hosts.teaching_material">
     <xed:include ref="title.collection.relItemsearch" />
     <xed:include ref="subtitle" />
@@ -348,7 +348,7 @@
     <xed:include ref="identifier.isbn.collection.relItemsearch" />
     <xed:include ref="project.ageRange" />
   </xed:template>
-  
+
   <xed:template id="genres.teaching_material">
     <xed:include ref="title.original" />
     <xed:include ref="project.author.repeated.required" />
@@ -370,9 +370,9 @@
     <xed:include ref="abstract.simple" />
     <xed:include ref="embargo.datetimepicker" />
     <xed:include ref="rights" />
-    <xed:include ref="comment" />
+    <xed:include ref="comment.complex" />
   </xed:template>
-  
+
   <xed:template id="genres.research_material">
     <xed:include ref="title.original" />
     <xed:include ref="project.author.repeated.required" />
@@ -387,9 +387,9 @@
     <xed:include ref="subject.simple" />
     <xed:include ref="abstract.simple" />
     <xed:include ref="rights" />
-    <xed:include ref="comment" />
+    <xed:include ref="comment.complex" />
   </xed:template>
-  
+
   <xed:template id="genres.practice_material">
     <xed:include ref="title.original" />
     <xed:include ref="project.author.repeated.required" />
@@ -404,9 +404,9 @@
     <xed:include ref="subject.simple" />
     <xed:include ref="abstract.simple" />
     <xed:include ref="rights" />
-    <xed:include ref="comment" />
+    <xed:include ref="comment.complex" />
   </xed:template>
-  
+
   <xed:template id="genres.dissertation">
     <xed:include ref="titles.thesis" />
     <xed:include ref="author.repeated" />
@@ -429,8 +429,9 @@
     <xed:include ref="rights" />
     <xed:include ref="embargo.datetimepicker" />
     <xed:include ref="institutes.repeat" />
+    <xed:include ref="comment.complex" />
   </xed:template>
-  
+
   <xed:template id="genres.bachelor_thesis">
     <xed:include ref="titles.thesis" />
     <xed:include ref="author.repeated" />
@@ -444,9 +445,9 @@
     <xed:include ref="language" />
     <xed:include ref="rights" />
     <xed:include ref="abstract.repeated" />
-    <xed:include ref="comment.public" />
+    <xed:include ref="comment.complex" />
   </xed:template>
-  
+
   <xed:template id="genres.cas">
     <xed:include ref="titles.thesis" />
     <xed:include ref="author.repeated" />
@@ -470,8 +471,9 @@
     <xed:include ref="rights" />
     <xed:include ref="embargo.datetimepicker" />
     <xed:include ref="institutes.repeat" />
+    <xed:include ref="comment.complex" />
   </xed:template>
-  
+
   <xed:template id="genres.mas">
     <xed:include ref="titles.thesis" />
     <xed:include ref="author.repeated" />
@@ -495,8 +497,9 @@
     <xed:include ref="rights" />
     <xed:include ref="embargo.datetimepicker" />
     <xed:include ref="institutes.repeat" />
+    <xed:include ref="comment.complex" />
   </xed:template>
-  
+
   <xed:template id="genres.master_thesis">
     <xed:include ref="titles.thesis" />
     <xed:include ref="author.repeated" />
@@ -510,9 +513,9 @@
     <xed:include ref="language" />
     <xed:include ref="rights" />
     <xed:include ref="abstract.repeated" />
-    <xed:include ref="comment.public" />
+    <xed:include ref="comment.complex" />
   </xed:template>
-  
+
   <xed:template id="genres.matura">
     <xed:include ref="titles.thesis" />
     <xed:include ref="author.repeated" />
@@ -526,9 +529,9 @@
     <xed:include ref="language" />
     <xed:include ref="rights" />
     <xed:include ref="abstract.repeated" />
-    <xed:include ref="comment.public" />
+    <xed:include ref="comment.complex" />
   </xed:template>
-  
+
   <xed:template id="genres.research_data">
     <xed:include ref="title" />
     <xed:include ref="research.data.person.repeated" />
@@ -548,12 +551,12 @@
     <xed:include ref="cartographics" />
     <xed:include ref="related.item.link" />
     <xed:include ref="institutes.repeat" />
-    <xed:include ref="comment" />
     <xed:include ref="openAIRE" />
+    <xed:include ref="comment.complex" />
   </xed:template>
-  
+
   <!-- ========== project specific field templates ========== -->
-  
+
   <!-- TODO: Add row to <div class="form-group"> in MIR -->
   <xed:template id="research.data.date.repeated">
     <xed:bind xpath="mods:originInfo[@eventType='creation']" />
@@ -577,7 +580,7 @@
                             type="creation" />
         <mir:dateRangeInput xpath="mods:dateCaptured[@encoding='w3cdtf']"
                             class="datetimepicker date-changeable d-none col-md-6"
-                            placeholder="{i18n:mir.placeholder.date}" 
+                            placeholder="{i18n:mir.placeholder.date}"
                             type="collection" />
         <mir:dateRangeInput xpath="mods:dateIssued[@encoding='w3cdtf']"
                             class="datetimepicker date-changeable d-none col-md-6"
@@ -595,7 +598,7 @@
       </div>
     </xed:repeat>
   </xed:template>
-  
+
   <xed:template id="referent.repeated">
     <mir:role.repeated role="ths" label="mir.role.referent" help-text="{i18n:mir.help.role.referent}" />
   </xed:template>
@@ -633,7 +636,7 @@
       </xed:repeat>
     </fieldset>
   </xed:template>
-  
+
   <xed:template id="project.peerReviewed">
     <xed:bind xpath="mods:classification[@authorityURI='https://publikationsserver.phtg.ch/classifications/peer_review'][@displayLabel='peer_review']/@valueURIxEditor">
       <div class="form-group row {$xed-validation-marker}">
@@ -652,7 +655,7 @@
       </div>
     </xed:bind>
   </xed:template>
-  
+
   <xed:template id="project.ageRange">
     <xed:bind xpath="mods:note[@type='ageRange']" initially="notSpecified">
       <div class="form-group row">
@@ -673,28 +676,28 @@
       </div>
     </xed:bind>
   </xed:template>
-  
+
   <xed:template id="project.title.proceedings.relItemsearch.required">
-    <mir:relItemsearch searchengine="title" genre="proceedings" responsefield="mods.title" xpath="mods:titleInfo/mods:title" label="mir.title" 
+    <mir:relItemsearch searchengine="title" genre="proceedings" responsefield="mods.title" xpath="mods:titleInfo/mods:title" label="mir.title"
                        class="required" required="true" required-i18n="mir.validation.title.proceedings"/>
   </xed:template>
-  
+
   <xed:template id="project.monografie.repeated.required">
     <mir:role.repeated role="aut" label="mir.role.author" help-text="{i18n:mir.help.role.author}" class="required"
                        required="true" required-i18n="mir.validation.author" />
   </xed:template>
-  
+
   <xed:template id="title.series.relItemsearch">
     <mir:relItemsearch searchengine="title" genre="book" responsefield="mods.title" xpath="mods:titleInfo/mods:title"
                        label="mir.series.title" help-text="{i18n:mir.help.series.title}" />
   </xed:template>
-  
+
   <xed:template id="project.title.series.relItemsearch.required">
-    <mir:relItemsearch searchengine="title" genre="book" responsefield="mods.title" xpath="mods:titleInfo/mods:title" 
+    <mir:relItemsearch searchengine="title" genre="book" responsefield="mods.title" xpath="mods:titleInfo/mods:title"
                        label="mir.series.title" class="required" required="true"
                        required-i18n="mir.validation.title.book" help-text="{i18n:mir.help.series.title}" />
   </xed:template>
-  
+
   <xed:template id="project.rvk">
     <xed:choose>
       <xed:when test="xed:call-java('org.mycore.common.xml.MCRXMLFunctions','isCurrentUserInRole','admin') or xed:call-java('org.mycore.common.xml.MCRXMLFunctions','isCurrentUserInRole','editor')">
@@ -705,7 +708,7 @@
       </xed:otherwise>
     </xed:choose>
   </xed:template>
-  
+
   <xed:template id="sdnb.repeat">
     <xed:repeat xpath="mods:classification[@authority='sdnb'][@displayLabel='sdnb']" min="1" max="10" method="build">
       <div class="form-group row">
@@ -725,7 +728,7 @@
       </div>
     </xed:repeat>
   </xed:template>
-  
+
   <xed:template id="project.rvk.required">
     <xed:repeat xpath="mods:classification[@authority='rvk'][@displayLabel='rvk']" min="1" max="10" method="build">
       <div class="form-group row required {$xed-validation-marker}">
@@ -747,7 +750,7 @@
     <xed:validate xpath="//mods:mods/mods:classification[@authority='rvk'][@displayLabel='rvk']" required="true" i18n="project.validation.rvk"
                   display="global" />
   </xed:template>
-  
+
   <xed:template id="project.rvk.not_required">
     <xed:repeat xpath="mods:classification[@authority='rvk'][@displayLabel='rvk']" min="1" max="10" method="build">
       <div class="form-group row">
@@ -767,7 +770,7 @@
       </div>
     </xed:repeat>
   </xed:template>
-  
+
   <xed:template id="project.ddc">
     <xed:bind xpath="mods:classification[@authorityURI='https://publikationsserver.phtg.ch/classifications/DDC'][@displayLabel='DDC']/@valueURIxEditor">
       <div class="form-group row {$xed-validation-marker}">
@@ -786,7 +789,7 @@
       </div>
     </xed:bind>
   </xed:template>
-  
+
   <xed:template id="project.courses">
     <xed:bind xpath="mods:classification[@authorityURI='https://publikationsserver.phtg.ch/classifications/courses'][@displayLabel='courses']/@valueURIxEditor">
       <div class="form-group row {$xed-validation-marker}">
@@ -824,7 +827,7 @@
       </div>
     </xed:bind>
   </xed:template>
-  
+
   <xed:template id="project.research_fields">
     <xed:bind xpath="mods:classification[@authorityURI='https://publikationsserver.phtg.ch/classifications/research_fields'][@displayLabel='research_fields']/@valueURIxEditor">
       <div class="form-group row {$xed-validation-marker}">
@@ -843,7 +846,7 @@
       </div>
     </xed:bind>
   </xed:template>
-  
+
   <xed:template id="project.research_projects">
     <xed:bind xpath="mods:classification[@authorityURI='https://publikationsserver.phtg.ch/classifications/research_projects'][@displayLabel='research_projects']/@valueURIxEditor">
       <div class="form-group row {$xed-validation-marker}">
@@ -862,7 +865,7 @@
       </div>
     </xed:bind>
   </xed:template>
-  
+
   <xed:template id="sdnb.repeat">
     <xed:repeat xpath="mods:classification[@authority='sdnb'][@displayLabel='sdnb']" min="1" max="10" method="build">
       <div class="form-group row">
@@ -882,7 +885,7 @@
       </div>
     </xed:repeat>
   </xed:template>
-  
+
   <xed:template id="project.author.repeated.required">
     <mir:person.extended.repeated help-text="{i18n:mir.help.name.repeated}" >
       <xed:include uri="xslStyle:items2options:classification:editor:-1:children:marcrelator" />
@@ -931,8 +934,8 @@
           <!-- <xed:include ref="person.affiliation" />-->
           <!-- <xed:include ref="nameIdentifier.repeated" />-->
           <div class="form-group row {$xed-validation-marker} ">
-          <!-- <div class="form-group required row {$xed-validation-marker} "> -->
-          <!-- Unklar, ob es das Kürzel obligatorisch ist, deswegen erst einmal deaktiviert -->
+            <!-- <div class="form-group required row {$xed-validation-marker} "> -->
+            <!-- Unklar, ob es das Kürzel obligatorisch ist, deswegen erst einmal deaktiviert -->
             <xed:bind xpath="mods:nameIdentifier[@type='phtg']">
               <label class="col-md-3 col-form-label text-right">
                 <xed:output i18n="project.form.label.employee_abbreviation" />
@@ -958,33 +961,33 @@
     <xed:if test="not(../../../../service/servflags[@class='MCRMetaLangText']/servflag[@type='agreement']/text()=$MIR.Agreement.File)">
       <xed:if test="xed:call-java('de.gbv.reposis.phtg.VZGAgreementUtil','isOnlySubmitter')">
         <xed:if test="not(contains($MIR.Agreement.Genres.Skip, concat(',',$genre,',')))">
-            <xed:bind xpath="../../../../service/servflags[@class='MCRMetaLangText']/servflag[@type='agreement']">
-              <fieldset>
-                <legend class="mir-fieldset-legend">
-                  <xed:output i18n="project.form.agreement"/>
-                </legend>
-                <div class="row mt-4 mb-4" id="autor-agreement">
-                  <div class="offset-3 col-md-9">
-                    <div class="form-check required {$xed-validation-marker}">
-                      <!-- how to translate ??? -->
-                      <input class="form-check-input" type="checkbox" value="{$MIR.Agreement.File}"
-                             id="autor-agreement-check"></input>
-                      <label for="autor-agreement-check" class="form-check-label" id="autor-agreement-link">
-                        Ich habe die <a
-                              href="{$WebApplicationBaseURL}content/publish/{$MIR.Agreement.File}"
-                              target="_blank">Einverständniserklärung zur Hinterlegung von Werken im Publikationsserver der
-                        PHTG
-                      </a> gelesen und akzeptiere diese
-                      </label>
-                    </div>
+          <xed:bind xpath="../../../../service/servflags[@class='MCRMetaLangText']/servflag[@type='agreement']">
+            <fieldset>
+              <legend class="mir-fieldset-legend">
+                <xed:output i18n="project.form.agreement"/>
+              </legend>
+              <div class="row mt-4 mb-4" id="autor-agreement">
+                <div class="offset-3 col-md-9">
+                  <div class="form-check required {$xed-validation-marker}">
+                    <!-- how to translate ??? -->
+                    <input class="form-check-input" type="checkbox" value="{$MIR.Agreement.File}"
+                           id="autor-agreement-check"></input>
+                    <label for="autor-agreement-check" class="form-check-label" id="autor-agreement-link">
+                      Ich habe die <a
+                            href="{$WebApplicationBaseURL}content/publish/{$MIR.Agreement.File}"
+                            target="_blank">Einverständniserklärung zur Hinterlegung von Werken im Publikationsserver der
+                      PHTG
+                    </a> gelesen und akzeptiere diese
+                    </label>
                   </div>
                 </div>
-              </fieldset>
-              <xed:validate display="global" xpath="//servflag[@type='agreement']" required="true"
-                            matches="Einverstaendniserklaerung_[0-9]+_v[0-9]+.[0-9]+.pdf"
-                            i18n="project.form.validation.agreement"/>
-            </xed:bind>
-          </xed:if>
+              </div>
+            </fieldset>
+            <xed:validate display="global" xpath="//servflag[@type='agreement']" required="true"
+                          matches="Einverstaendniserklaerung_[0-9]+_v[0-9]+.[0-9]+.pdf"
+                          i18n="project.form.validation.agreement"/>
+          </xed:bind>
+        </xed:if>
       </xed:if>
     </xed:if>
     <xed:cleanup-rule xpath="//servflag[@type='agreement']" relevant-if="string-length(text())&gt;0"/>
