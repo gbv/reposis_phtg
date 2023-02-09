@@ -150,6 +150,18 @@
                     </div>
                   </div>
                 </div>
+                <!-- speech filter -->
+                <div class="form-group row">
+                  <label for="inputSpeech1" class="col-md-3 col-form-label text-right">
+                  </label>
+                  <div class="col-md-9">
+                    <div class="input-group">
+                      <xed:bind xpath="boolean[@operator='not']/condition[@field='mods.genre'][1]/@value" initially="false"	default="speech">
+                        <input type="checkbox" value="true" /> <span class="pl-1"><xed:output i18n="project.editor.search.speech_filter"/></span>
+                      </xed:bind>
+                    </div>
+                  </div>
+                </div>
               </xed:bind>
             <!-- sort -->
               <xed:bind xpath="sortBy/field">
