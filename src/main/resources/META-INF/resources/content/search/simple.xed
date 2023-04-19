@@ -4,7 +4,8 @@
 	<section xml:lang="all" xmlns:xed="http://www.mycore.de/xeditor" xmlns:mir="http://www.mycore.de/mir"
 					 i18n="component.mods.editor.search.simple.pagetitle">
 		<xed:form class="form-horizontal" role="form">
-			<xed:cleanup-rule xpath="//condition"	relevant-if="(string-length(@value) &gt; 0) or value[string-length(text()) &gt; 0 ]"/>
+			<xed:cleanup-rule xpath="//condition"
+												relevant-if="(string-length(@value) &gt; 0) or value[string-length(text()) &gt; 0 ]"/>
 			<xed:cleanup-rule xpath="//boolean" relevant-if="boolean|condition"/>
 			<xed:cleanup-rule xpath="//condition[@selectable='true']" relevant-if="@id = ../selectCondition/@keep"/>
 			<xed:cleanup-rule xpath="//*/@selectable|//selectCondition" relevant-if="false()"/>
@@ -47,8 +48,10 @@
 								<div class="col-md-9">
 									<div class="input-group">
 
-										<xed:bind xpath="condition[@field='derCount'][@value='0'][@operator='&gt;'][@selectable='true'][@id='condFullText']"/>
-										<xed:bind	xpath="condition[@field='worldReadableComplete'][@value='true'][@operator='='][@selectable='true'][@id='condOpenAccess']"/>
+										<xed:bind
+												xpath="condition[@field='derCount'][@value='0'][@operator='&gt;'][@selectable='true'][@id='condFullText']"/>
+										<xed:bind
+												xpath="condition[@field='worldReadableComplete'][@value='true'][@operator='='][@selectable='true'][@id='condOpenAccess']"/>
 										<!-- selectCondition must always be after @selectable conditions for xed:cleanup-rule to work -->
 
 										<xed:bind xpath="selectCondition[@delete='true']/@keep">
@@ -71,23 +74,46 @@
 									</div>
 								</div>
 							</div>
-						  <!-- speech filter -->
-						  <div class="form-group row">
-							<label for="inputSpeech1" class="col-md-3 col-form-label text-right">
-							</label>
-							<div class="col-md-9">
-								<div class="input-group">
-									<xed:bind xpath="boolean[@operator='not']/condition[@field='mods.genre'][1]/@value" initially="false"	default="speech">
-										<input type="checkbox" value="true" /> <span class="pl-1"><xed:output i18n="project.editor.search.speech_filter"/></span>
-									</xed:bind>
+							<!-- speech filter -->
+							<div class="form-group row">
+								<label for="inputSpeech1" class="col-md-3 col-form-label text-right">
+								</label>
+								<div class="col-md-9">
+									<div class="input-group">
+										<xed:bind xpath="boolean[@operator='not'][1]/condition[@field='category.top']/@value"
+															initially="false" default="mir_genres:speech">
+											<input type="checkbox" value="true"/>
+											<span class="pl-1">
+												<xed:output i18n="project.editor.search.speech_filter"/>
+											</span>
+										</xed:bind>
+									</div>
+								</div>
+								<!-- TODO: Clean up rule to remove not needed query part -->
+							</div>
+
+							<!-- thesis filter -->
+							<div class="form-group row">
+								<label for="inputThesis1" class="col-md-3 col-form-label text-right">
+								</label>
+								<div class="col-md-9">
+									<div class="input-group">
+										<xed:bind xpath="boolean[@operator='not'][2]/condition[@field='category.top']/@value"
+															initially="false" default="mir_genres:thesis">
+											<input type="checkbox" value="true"/>
+											<span class="pl-1">
+												<xed:output i18n="project.editor.search.thesis_filter"/>
+											</span>
+										</xed:bind>
+									</div>
 								</div>
 							</div>
-						</div>
+							<!-- TODO: Clean up rule to remove not needed query part -->
 						</div>
 						<!-- submit -->
 						<div class="card-footer clearfix">
 							<div class="float-right">
-								<mir:template name="submitButton" i18n="editor.search.search"	target="servlet_MCRQLSearchServlet"/>
+								<mir:template name="submitButton" i18n="editor.search.search" target="servlet_MCRQLSearchServlet"/>
 							</div>
 						</div>
 					</div>

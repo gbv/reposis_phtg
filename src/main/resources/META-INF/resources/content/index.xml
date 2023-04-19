@@ -31,6 +31,10 @@
               <input type="checkbox" class="custom-control-input" id="switchPaper" />
               <label class="custom-control-label" for="switchPaper">Referate einbeziehen</label>
             </div>
+            <div class="custom-control custom-switch mt-3 ml-4">
+              <input type="checkbox" class="custom-control-input" id="switchThesis" />
+              <label class="custom-control-label" for="switchThesis">Qualifikationsarbeiten einbeziehen</label>
+            </div>
           </form>
         </div>
       </div>
@@ -42,7 +46,7 @@
         var documentsFiltered = 0;
         $.ajax({
           type: "GET",
-          url: "../api/v1/search?q=objectType:mods AND state:published AND NOT(mods.genre:speech)&amp;rows=0&amp;wt=json&amp;json.wrf=?",
+          url: '../api/v1/search?q=objectType:mods AND state:published AND NOT(category.top:"mir_genres:speech") AND NOT(category.top:"mir_genres:thesis")&amp;rows=0&amp;wt=json&amp;json.wrf=?',
           dataType: "jsonp",
           success: function (data) {
             documentsFiltered = $.number(data.response.numFound,0, ',', '.');
@@ -60,7 +64,7 @@
             documentsAll = $.number(data.response.numFound,0, ',', '.');
           },
         });
-        var paperFilter = '<input name="fq" type="hidden" value="NOT(mods.genre:speech)" id="filterPaper" />';
+        var paperFilter = '<input name="fq" type="hidden" value="NOT(category.top:&quot;mir_genres:speech&quot;)" id="filterPaper" />';
         $("#project-searchMainPage").append( paperFilter );
 
         $("#switchPaper").change(function() {
@@ -76,10 +80,27 @@
             }
           }
         });
+
+      var thesisFilter = '<input name="fq" type="hidden" value="NOT(category.top:&quot;mir_genres:thesis&quot;)" id="filterThesis" />';
+      $("#project-searchMainPage").append( thesisFilter );
+
+      $("#switchThesis").change(function() {
+        if ( $("#switchThesis").prop("checked") === true ) {
+          $("#filterThesis").remove();
+          if ( documentsAll ) {
+            $('#project-searchInput').attr('placeholder', 'Suche in ' + documentsAll + ' Dokumenten');
+          }
+        } else {
+          $("#project-searchMainPage").append( thesisFilter );
+          if ( documentsFiltered ) {
+            $('#project-searchInput').attr('placeholder', 'Suche in ' + documentsFiltered + ' Dokumenten');
+          }
+        }
+      });
+
       });
     </script>
   </section>
   <meta>
-    <log date="2015-05-22" time="11:12" labelPath=" » Start" lastEditor="Kathleen Neumann" />
   </meta>
 </MyCoReWebPage>
