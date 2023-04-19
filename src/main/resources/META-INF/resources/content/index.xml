@@ -39,39 +39,64 @@
         </div>
       </div>
     </div>
-    <script type="text/javascript" src="../js/jquery.number.js"></script>
-    <script>
-      $( document ).ready(function() {
+    <script type="text/javascript" src="../js/jquery.number.js"/>
+    <script type="text/javascript" >
+       $( document ).ready(function() {
         var documentsAll = 0;
         var documentsFiltered = 0;
+
+        // not speech and not thesis (filtered)
         $.ajax({
           type: "GET",
-          url: '../api/v1/search?q=objectType:mods AND state:published AND NOT(category.top:"mir_genres:speech") AND NOT(category.top:"mir_genres:thesis")&amp;rows=0&amp;wt=json&amp;json.wrf=?',
+          url: '../api/v1/search?q=objectType:mods AND state:published AND NOT(category.top:&quot;mir_genres:speech&quot;) AND NOT(category.top:&quot;mir_genres:thesis&quot;)&amp;rows=0&amp;wt=json&amp;json.wrf=?',
           dataType: "jsonp",
           success: function (data) {
             documentsFiltered = $.number(data.response.numFound,0, ',', '.');
             if ( documentsFiltered ) {
               $('#project-searchInput').attr('placeholder', 'Suche in ' + documentsFiltered + ' Dokumenten');
             }
-
           },
         });
+
+        // not thesis
         $.ajax({
           type: "GET",
-          url: "../api/v1/search?q=objectType:mods AND state:published&amp;rows=0&amp;wt=json&amp;json.wrf=?",
+          url: '../api/v1/search?q=objectType:mods AND state:published AND NOT(category.top:&quot;mir_genres:thesis&quot;)&amp;rows=0&amp;wt=json&amp;json.wrf=?',
+          dataType: "jsonp",
+          success: function (data) {
+            documentsNotThesis = $.number(data.response.numFound,0, ',', '.');
+          },
+        });
+
+        // not speech
+        $.ajax({
+          type: "GET",
+          url: '../api/v1/search?q=objectType:mods AND state:published AND NOT(category.top:&quot;mir_genres:speech&quot;)&amp;rows=0&amp;wt=json&amp;json.wrf=?',
+          dataType: "jsonp",
+          success: function (data) {
+            documentsNotSpeech = $.number(data.response.numFound,0, ',', '.');
+          },
+        });
+
+        // all
+        $.ajax({
+          type: "GET",
+          url: '../api/v1/search?q=objectType:mods AND state:published&amp;rows=0&amp;wt=json&amp;json.wrf=?',
           dataType: "jsonp",
           success: function (data) {
             documentsAll = $.number(data.response.numFound,0, ',', '.');
           },
         });
+
+
         var paperFilter = '<input name="fq" type="hidden" value="NOT(category.top:&quot;mir_genres:speech&quot;)" id="filterPaper" />';
         $("#project-searchMainPage").append( paperFilter );
 
         $("#switchPaper").change(function() {
-          if ( $("#switchPaper").prop("checked") === true ) {
+          if ( $("#switchPaper").prop("checked") === true &amp;&amp; $("#switchThesis").prop("checked") === false ) {
             $("#filterPaper").remove();
-            if ( documentsAll ) {
-              $('#project-searchInput').attr('placeholder', 'Suche in ' + documentsAll + ' Dokumenten');
+            if ( documentsNotThesis ) {
+              $('#project-searchInput').attr('placeholder', 'Suche in ' + documentsNotThesis + ' Dokumenten');
             }
           } else {
             $("#project-searchMainPage").append( paperFilter );
@@ -81,23 +106,27 @@
           }
         });
 
-      var thesisFilter = '<input name="fq" type="hidden" value="NOT(category.top:&quot;mir_genres:thesis&quot;)" id="filterThesis" />';
-      $("#project-searchMainPage").append( thesisFilter );
+        var thesisFilter = '<input name="fq" type="hidden" value="NOT(category.top:&quot;mir_genres:thesis&quot;)" id="filterThesis" />';
+        $("#project-searchMainPage").append( thesisFilter );
 
-      $("#switchThesis").change(function() {
-        if ( $("#switchThesis").prop("checked") === true ) {
-          $("#filterThesis").remove();
-          if ( documentsAll ) {
-            $('#project-searchInput').attr('placeholder', 'Suche in ' + documentsAll + ' Dokumenten');
+        $("#switchThesis").change(function() {
+          if ( $("#switchThesis").prop("checked") === true &amp;&amp; $("#switchPaper").prop("checked") === false ) {
+            $("#filterThesis").remove();
+            if ( documentsNotSpeech ) {
+              $('#project-searchInput').attr('placeholder', 'Suche in ' + documentsNotSpeech + ' Dokumenten');
+            }
+          } else if ( $("#switchThesis").prop("checked") === true &amp;&amp; $("#switchPaper").prop("checked") === true ) {
+            $("#filterThesis").remove();
+            if ( documentsAll ) {
+              $('#project-searchInput').attr('placeholder', 'Suche in ' + documentsAll + ' Dokumenten');
+            }
+          } else {
+            $("#project-searchMainPage").append( thesisFilter );
+            if ( documentsFiltered ) {
+              $('#project-searchInput').attr('placeholder', 'Suche in ' + documentsFiltered + ' Dokumenten');
+            }
           }
-        } else {
-          $("#project-searchMainPage").append( thesisFilter );
-          if ( documentsFiltered ) {
-            $('#project-searchInput').attr('placeholder', 'Suche in ' + documentsFiltered + ' Dokumenten');
-          }
-        }
-      });
-
+        });
       });
     </script>
   </section>
