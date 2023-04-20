@@ -373,6 +373,25 @@
     <xed:include ref="comment.complex" />
   </xed:template>
 
+  <xed:template id="genres.other">
+    <xed:include ref="title.original" />
+    <xed:include ref="project.author.repeated.required" />
+    <xed:include ref="institutes.repeat" />
+    <xed:include ref="editor.repeated" />
+    <xed:include ref="host.volume" />
+    <xed:include ref="year.issued" />
+    <xed:include ref="type.of.resource.repeated" />
+    <xed:include ref="language" />
+    <xed:include ref="identifier.managed" />
+    <xed:include ref="doi.handle.urn.repeated" />
+    <xed:include ref="link.repeated" />
+    <xed:include ref="project.rvk" />
+    <xed:include ref="subject.simple" />
+    <xed:include ref="abstract.simple" />
+    <xed:include ref="rights" />
+    <xed:include ref="comment.complex" />
+  </xed:template>
+
   <xed:template id="genres.research_material">
     <xed:include ref="title.original" />
     <xed:include ref="project.author.repeated.required" />
