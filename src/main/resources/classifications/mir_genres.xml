@@ -89,6 +89,12 @@
       <label xml:lang="en" text="Collection" />
       <label xml:lang="x-hosts" text="series standalone" />
     </category>
+		<category ID="other">
+			<label xml:lang="x-mapping" text="diniPublType:other diniPublType2022:Other" />
+			<label xml:lang="en" text="Other" />
+			<label xml:lang="de" text="Sonstige" />
+			<label xml:lang="x-hosts" text="standalone" />
+		</category>
     <category ID="proceedings">
       <label xml:lang="x-mapping" text="marcgt:conference_publication diniPublType:conferenceObject diniPublType2022:ConferenceProceedings schemaOrg:Book" />
       <label xml:lang="en" text="Proceedings" />
@@ -108,12 +114,6 @@
       <label xml:lang="de" text="Zeitung" />
       <label xml:lang="x-hosts" text="standalone" />
     </category>
-		<category ID="other">
-			<label xml:lang="x-mapping" text="diniPublType:other diniPublType2022:Other" />
-			<label xml:lang="en" text="Other" />
-			<label xml:lang="de" text="Sonstige" />
-			<label xml:lang="x-hosts" text="standalone" />
-		</category>
     <category ID="thesis">
 			<label xml:lang="de" text="Qualifikationsarbeiten" />
 			<label xml:lang="en" text="Qualification work" />
