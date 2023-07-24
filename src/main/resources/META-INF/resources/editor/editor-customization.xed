@@ -462,7 +462,7 @@
     <xed:include ref="creator.college" />
     <xed:include ref="type.of.resource.repeated" />
     <xed:include ref="language" />
-    <xed:include ref="rights" />
+    <xed:include ref="rights.reserved" />
     <xed:include ref="abstract.repeated" />
     <xed:include ref="comment.complex" />
   </xed:template>
@@ -487,7 +487,7 @@
     <xed:include ref="project.rvk" />
     <xed:include ref="subject.simple" />
     <xed:include ref="abstract.repeated" />
-    <xed:include ref="rights" />
+    <xed:include ref="rights.reserved" />
     <xed:include ref="embargo.datetimepicker" />
     <xed:include ref="institutes.repeat" />
     <xed:include ref="comment.complex" />
@@ -513,7 +513,7 @@
     <xed:include ref="project.rvk" />
     <xed:include ref="subject.simple" />
     <xed:include ref="abstract.repeated" />
-    <xed:include ref="rights" />
+    <xed:include ref="rights.reserved" />
     <xed:include ref="embargo.datetimepicker" />
     <xed:include ref="institutes.repeat" />
     <xed:include ref="comment.complex" />
@@ -530,7 +530,7 @@
     <xed:include ref="creator.college" />
     <xed:include ref="type.of.resource.repeated" />
     <xed:include ref="language" />
-    <xed:include ref="rights" />
+    <xed:include ref="rights.reserved" />
     <xed:include ref="abstract.repeated" />
     <xed:include ref="comment.complex" />
   </xed:template>
@@ -546,7 +546,7 @@
     <xed:include ref="creator.college" />
     <xed:include ref="type.of.resource.repeated" />
     <xed:include ref="language" />
-    <xed:include ref="rights" />
+    <xed:include ref="rights.reserved" />
     <xed:include ref="abstract.repeated" />
     <xed:include ref="comment.complex" />
   </xed:template>
@@ -620,6 +620,24 @@
 
   <xed:template id="referent.repeated">
     <mir:role.repeated role="ths" label="mir.role.referent" help-text="{i18n:mir.help.role.referent}" />
+  </xed:template>
+
+  <xed:template id="rights.reserved">
+    <xed:bind xpath="mods:accessCondition[@type='use and reproduction']" initially="rights_reserved">
+      <div class="form-group row required {$xed-validation-marker}">
+        <label class="col-md-3 col-form-label text-right">
+          <xed:output i18n="mir.rights" />
+          :
+        </label>
+        <div class="col-md-6">
+          <select class="form-control form-control-inline">
+            <option value="rights_reserved" />
+            <xed:include uri="xslStyle:license-filter,items2options?genre={$genre_intern}:classification:editor:-1:children:mir_licenses" />
+          </select>
+        </div>
+        <mir:help-pmud help-text="{i18n:mir.help.rights}" />
+      </div>
+    </xed:bind>
   </xed:template>
 
   <xed:template id="coreferent.repeated">
