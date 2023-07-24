@@ -16,6 +16,13 @@ $(document).ready(function() {
       if ($("input[name='/mycoreobject/metadata[1]/def.modsContainer[1]/modsContainer[1]/mods:mods[1]/mods:originInfo[2]/mods:publisher[1]']").val()  == '') {
         $("input[name='/mycoreobject/metadata[1]/def.modsContainer[1]/modsContainer[1]/mods:mods[1]/mods:originInfo[2]/mods:publisher[1]']").val('Pädagogische Hochschule Thurgau');
       };
+  } else if ($("input[name='genre']").val() == 'master_thesis' ) {
+      if ($("input[name='/mycoreobject/metadata[1]/def.modsContainer[1]/modsContainer[1]/mods:mods[1]/mods:originInfo[2]/mods:place[1]/mods:placeTerm[1]']").val()  == '') {
+        $("input[name='/mycoreobject/metadata[1]/def.modsContainer[1]/modsContainer[1]/mods:mods[1]/mods:originInfo[2]/mods:place[1]/mods:placeTerm[1]']").val('Kreuzlingen, Konstanz');
+      };
+      if ($("input[name='/mycoreobject/metadata[1]/def.modsContainer[1]/modsContainer[1]/mods:mods[1]/mods:originInfo[2]/mods:publisher[1]']").val()  == '') {
+        $("input[name='/mycoreobject/metadata[1]/def.modsContainer[1]/modsContainer[1]/mods:mods[1]/mods:originInfo[2]/mods:publisher[1]']").val('Pädagogische Hochschule Thurgau, Universität Konstanz');
+      };
   };
 
   // spam protection for mails
