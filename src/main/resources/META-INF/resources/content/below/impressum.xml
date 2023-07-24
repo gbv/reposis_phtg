@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MyCoReWebPage><section xml:lang="de" title="Impressum"><div class="row">
+<MyCoReWebPage><section xml:lang="de" title="Impressum">
+  <head>
+    <meta name="title" content="Impressum"/>
+    <meta name='description' content="Anbieter dieser Internetpräsenz ist im Rechtssinne die Pädagogische Hochschule Thurgau" />
+  </head>
+<div class="row">
 <div class="col-md-12" lang="de">
 <h1>Impressum</h1>
 

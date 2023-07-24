@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MyCoReWebPage><section xml:lang="de" title="HAFTUNGSHINWEISE"><div class="row">
+<MyCoReWebPage><section xml:lang="de" title="HAFTUNGSHINWEISE">
+	<head>
+		<meta name="title" content="Haftungshinweise"/>
+		<meta name='description' content="Rechtliche Hinweise zum Repositorium der Pädagogische Hochschule Thurgau" />
+	</head>
+<div class="row">
 <div class="col-md-12" lang="de">
 <h1>Rechtliche Hinweise</h1>
 

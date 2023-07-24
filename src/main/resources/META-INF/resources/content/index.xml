@@ -2,7 +2,15 @@
 <!DOCTYPE MyCoReWebPage>
 <MyCoReWebPage>
 
-  <section xml:lang="de" title="Willkommen bei der PHTG">
+  <section xml:lang="de" title="Publikationsserver der PHTG">
+    <head>
+      <meta name="title" content="Publikationsserver der PHTG"/>
+      <meta name='description' content="Der Publikationsserver der PHTG ist das institutionelle Repositorium der
+                                        Pädagogischen Hochschule Thurgau. Darüber werden wissenschaftliche und
+                                        anwendungsbezogene Publikationen von Autor:innen der PHTG im Sinne von
+                                        Open-Access veröffentlicht." />
+    </head>
+
     <div class="jumbotwo" id="phtg-index-search" style="margin-top:50px;">
       <div class="row">
         <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2" lang="de">

@@ -71,7 +71,7 @@
             <label xml:lang="de">Publizieren</label>
             <label xml:lang="en">Publish</label>
         </item>
-        <item href="/content/publish/publish_with_ppn.xml" type="intern" replaceMenu="false" constrainPopUp="false">
+        <item href="/content/publish/index.xml" type="intern" replaceMenu="false" constrainPopUp="false">
             <label xml:lang="de">mit Metadatenübernahme</label>
             <label xml:lang="en">with metadata import</label>
         </item>

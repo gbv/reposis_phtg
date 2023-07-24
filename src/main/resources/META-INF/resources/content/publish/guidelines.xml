@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MyCoReWebPage><section xml:lang="de" title="Leitlinie Publikationsserver"><div>
+<MyCoReWebPage><section xml:lang="de" title="Leitlinien">
+  <head>
+    <meta name="title" content="Leitlinien"/>
+    <meta name='description' content="Inhaltliche Ausrichtung, angebotene Services und technische Aspekte." />
+  </head>
+<div>
 <h2>Leitlinien zum Publizieren im Publikationsserver der PHTG</h2>
 
 <p>Der Publikationsserver der PHTG ist das institutionelle Repositorium der Pädagogischen Hochschule Thurgau (PHTG) mit dem Zweck, wissenschaftliche und anwendungsbezogene Publikationen und Forschungsergebnisse von Mitarbeitenden der PHTG dauerhaft und unter Einhaltung gängiger Standards zu veröffentlichen. Der Betrieb des Publikationsservers der PHTG erfolgt durch die Campus-Bibliothek, die damit den technischen und organisatorischen Rahmen sicherstellt, um die in der <a href="https://qm.phtg.ch/File/CoreDownload?id=2768&amp;filename=Open_Access-Policy_PHTG_20220101.pdf&amp;langId=1">Open-Access-Policy der PHTG</a> formulierten Richtlinien umzusetzen.</p>

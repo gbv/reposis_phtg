@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MyCoReWebPage>
 
+  <section xml:lang="de">
+    <head>
+      <meta name="title" content="Erweiterte Suche" />
+      <meta name="description" content="Erweiterte Suche im Repositorium" />
+    </head>
+  </section>
+  <section xml:lang="en">
+    <head>
+      <meta name="title" content="Advanced Search" />
+      <meta name="description" content="Advanced search in the document server" />
+    </head>
+  </section>
+
   <section xml:lang="all" xmlns:xed="http://www.mycore.de/xeditor"
     xmlns:mir="http://www.mycore.de/mir"
     i18n="component.mods.editor.search.complex.pagetitle">

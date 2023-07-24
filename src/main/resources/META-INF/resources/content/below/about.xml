@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE MyCoReWebPage>
 <MyCoReWebPage>
-    <section xml:lang="de" title="Impressum">
+    <section xml:lang="de" title="Über den Publikationsserver der PHTG">
+        <head>
+            <meta name="title" content="Über den Publikationsserver der PHTG"/>
+            <meta name='description' content="Informationen zum Publikationsserver der PHTG" />
+        </head>
         <div class="row">
             <div class="col-md-12" lang="de">
                 <h1>Über den Publikationsserver der PHTG</h1>

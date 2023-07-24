@@ -3,6 +3,19 @@
 
 <MyCoReWebPage>
 
+    <section xml:lang="de">
+        <head>
+            <meta name="title" content="Suche nach RVK-Systematik"/>
+            <meta name="description" content="Suche nach RVK-Systematik im Repositorium"/>
+        </head>
+    </section>
+    <section xml:lang="en">
+        <head>
+            <meta name="title" content="Search for RVK systematics"/>
+            <meta name="description" content="Search for RVK systematics in the repository"/>
+        </head>
+    </section>
+
     <section i18n="browse.rvk.title" xml:lang="all">
         <div class="row">
             <div class="col-md-8" lang="de">

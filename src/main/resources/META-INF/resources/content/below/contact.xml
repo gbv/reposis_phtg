@@ -2,6 +2,10 @@
 <!DOCTYPE MyCoReWebPage>
 <MyCoReWebPage>
     <section xml:lang="de" title="Kontakt">
+        <head>
+            <meta name="title" content="Kontakt"/>
+            <meta name='description' content="Der Publikationsserver der PHTG wird von der Campus-Bibliothek betrieben" />
+        </head>
         <div class="row">
             <div class="col-md-12" lang="de">
                 <h2>Kontakt</h2>

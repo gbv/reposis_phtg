@@ -3,6 +3,10 @@
 <MyCoReWebPage>
 
   <section xml:lang="de" title="Veröffentlichen von E-Publikationen">
+    <head>
+      <meta name="title" content="Veröffentlichen von E-Publikationen"/>
+      <meta name='description' content="Kontaktformular zum veröffentlichen von E-Publikationen" />
+    </head>
     <xed:form xmlns:xed="http://www.mycore.de/xeditor" method="post" role="form" class="form-horizontal">
       <xed:bind xpath="/contactMail">
         <h1>Kontakt</h1>

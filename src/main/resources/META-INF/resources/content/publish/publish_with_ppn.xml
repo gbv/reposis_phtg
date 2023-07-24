@@ -5,6 +5,10 @@
     <script src='../../js/mir/select-doctype.min.js' />
   </section>
   <section title="Publizieren" xml:lang="de">
+    <head>
+      <meta name="title" content="Publizieren"/>
+      <meta name="description" content="Dokumente einreichen"/>
+    </head>
     <form id="submit_publication" class="form-horizontal" role="form" method="get" action="../../editor/editor-dynamic.xed">
       
       <h1>Publizieren mit Metadatenübernahme</h1>

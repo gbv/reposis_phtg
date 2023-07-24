@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MyCoReWebPage><section xml:lang="de" title="Hinweise für Autoren"><div>
+<MyCoReWebPage><section xml:lang="de" title="Hinweise für Autorinnen und Autoren">
+	<head>
+		<meta name="title" content="Hinweise für Autorinnen und Autoren"/>
+		<meta name='description' content="Informationen und Anleitung zur Erfassung von Publikationen" />
+	</head>
+	<div>
 <h2>Hinweise für Autorinnen und Autoren</h2>
 
 <p>Als Mitarbeiterin bzw. Mitarbeiter der PHTG können Sie Ihre elektronischen Publikationen (z.B. Zeitschriftenartikel, Buchkapitel, Monografien, Tagungsberichte, Praxismaterialien, Forschungsdaten etc.) auf dem Publikationsserver der PHTG im Sinne von Open Access veröffentlichen. Jeder Eintrag erhält dabei einen persistenten Identifikator (DOI, URN). Die Volltexte sind frei und dauerhaft zugänglich, falls die jeweiligen Verlagsbestimmungen dies erlauben (die entsprechenden Rechte können teilweise oder vollständig eingeschränkt sein). Die Metadaten werden in internationalen Fachdatenbanken und Suchmaschinen indexiert (z.B. GoogleScholar, BASE, OpenAire u.a.) und über eine Schnittstelle an die Mitarbeitenden-Profile auf der Website der PHTG geliefert.</p>
