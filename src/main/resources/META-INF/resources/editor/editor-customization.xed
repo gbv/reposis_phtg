@@ -534,12 +534,11 @@
   </xed:template>
 
   <xed:template id="genres.matura">
-    <xed:include ref="titles.thesis" />
+    <xed:include ref="title.original" />
     <xed:include ref="author.repeated" />
     <xed:include ref="referent.repeated" />
     <xed:include ref="coreferent.repeated" />
     <xed:include ref="year.issued" />
-    <xed:include ref="project.courses" />
     <xed:include ref="creator.place.college" />
     <xed:include ref="creator.college" />
     <xed:include ref="type.of.resource.repeated" />
