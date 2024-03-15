@@ -48,11 +48,10 @@
 							<!-- Content -->
 							<mir:template name="textInput" xpath="condition[@field='content']/@value" id="inputContent1"
 														i18n="editor.search.derivate" tooltip="editor.search.derivate.tooltip"/>
-							<!-- Institution -->
-							<mir:template name="selectInput" xpath="condition[@field='category'][1]/@value"
-														id="inputInst1" i18n="editor.search.mir.institute"
-														tooltip="editor.search.mir.institute.tooltip"
-														uri="xslStyle:items2options:classification:editorComplete:-1:children:mir_institutes"/>
+							<!-- Forschungsfeld -->
+							<mir:template name="selectInput" xpath="condition[@field='category.top'][1]/@value" id="inputResearchArea1"
+														i18n="editor.search.project.research_areas" tooltip="editor.search.project.research_areas.tooltip"
+														uri="xslStyle:items2options:classification:editorComplete:-1:children:research_areas"/>
 							<!--Fulltext -->
 							<div class="form-group row">
 								<label for="inputFulltext1" class="col-md-3 col-form-label text-right">

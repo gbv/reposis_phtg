@@ -89,11 +89,11 @@
                 <mir:template name="textInput"
                   xpath="condition[@field='id,isbn,mods.identifier']/@value" id="inputIdentifier1"
                   i18n="editor.search.mir.identifier" tooltip="editor.search.mir.identifier.tooltip" />
-              <!-- Institution -->
-                <mir:template name="selectInput"
-                  xpath="condition[@field='category.top'][1]/@value" id="inputInst1"
-                  i18n="editor.search.mir.institute" tooltip="editor.search.mir.institute.tooltip"
-                  uri="xslStyle:items2options:classification:editorComplete:-1:children:mir_institutes" />
+              <!-- Forschungsfeld -->
+              <mir:template name="selectInput"
+                  xpath="condition[@field='category.top'][1]/@value" id="inputResearchArea1"
+                  i18n="editor.search.project.research_areas" tooltip="editor.search.project.research_areas.tooltip"
+                  uri="xslStyle:items2options:classification:editorComplete:-1:children:research_areas"/>
               <!-- RVK Sachgruppe -->
               <mir:template name="selectInput"
                   xpath="condition[@field='category.top'][2]/@value" id="inputRVK1"
