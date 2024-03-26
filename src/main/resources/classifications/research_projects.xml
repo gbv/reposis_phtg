@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="research_projects">
+  <label xml:lang="de" text="Forschungsprojekte" description="Liste der Forschungsprojekte" />
+  <label xml:lang="en" text="research projects" description="List of research projects" />
+  <label xml:lang="x-uri"
+    text="https://www.publikationsserver.phtg.ch/classifications/research_projects" />
+  <categories>
+    <category ID="DiaMaNt">
+      <label xml:lang="de" text="Lerngelegenheiten für Lehrstudierende im sozialen Netzwerk: Praxisfeld aus allgemein- und mathematikdidaktischer Perspektive (DiaMaNt)" />
+    </category>
+    <category ID="Bildungsgerechtigkeitgeschichte">
+      <label xml:lang="de" text="Geschichte der Bildungsgerechtigkeit" />
+    </category>
+    <category ID="EmTiK">
+      <label xml:lang="de" text="Erwerbsunterstützung mündlicher Textfähigkeiten im Kindergarten (EmTiK)" />
+    </category>
+  </categories>
+</mycoreclass>
