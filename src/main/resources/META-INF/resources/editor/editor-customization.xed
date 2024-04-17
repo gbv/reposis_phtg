@@ -9,8 +9,8 @@
     <xed:remove ref="sdnb.repeat" />
     <xed:remove ref="institutes.repeat" />
     <xed:include ref="project.research_areas"                   after="project.ddc" />
-    <xed:include ref="project.courses"                          after="project.research_areas" />
-    <xed:include ref="project.research_areas"                   after="project.research_project" />
+    <xed:include ref="project.research_project"                 after="project.research_areas" />
+    <xed:include ref="project.courses"                          after="project.research_project" />
     <xed:include ref="project.peerReviewed"                     after="project.courses" />
     <xed:include ref="project.oa_status"                        after="rights" />
   </xed:modify>
