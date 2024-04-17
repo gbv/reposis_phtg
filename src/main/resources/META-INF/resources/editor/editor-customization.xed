@@ -10,6 +10,7 @@
     <xed:remove ref="institutes.repeat" />
     <xed:include ref="project.research_areas"                   after="project.ddc" />
     <xed:include ref="project.courses"                          after="project.research_areas" />
+    <xed:include ref="project.research_areas"                   after="project.research_project" />
     <xed:include ref="project.peerReviewed"                     after="project.courses" />
     <xed:include ref="project.oa_status"                        after="rights" />
   </xed:modify>
@@ -18,6 +19,7 @@
     <xed:include ref="title.original" />
     <xed:include ref="project.author.repeated.required" />
     <xed:include ref="project.research_areas" />
+    <xed:include ref="project.research_projects" />
     <xed:if test="$host='standalone'">
       <xed:include ref="year.issued" />
       <xed:include ref="extent" />
@@ -39,6 +41,7 @@
     <xed:include ref="title.original" />
     <xed:include ref="project.author.repeated.required" />
     <xed:include ref="project.research_areas" />
+    <xed:include ref="project.research_projects" />
     <xed:if test="$host='standalone'">
       <xed:include ref="year.issued" />
       <xed:include ref="extent" />
@@ -60,6 +63,7 @@
     <xed:include ref="title.original" />
     <xed:include ref="project.author.repeated.required" />
     <xed:include ref="project.research_areas" />
+    <xed:include ref="project.research_projects" />
     <xed:if test="$host='standalone'">
       <xed:include ref="year.issued" />
       <xed:include ref="extent" />
@@ -88,6 +92,7 @@
     </xed:if>
     <xed:include ref="project.author.repeated.required" />
     <xed:include ref="project.research_areas" />
+    <xed:include ref="project.research_projects" />
     <xed:if test="$host='standalone'">
       <xed:include ref="year.issued" />
     </xed:if>
@@ -131,6 +136,7 @@
       <xed:include ref="year.issued" />
     </xed:if>
     <xed:include ref="project.research_areas" />
+    <xed:include ref="project.research_projects" />
     <xed:include ref="language" />
     <xed:include ref="project.rvk" />
     <xed:include ref="subject.simple" />
@@ -143,6 +149,7 @@
     <xed:include ref="title.original" />
     <xed:include ref="project.author.repeated.required" />
     <xed:include ref="project.research_areas" />
+    <xed:include ref="project.research_projects" />
     <xed:include ref="year.issued" />
     <xed:include ref="language" />
     <xed:include ref="identifier.managed" />
@@ -159,6 +166,7 @@
     <xed:include ref="title.original" />
     <xed:include ref="project.author.repeated.required" />
     <xed:include ref="project.research_areas" />
+    <xed:include ref="project.research_projects" />
     <xed:if test="$host='standalone'">
       <xed:include ref="year.issued" />
       <xed:include ref="extent" />
@@ -215,6 +223,7 @@
     <xed:include ref="embargo.datetimepicker" />
     <xed:include ref="rights" />
     <xed:include ref="project.research_areas" />
+    <xed:include ref="project.research_projects" />
     <xed:include ref="comment.complex" />
   </xed:template>
 
@@ -239,6 +248,7 @@
     <xed:include ref="embargo.datetimepicker" />
     <xed:include ref="rights" />
     <xed:include ref="project.research_areas" />
+    <xed:include ref="project.research_projects" />
     <xed:include ref="comment.complex" />
   </xed:template>
 
@@ -332,6 +342,7 @@
     <xed:include ref="project.peerReviewed" />
     <xed:include ref="rights" />
     <xed:include ref="project.research_areas" />
+    <xed:include ref="project.research_projects" />
     <xed:include ref="comment.complex" />
   </xed:template>
 
@@ -352,6 +363,7 @@
     <xed:include ref="title.original" />
     <xed:include ref="project.author.repeated.required" />
     <xed:include ref="project.research_areas" />
+    <xed:include ref="project.research_projects" />
     <xed:include ref="year.issued" />
     <xed:include ref="place" />
     <xed:include ref="publisher" />
@@ -376,6 +388,7 @@
     <xed:include ref="title.original" />
     <xed:include ref="project.author.repeated.required" />
     <xed:include ref="project.research_areas" />
+    <xed:include ref="project.research_projects" />
     <xed:include ref="editor.repeated" />
     <xed:include ref="host.volume" />
     <xed:include ref="year.issued" />
@@ -395,6 +408,7 @@
     <xed:include ref="title.original" />
     <xed:include ref="project.author.repeated.required" />
     <xed:include ref="project.research_areas" />
+    <xed:include ref="project.research_projects" />
     <xed:include ref="editor.repeated" />
     <xed:include ref="host.volume" />
     <xed:include ref="year.issued" />
@@ -412,6 +426,7 @@
     <xed:include ref="title.original" />
     <xed:include ref="project.author.repeated.required" />
     <xed:include ref="project.research_areas" />
+    <xed:include ref="project.research_projects" />
     <xed:include ref="editor.repeated" />
     <xed:include ref="host.volume" />
     <xed:include ref="year.issued" />
@@ -447,6 +462,7 @@
     <xed:include ref="rights" />
     <xed:include ref="embargo.datetimepicker" />
     <xed:include ref="project.research_areas" />
+    <xed:include ref="project.research_projects" />
     <xed:include ref="comment.complex" />
   </xed:template>
 
@@ -473,22 +489,11 @@
     <xed:include ref="coreferent.repeated" />
     <xed:include ref="year.issued" />
     <xed:include ref="project.courses" />
-    <xed:include ref="date.submitted.datetimepicker" />
-    <xed:include ref="date.accepted.datetimepicker" />
-    <xed:include ref="shelfmark" />
     <xed:include ref="creator.place.college" />
     <xed:include ref="creator.college" />
-    <xed:include ref="publisher" />
-    <xed:include ref="extent" />
     <xed:include ref="type.of.resource.repeated" />
     <xed:include ref="language" />
-    <xed:include ref="identifier.isbn" />
-    <xed:include ref="project.rvk" />
-    <xed:include ref="subject.simple" />
-    <xed:include ref="abstract.repeated" />
     <xed:include ref="rights.reserved" />
-    <xed:include ref="embargo.datetimepicker" />
-    <xed:include ref="project.research_areas" />
     <xed:include ref="comment.complex" />
   </xed:template>
 
@@ -515,6 +520,7 @@
     <xed:include ref="rights.reserved" />
     <xed:include ref="embargo.datetimepicker" />
     <xed:include ref="project.research_areas" />
+    <xed:include ref="project.research_projects" />
     <xed:include ref="comment.complex" />
   </xed:template>
 
@@ -568,6 +574,7 @@
     <xed:include ref="cartographics" />
     <xed:include ref="related.item.link" />
     <xed:include ref="project.research_areas" />
+    <xed:include ref="project.research_projects" />
     <xed:include ref="openAIRE" />
     <xed:include ref="comment.complex" />
   </xed:template>
@@ -878,6 +885,25 @@
           </select>
         </div>
         <mir:help-pmud help-text="{i18n:project.help.research_areas}" pmud="false" />
+      </div>
+    </xed:bind>
+  </xed:template>
+
+  <xed:template id="project.research_projects">
+    <xed:bind xpath="mods:classification[@authorityURI='https://publikationsserver.phtg.ch/classifications/research_projects'][@displayLabel='research_projects']/@valueURIxEditor">
+      <div class="form-group row {$xed-validation-marker}">
+        <label class="col-md-3 col-form-label text-right">
+          <xed:output i18n="project.form.label.research_projects" />
+        </label>
+        <div class="col-md-6">
+          <select class="form-control form-control-inline">
+            <option value="">
+              <xed:output i18n="mir.select.optional" />
+            </option>
+            <xed:include uri="xslStyle:items2options:classification:editor:-1:children:research_projects" />
+          </select>
+        </div>
+        <mir:help-pmud help-text="{i18n:project.help.research_projects}" pmud="false" />
       </div>
     </xed:bind>
   </xed:template>

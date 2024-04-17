@@ -55,6 +55,10 @@
             <label xml:lang="de">In Forschungsbereichen</label>
             <label xml:lang="en">in research areas</label>
         </item>
+        <item href="/content/browse/research_projects.xml" type="intern" replaceMenu="false" constrainPopUp="false">
+            <label xml:lang="de">In Forschungsprojekten</label>
+            <label xml:lang="en">in research projects</label>
+        </item>
         <item href="/content/browse/rvk.xml" type="intern" replaceMenu="false" constrainPopUp="false">
             <label xml:lang="de">Nach Sachgebiet</label>
             <label xml:lang="en">by subject area</label>
