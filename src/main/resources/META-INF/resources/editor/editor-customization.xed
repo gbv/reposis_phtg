@@ -494,9 +494,6 @@
     <xed:include ref="type.of.resource.repeated" />
     <xed:include ref="language" />
     <xed:include ref="rights.reserved" />
-    <xed:include ref="embargo.datetimepicker" />
-    <xed:include ref="project.research_areas" />
-    <xed:include ref="project.research_projects" />
     <xed:include ref="comment.complex" />
   </xed:template>
 
