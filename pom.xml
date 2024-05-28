@@ -24,7 +24,7 @@
     <version>2022.06-SNAPSHOT</version>
   </parent>
 
-  <groupId>de.gbv.phtg</groupId>
+  <groupId>de.gbv.reposis_phtg</groupId>
   <artifactId>reposis_phtg</artifactId>
   <version>2022.06-SNAPSHOT</version>
   <properties>
@@ -115,6 +115,7 @@
       <groupId>org.jsoup</groupId>
       <artifactId>jsoup</artifactId>
     </dependency>
+
     <dependency>
       <groupId>org.mycore</groupId>
       <artifactId>mycore-base</artifactId>
@@ -123,16 +124,14 @@
       <groupId>org.mycore</groupId>
       <artifactId>selenium-utils</artifactId>
     </dependency>
+  
     <dependency>
       <groupId>de.gbv.reposis</groupId>
       <artifactId>reposis_common</artifactId>
       <version>2022.06-SNAPSHOT</version>
       <scope>runtime</scope>
     </dependency>
-    <dependency>
-      <groupId>org.mycore</groupId>
-      <artifactId>selenium-utils</artifactId>
-    </dependency>
+
     <dependency>
       <groupId>org.mycore</groupId>
       <artifactId>mycore-base</artifactId>
@@ -140,4 +139,6 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  </project>
+
+
+</project>
