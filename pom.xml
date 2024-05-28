@@ -124,19 +124,22 @@
       <groupId>org.mycore</groupId>
       <artifactId>selenium-utils</artifactId>
     </dependency>
-    <dependency>
-      <groupId>org.mycore</groupId>
-      <artifactId>mycore-base</artifactId>
-      <type>test-jar</type>
-      <scope>test</scope>
-    </dependency>
-
+  
     <dependency>
       <groupId>de.gbv.reposis</groupId>
       <artifactId>reposis_common</artifactId>
       <version>2022.06-SNAPSHOT</version>
       <scope>runtime</scope>
     </dependency>
+
+    <dependency>
+      <groupId>org.mycore</groupId>
+      <artifactId>mycore-base</artifactId>
+      <type>test-jar</type>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
+  
+
 
 </project>
