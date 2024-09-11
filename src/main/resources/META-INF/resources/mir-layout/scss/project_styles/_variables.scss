@@ -28,18 +28,20 @@ $green-light:   #f7faef;
 $blue-dark:     #1a3260;
 $blue-medium:   #3e609f;
 
+$green24:        #005046;
+$green24-medium: #007a6b;
 
 // --------------------------------------------------
 //  overwrite bootstrap
 // --------------------------------------------------
 
-$primary: $green;
-$secondary: $green-medium;
+$primary: $green24-medium;
+$secondary: $gray-dark;
 
 $text-color: $black-dark;
 
-$link-color: $blue-medium;
-$link-hover-color: $blue-medium;
+$link-color: $green24;
+$link-hover-color: $green24-medium;
 $link-hover-decoration: underline dotted;
 
 $font-size-base: 1rem; //.875rem
@@ -60,5 +62,5 @@ $border-radius-lg: $border-radius;
 $input-border-radius: $border-radius;
 
 $dropdown-link-color: $black-dark;
-$dropdown-link-hover-color: $green;
+$dropdown-link-hover-color: $green24;
 $dropdown-link-hover-bg: white;

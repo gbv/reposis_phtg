@@ -6,14 +6,6 @@
 // set the defaults for all responsive levels here
 // no (xl) media query necessary (desktop first)
 
-// logo and menu container
-#project_logo_box {
-  img {
-    width: 500px;
-    height: 65px;
-  }
-}
-
 // Large devices (desktops) and below: <= 1200px
 @include media-breakpoint-down(lg) {
   // add/overwrite styles for responsive level lg and lower
