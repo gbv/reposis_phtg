@@ -36,7 +36,9 @@ $green24-medium: #007a6b;
 // --------------------------------------------------
 
 $primary: $green24-medium;
-$secondary: $gray-dark;
+$secondary: $green24-medium;
+
+$success: $green24-medium;
 
 $text-color: $black-dark;
 
@@ -45,7 +47,7 @@ $link-hover-color: $green24-medium;
 $link-hover-decoration: underline dotted;
 
 $font-size-base: 1rem; //.875rem
-$font-family-sans-serif: myriad-pro, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-sans-serif: Arial, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 $font-weight-base: 400;
 $font-weight-normal: 400;
 
@@ -64,3 +66,13 @@ $input-border-radius: $border-radius;
 $dropdown-link-color: $black-dark;
 $dropdown-link-hover-color: $green24;
 $dropdown-link-hover-bg: white;
+
+$pagination-color: white;
+$pagination-bg: $green24;;
+$pagination-border-width: 0;
+$pagination-hover-color: white;
+$pagination-hover-bg: $green24-medium;
+$pagination-active-color: white;
+$pagination-active-bg: $green24-medium;
+$pagination-disabled-color: white;
+$pagination-disabled-bg: $gray-medium;
