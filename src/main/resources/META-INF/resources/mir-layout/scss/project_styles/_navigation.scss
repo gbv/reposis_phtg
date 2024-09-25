@@ -27,30 +27,38 @@
   background-color: transparent;
 }
 .mir-main-nav {
-  background-color: $green-medium;
+  background-color: $green24;
   .navbar {
     padding: 0;
-    background-color: $green-medium;
+    background-color: $green24;
     .nav-item {
-      background-color: $green;
+      background-color: $green24;
       border-left: 5px solid white;
+      &.active {
+        .nav-link {
+          color: $white;
+          background-color: $green24-medium;
+        }
+      }
       .nav-link {
         padding: 0.5rem 1rem;
+        &.active,
         &:focus,
         &:hover {
           color: $white;
-          background-color: darken($green, 10%);
+          background-color: $green24-medium;
         }
       }
     }
     #basket-list-item {
       .nav-link {
-        color: $green;
+        color: white;
         padding: 0.5rem 1rem;
         border-left: 5px solid white;
         &:focus,
         &:hover {
-          color: darken($green, 10%);
+          color: white;
+          background-color: $green24-medium;
         }
       }
     }

@@ -31,7 +31,7 @@
           <div id="project_logo_box">
             <a href="https://www.phtg.ch/"
                class="">
-              <img src="{$WebApplicationBaseURL}images/logo-phtg.svg" class="img-fluid" />
+              <img src="{$WebApplicationBaseURL}images/logo-phtg24-cut.svg" class="img-fluid" />
             </a>
           </div>
         </div>
