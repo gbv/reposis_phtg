@@ -4,15 +4,15 @@
 
   <!-- ========== extend editor-genres.xed ========== -->
   <xed:modify ref="admin.fields">
-    <xed:include ref="project.rvk"                 before="sdnb.repeat" />
-    <xed:include ref="project.ddc"                              after="sdnb.repeat" />
+    <xed:include ref="project.rvk" before="sdnb.repeat" />
+    <xed:include ref="project.ddc" after="sdnb.repeat" />
     <xed:remove ref="sdnb.repeat" />
     <xed:remove ref="institutes.repeat" />
-    <xed:include ref="project.research_areas"                   after="project.ddc" />
-    <xed:include ref="project.research_projects"                 after="project.research_areas" />
-    <xed:include ref="project.courses"                          after="project.research_projects" />
-    <xed:include ref="project.peerReviewed"                     after="project.courses" />
-    <xed:include ref="project.oa_status"                        after="rights" />
+    <xed:include ref="project.research_areas" after="project.ddc" />
+    <xed:include ref="project.research_projects" after="project.research_areas" />
+    <xed:include ref="project.courses" after="project.research_projects" />
+    <xed:include ref="project.peerReviewed" after="project.courses" />
+    <xed:include ref="project.oa_status" after="rights" />
   </xed:modify>
 
   <xed:template id="genres.article">
@@ -287,7 +287,9 @@
 
   <xed:template id="hosts.proceedings">
     <xed:bind xpath="mods:relatedItem[@type='host']">
-      <xed:bind xpath="@xlink:href" initially="{$MIR.projectid.default}_mods_00000000"> <input id="relItem-proceedings" type="hidden" /> </xed:bind>
+      <xed:bind xpath="@xlink:href" initially="{$MIR.projectid.default}_mods_00000000">
+        <input id="relItem-proceedings" type="hidden" />
+      </xed:bind>
       <xed:include ref="project.title.proceedings.relItemsearch.required" />
       <xed:include ref="subtitle" />
       <xed:include ref="conference" />
@@ -300,18 +302,20 @@
 
   <xed:modify ref="hosts.series">
     <xed:if test="xed:call-java('org.mycore.common.xml.MCRXMLFunctions','isCurrentUserInRole','admin') or xed:call-java('org.mycore.common.xml.MCRXMLFunctions','isCurrentUserInRole','editor')">
-      <xed:include ref="project.title.series.relItemsearch.required"                 after="title.series.relItemsearch" />
-      <xed:remove  ref="title.series.relItemsearch" />
+      <xed:include ref="project.title.series.relItemsearch.required" after="title.series.relItemsearch" />
+      <xed:remove ref="title.series.relItemsearch" />
     </xed:if>
-    <xed:remove  ref="shelfmark.book.relItemsearch" />
-    <xed:remove  ref="identifier.issn.series.relItemsearch" />
+    <xed:remove ref="shelfmark.book.relItemsearch" />
+    <xed:remove ref="identifier.issn.series.relItemsearch" />
   </xed:modify>
 
   <!-- ========== project specific host and genre templates ========== -->
 
   <xed:template id="hosts.editing">
     <xed:bind xpath="mods:relatedItem[@type='host']">
-      <xed:bind xpath="@xlink:href" initially="{$MIR.projectid.default}_mods_00000000"><input id="relItem-collection" type="hidden" /></xed:bind>
+      <xed:bind xpath="@xlink:href" initially="{$MIR.projectid.default}_mods_00000000">
+        <input id="relItem-collection" type="hidden" />
+      </xed:bind>
       <xed:include ref="title.collection.relItemsearch" />
       <xed:include ref="subtitle" />
       <xed:include ref="editor.repeated" />
@@ -589,34 +593,44 @@
         <div class="col-md-3">
           <xed:bind xpath="@eventType" default="creation">
             <select class="form-control form-control-inline date-select">
-              <option value="creation"><xed:output i18n="mir.date.created" /></option>
-              <option value="collection"><xed:output i18n="mir.date.collected" /></option>
-              <option value="publication"><xed:output i18n="mir.date.issued.10" /></option>
-              <option value="review"><xed:output i18n="mir.date.reviewed" /></option>
-              <option value="update"><xed:output i18n="mir.date.updated" /></option>
+              <option value="creation">
+                <xed:output i18n="mir.date.created" />
+              </option>
+              <option value="collection">
+                <xed:output i18n="mir.date.collected" />
+              </option>
+              <option value="publication">
+                <xed:output i18n="mir.date.issued.10" />
+              </option>
+              <option value="review">
+                <xed:output i18n="mir.date.reviewed" />
+              </option>
+              <option value="update">
+                <xed:output i18n="mir.date.updated" />
+              </option>
             </select>
           </xed:bind>
         </div>
         <mir:dateRangeInput xpath="mods:dateCreated[@encoding='w3cdtf']"
-                            class="datetimepicker date-changeable col-md-6"
-                            placeholder="{i18n:mir.placeholder.date}"
-                            type="creation" />
+          class="datetimepicker date-changeable col-md-6"
+          placeholder="{i18n:mir.placeholder.date}"
+          type="creation" />
         <mir:dateRangeInput xpath="mods:dateCaptured[@encoding='w3cdtf']"
-                            class="datetimepicker date-changeable d-none col-md-6"
-                            placeholder="{i18n:mir.placeholder.date}"
-                            type="collection" />
+          class="datetimepicker date-changeable d-none col-md-6"
+          placeholder="{i18n:mir.placeholder.date}"
+          type="collection" />
         <mir:dateRangeInput xpath="mods:dateIssued[@encoding='w3cdtf']"
-                            class="datetimepicker date-changeable d-none col-md-6"
-                            placeholder="{i18n:mir.placeholder.date}"
-                            type="publication" />
+          class="datetimepicker date-changeable d-none col-md-6"
+          placeholder="{i18n:mir.placeholder.date}"
+          type="publication" />
         <mir:dateRangeInput xpath="mods:dateOther[@type='reviewed'][@encoding='w3cdtf']"
-                            class="datetimepicker date-changeable d-none col-md-6"
-                            placeholder="{i18n:mir.placeholder.date}"
-                            type="review" />
+          class="datetimepicker date-changeable d-none col-md-6"
+          placeholder="{i18n:mir.placeholder.date}"
+          type="review" />
         <mir:dateRangeInput xpath="mods:dateModified[@encoding='w3cdtf']"
-                            class="datetimepicker date-changeable d-none col-md-6"
-                            placeholder="{i18n:mir.placeholder.date}"
-                            type="update" />
+          class="datetimepicker date-changeable d-none col-md-6"
+          placeholder="{i18n:mir.placeholder.date}"
+          type="update" />
         <mir:help-pmud help-text="{i18n:mir.help.date.repeated}" pmud="true" />
       </div>
     </xed:repeat>
@@ -650,7 +664,7 @@
 
   <xed:template id="title.series.relItemsearch">
     <mir:relItemsearch searchengine="title" genre="book" responsefield="mods.title" xpath="mods:titleInfo/mods:title"
-                       label="mir.series.title" help-text="{i18n:mir.help.series.title}" />
+      label="mir.series.title" help-text="{i18n:mir.help.series.title}" />
   </xed:template>
 
 </xed:template>
