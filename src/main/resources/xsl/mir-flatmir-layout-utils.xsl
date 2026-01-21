@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:i18n="xalan://org.mycore.services.i18n.MCRTranslation"
-    xmlns:mcrver="xalan://org.mycore.common.MCRCoreVersion"
-    xmlns:mcrxsl="xalan://org.mycore.common.xml.MCRXMLFunctions"
-    exclude-result-prefixes="i18n mcrver mcrxsl">
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:i18n="xalan://org.mycore.services.i18n.MCRTranslation"
+  xmlns:mcrver="xalan://org.mycore.common.MCRCoreVersion"
+  xmlns:mcrxsl="xalan://org.mycore.common.xml.MCRXMLFunctions"
+  exclude-result-prefixes="i18n mcrver mcrxsl">
 
   <xsl:import href="resource:xsl/layout/mir-common-layout.xsl" />
+
   <xsl:param name="MIR.TestInstance" />
 
   <xsl:template name="mir.navigation">
@@ -30,7 +32,7 @@
         <div class="col-4">
           <div id="project_logo_box">
             <a href="https://www.phtg.ch/"
-               class="">
+              class="">
               <img src="{$WebApplicationBaseURL}images/logo-phtg24-cut.svg" class="img-fluid" />
             </a>
           </div>
@@ -39,13 +41,10 @@
           <a href="https://www.bibliothek.phtg.ch/" class="btn btn-primary">Campus-Bibliothek</a>
         </div>
       </div>
-
     </div>
-
     <div class="mir-main-nav">
       <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark">
-
           <button
             class="navbar-toggler"
             type="button"
@@ -56,17 +55,15 @@
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-
           <div id="mir-main-nav__entries" class="collapse navbar-collapse mir-main-nav__entries">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
               <xsl:call-template name="project.generate_single_menu_entry">
-                <xsl:with-param name="menuID" select="'brand'"/>
+                <xsl:with-param name="menuID" select="'brand'" />
               </xsl:call-template>
               <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='search']" />
               <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='publish']" />
               <xsl:call-template name="mir.basketMenu" />
             </ul>
-
             <form
               action="{$WebApplicationBaseURL}servlets/solr/find"
               class="searchfield_box form-inline my-2 my-lg-0"
@@ -90,7 +87,6 @@
                 <i class="fas fa-search"></i>
               </button>
             </form>
-
           </div>
         </nav>
       </div>
@@ -109,14 +105,14 @@
       <xsl:variable name="activeClass">
         <xsl:choose>
           <xsl:when test="$loaded_navigation_xml/menu[@id=$menuID]/item[@href = $browserAddress ]">
-          <xsl:text>active</xsl:text>
+            <xsl:text>active</xsl:text>
           </xsl:when>
           <xsl:otherwise>
             <xsl:text>not-active</xsl:text>
           </xsl:otherwise>
         </xsl:choose>
       </xsl:variable>
-      <a id="{$menuID}" href="{$WebApplicationBaseURL}{$loaded_navigation_xml/menu[@id=$menuID]/item/@href}" class="nav-link {$activeClass}" >
+      <a id="{$menuID}" href="{$WebApplicationBaseURL}{$loaded_navigation_xml/menu[@id=$menuID]/item/@href}" class="nav-link {$activeClass}">
         <xsl:choose>
           <xsl:when test="$loaded_navigation_xml/menu[@id=$menuID]/item/label[lang($CurrentLang)] != ''">
             <xsl:value-of select="$loaded_navigation_xml/menu[@id=$menuID]/item/label[lang($CurrentLang)]" />
