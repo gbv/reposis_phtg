@@ -8,7 +8,6 @@
     <artifactId>reposis_mir_parent</artifactId>
     <version>2022.06-SNAPSHOT</version>
   </parent>
-  <groupId>de.gbv.reposis_phtg</groupId>
   <artifactId>reposis_phtg</artifactId>
   <version>2022.06-SNAPSHOT</version>
   <properties>
