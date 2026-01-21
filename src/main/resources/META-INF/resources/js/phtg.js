@@ -1,61 +1,106 @@
+function expandPersonDetails() {
+  const container = document.querySelector('.personExtended-container');
+  if (container) {
+    container.classList.remove('d-none');
+  }
+  document.querySelectorAll('.mir-fieldset-legend').forEach(element => {
+    element.classList.remove('hiddenDetail');
+  });
+  document.querySelectorAll('.mir-fieldset-expand-item').forEach(element => {
+    element.classList.remove('fa-chevron-down');
+    element.classList.add('fa-chevron-up');
+  });
+}
 
-$(document).ready(function() {
+function replaceMaskedEmails() {
+  document.querySelectorAll('span.madress').forEach(span => {
+    const address = span.textContent.replace(' [at] ', '@');
+    const link = document.createElement('a');
+    link.href = `mailto:${address}`;
+    link.textContent = address;
+    span.replaceWith(link);
+  });
+}
 
-  // set new default values for institution and location
-  if ($("input[name='genre']").val() == 'matura') {
-    if ($("input[name='/mycoreobject/metadata[1]/def.modsContainer[1]/modsContainer[1]/mods:mods[1]/mods:originInfo[2]/mods:place[1]/mods:placeTerm[1]']").val()  == '') {
-      $("input[name='/mycoreobject/metadata[1]/def.modsContainer[1]/modsContainer[1]/mods:mods[1]/mods:originInfo[2]/mods:place[1]/mods:placeTerm[1]']").val('Kreuzlingen');
-    };
-    if ($("input[name='/mycoreobject/metadata[1]/def.modsContainer[1]/modsContainer[1]/mods:mods[1]/mods:originInfo[2]/mods:publisher[1]']").val()  == '') {
-      $("input[name='/mycoreobject/metadata[1]/def.modsContainer[1]/modsContainer[1]/mods:mods[1]/mods:originInfo[2]/mods:publisher[1]']").val('Kantonsschule Kreuzlingen');
-    };
-  } else if ($("input[name='genre']").val() == 'bachelor_thesis' ) {
-      if ($("input[name='/mycoreobject/metadata[1]/def.modsContainer[1]/modsContainer[1]/mods:mods[1]/mods:originInfo[2]/mods:place[1]/mods:placeTerm[1]']").val()  == '') {
-        $("input[name='/mycoreobject/metadata[1]/def.modsContainer[1]/modsContainer[1]/mods:mods[1]/mods:originInfo[2]/mods:place[1]/mods:placeTerm[1]']").val('Kreuzlingen');
-      };
-      if ($("input[name='/mycoreobject/metadata[1]/def.modsContainer[1]/modsContainer[1]/mods:mods[1]/mods:originInfo[2]/mods:publisher[1]']").val()  == '') {
-        $("input[name='/mycoreobject/metadata[1]/def.modsContainer[1]/modsContainer[1]/mods:mods[1]/mods:originInfo[2]/mods:publisher[1]']").val('Pädagogische Hochschule Thurgau');
-      };
-  } else if ($("input[name='genre']").val() == 'master_thesis' ) {
-      if ($("input[name='/mycoreobject/metadata[1]/def.modsContainer[1]/modsContainer[1]/mods:mods[1]/mods:originInfo[2]/mods:place[1]/mods:placeTerm[1]']").val()  == '') {
-        $("input[name='/mycoreobject/metadata[1]/def.modsContainer[1]/modsContainer[1]/mods:mods[1]/mods:originInfo[2]/mods:place[1]/mods:placeTerm[1]']").val('Kreuzlingen, Konstanz');
-      };
-      if ($("input[name='/mycoreobject/metadata[1]/def.modsContainer[1]/modsContainer[1]/mods:mods[1]/mods:originInfo[2]/mods:publisher[1]']").val()  == '') {
-        $("input[name='/mycoreobject/metadata[1]/def.modsContainer[1]/modsContainer[1]/mods:mods[1]/mods:originInfo[2]/mods:publisher[1]']").val('Pädagogische Hochschule Thurgau, Universität Konstanz');
-      };
+// set new default values for institution and location
+function setDefaultInstitutionValues() {
+  const genreInput = document.querySelector("input[name='genre']");
+  const genre = genreInput?.value;
+  if (!genre) {
+    return;
+  }
+
+  const placeSelector = "input[name='/mycoreobject/metadata[1]/def.modsContainer[1]/modsContainer[1]/mods:mods[1]/mods:originInfo[2]/mods:place[1]/mods:placeTerm[1]']";
+  const publisherSelector = "input[name='/mycoreobject/metadata[1]/def.modsContainer[1]/modsContainer[1]/mods:mods[1]/mods:originInfo[2]/mods:publisher[1]']";
+
+  const placeInput = document.querySelector(placeSelector);
+  const publisherInput = document.querySelector(publisherSelector);
+
+  const genreDefaults = {
+    'matura': {
+      place: 'Kreuzlingen',
+      publisher: 'Kantonsschule Kreuzlingen'
+    },
+    'bachelor_thesis': {
+      place: 'Kreuzlingen',
+      publisher: 'Pädagogische Hochschule Thurgau'
+    },
+    'master_thesis': {
+      place: 'Kreuzlingen, Konstanz',
+      publisher: 'Pädagogische Hochschule Thurgau, Universität Konstanz'
+    }
   };
 
-  // spam protection for mails
-  $('span.madress').each(function(i) {
-      var text = $(this).text();
-      var address = text.replace(" [at] ", "@");
-      $(this).after('<a href="mailto:'+address+'">'+ address +'</a>')
-      $(this).remove();
+  if (genreDefaults[genre]) {
+    if (placeInput && (!placeInput.value || placeInput.value.trim() === '')) {
+      placeInput.value = genreDefaults[genre].place;
+    }
+    if (publisherInput && (!publisherInput.value || publisherInput.value.trim() === '')) {
+      publisherInput.value = genreDefaults[genre].publisher;
+    }
+  }
+}
+
+function observeAndSetDefaultHost(defaultValue) {
+  const observer = new MutationObserver(() => {
+    const hostSelect = document.querySelector('select#host');
+    if (hostSelect) {
+      const defaultOption = hostSelect.querySelector(`option[value="${defaultValue}"]`);
+      if (defaultOption) {
+        hostSelect.value = defaultValue;
+      }
+    }
   });
-
-  // activate empty search on start page
-  $("#project-searchMainPage").submit(function (evt) {
-    $(this).find(":input").filter(function () {
-          return !this.value;
-      }).attr("disabled", true);
-    return true;
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true
   });
+}
 
-  // unhide person extended box at reload
-  $('.personExtended-container').removeClass('d-none');
-  $('.mir-fieldset-legend').removeClass('hiddenDetail');
-  $('.mir-fieldset-expand-item').removeClass('fa-chevron-down');
-  $('.mir-fieldset-expand-item').addClass('fa-chevron-up');
+function ignoreEmptyFieldsOnSubmit(event) {
+  const form = event.currentTarget;
+  const inputs = form.querySelectorAll('input');
+  inputs.forEach(input => {
+    if (!input.value) {
+      input.dataset.nameBackup = input.name;
+      input.removeAttribute('name');
+    }
+  });
+  setTimeout(() => {
+    inputs.forEach(input => {
+      if (input.dataset.nameBackup) {
+        input.name = input.dataset.nameBackup;
+        delete input.dataset.nameBackup;
+      }
+    });
+  }, 0);
+}
 
-
-
-});
-
-$( document ).ajaxComplete(function() {
-  // change default selection of host to journal from publish/index.xml
-  if($("select#host option[value='journal']").length > 0){
-    $("select#host option[value='standalone']").removeAttr("selected");
-    $("select#host option[value='journal']").attr("selected", "selected");
-  };
-
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('project-searchMainPage')
+    ?.addEventListener('submit', ignoreEmptyFieldsOnSubmit);
+  replaceMaskedEmails();
+  setDefaultInstitutionValues();
+  expandPersonDetails();
+  observeAndSetDefaultHost();
 });
