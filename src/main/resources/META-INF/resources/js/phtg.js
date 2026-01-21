@@ -41,15 +41,6 @@ $(document).ready(function() {
     return true;
   });
 
-  // replace placeholder USERNAME with username
-  var userID = $("#currentUser strong").html();
-  var localHref = 'http://localhost:18021/phtg/servlets/solr/select?q=createdby:' + userID + '&fq=objectType:mods';
-  $("a[href='http://localhost:18021/phtg/servlets/solr/select?q=createdby:USERNAME']").attr('href', localHref);
-  var testHref = 'https://reposis-test.gbv.de/phtg/servlets/solr/select?q=createdby:' + userID + '&fq=objectType:mods';
-  $("a[href='https://reposis-test.gbv.de/phtg/servlets/solr/select?q=createdby:USERNAME']").attr('href', testHref);
-  var prodHref = 'https://publikationsserver.phtg.ch/servlets/solr/select?q=createdby:' + userID + '&fq=objectType:mods';
-  $("a[href='https://publikationsserver.phtg.ch/servlets/solr/select?q=createdby:USERNAME']").attr('href', prodHref);
-
   // unhide person extended box at reload
   $('.personExtended-container').removeClass('d-none');
   $('.mir-fieldset-legend').removeClass('hiddenDetail');
