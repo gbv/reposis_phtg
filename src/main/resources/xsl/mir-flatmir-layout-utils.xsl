@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet
-  version="1.0"
-  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-  xmlns:i18n="xalan://org.mycore.services.i18n.MCRTranslation"
-  xmlns:mcrver="xalan://org.mycore.common.MCRCoreVersion"
-  xmlns:mcrxsl="xalan://org.mycore.common.xml.MCRXMLFunctions"
-  exclude-result-prefixes="i18n mcrver mcrxsl">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
   <xsl:import href="resource:xsl/layout/mir-common-layout.xsl" />
 
@@ -70,7 +64,7 @@
               role="search">
               <input
                 name="condQuery"
-                placeholder="{i18n:translate('mir.navsearch.placeholder')}"
+                placeholder="{document('i18n:mir.navsearch.placeholder')/i18n/text()}"
                 class="form-control mr-sm-2 search-query"
                 id="searchInput"
                 type="text"
@@ -79,7 +73,7 @@
                 <xsl:when test="contains($isSearchAllowedForCurrentUser, 'true')">
                   <input name="owner" type="hidden" value="createdby:*" />
                 </xsl:when>
-                <xsl:when test="not(mcrxsl:isCurrentUserGuestUser())">
+                <xsl:when test="not($CurrentUser='guest')">
                   <input name="owner" type="hidden" value="createdby:{$CurrentUser}" />
                 </xsl:when>
               </xsl:choose>
@@ -174,7 +168,7 @@
   </xsl:template>
 
   <xsl:template name="mir.powered_by">
-    <xsl:variable name="mcr_version" select="concat('MyCoRe ',mcrver:getCompleteVersion())" />
+    <xsl:variable name="mcr_version" select="document('version:full')/version/text()" />
     <div id="powered_by">
       <a href="http://www.mycore.de"><!-- mycore_logo_powered_120x30_blaue_schrift_frei.png -->
         <img
