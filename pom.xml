@@ -1,36 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  ~ This file is part of ***  M y C o R e  ***
-  ~ See http://www.mycore.de/ for details.
-  ~
-  ~ MyCoRe is free software: you can redistribute it and/or modify
-  ~ it under the terms of the GNU General Public License as published by
-  ~ the Free Software Foundation, either version 3 of the License, or
-  ~ (at your option) any later version.
-  ~
-  ~ MyCoRe is distributed in the hope that it will be useful,
-  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
-  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  ~ GNU General Public License for more details.
-  ~
-  ~ You should have received a copy of the GNU General Public License
-  ~ along with MyCoRe.  If not, see <http://www.gnu.org/licenses/>.
-  -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>de.gbv.reposis</groupId>
     <artifactId>reposis_mir_parent</artifactId>
     <version>2022.06-SNAPSHOT</version>
   </parent>
-
   <groupId>de.gbv.reposis_phtg</groupId>
   <artifactId>reposis_phtg</artifactId>
   <version>2022.06-SNAPSHOT</version>
   <properties>
     <MCR.AppName>phtg</MCR.AppName>
   </properties>
-
   <build>
     <plugins>
       <plugin>
@@ -39,7 +22,6 @@
       </plugin>
     </plugins>
   </build>
-
   <repositories>
     <repository>
       <releases>
@@ -85,20 +67,6 @@
     </pluginRepository>
   </pluginRepositories>
   <dependencies>
-    <!-- enable theese if you write code using them
-        <dependency>
-            <groupId>org.mycore</groupId>
-            <artifactId>mycore-base</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.mycore</groupId>
-            <artifactId>mycore-mods</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.mycore</groupId>
-            <artifactId>mycore-pi</artifactId>
-        </dependency>
-        -->
     <dependency>
       <groupId>com.sun.activation</groupId>
       <artifactId>jakarta.activation</artifactId>
@@ -107,19 +75,16 @@
       <groupId>jakarta.servlet</groupId>
       <artifactId>jakarta.servlet-api</artifactId>
     </dependency>
-
     <dependency>
       <groupId>org.mycore</groupId>
       <artifactId>selenium-utils</artifactId>
     </dependency>
-  
     <dependency>
       <groupId>de.gbv.reposis</groupId>
       <artifactId>reposis_common</artifactId>
       <version>2022.06-SNAPSHOT</version>
       <scope>runtime</scope>
     </dependency>
-
     <dependency>
       <groupId>org.mycore</groupId>
       <artifactId>mycore-base</artifactId>
@@ -127,6 +92,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-
 </project>
