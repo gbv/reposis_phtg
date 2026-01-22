@@ -1,20 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="research_projects">
+<mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="research_projects">
   <label xml:lang="de" text="Forschungsprojekte" description="Liste der Forschungsprojekte" />
   <label xml:lang="en" text="research projects" description="List of research projects" />
-  <label xml:lang="x-uri"
-    text="https://www.publikationsserver.phtg.ch/classifications/research_projects" />
+  <label xml:lang="x-uri" text="https://www.publikationsserver.phtg.ch/classifications/research_projects" />
   <categories>
-    <category ID="DiaMaNt">
-      <label xml:lang="de" text="Lerngelegenheiten für Lehrstudierende im sozialen Netzwerk: Praxisfeld aus allgemein- und mathematikdidaktischer Perspektive (DiaMaNt)" />
+    <category ID="9a8761dc-9a10-451d-a814-0790aa354a1e">
+      <label xml:lang="de" text="Alltagsgespräche als Bildungschancen im Kindergarten (ABiK) " />
     </category>
-    <category ID="Bildungsgerechtigkeitgeschichte">
+    <category ID="a3c1b5cc-c0a1-4f74-b306-ae2b0332523e">
+      <label xml:lang="de" text="Alltagsgespräche als Bildungschancen auf der Unterstufe (AllBi-U)" />
+    </category>
+    <category ID="42258e60-5d09-4cfa-ac4b-8ff66f846c66">
+      <label xml:lang="de" text="Beliefs von Lehrstudierenden zum mathematischen Argumentieren (BeLLA)" />
+    </category>
+    <category ID="c98b214d-6437-4e76-89d9-ac1a43e31d22">
+      <label xml:lang="de" text="Beobachtungen des Bildungssystems" />
+    </category>
+    <category ID="6b176838-2466-47c0-a6ca-056eb7cd013a">
+      <label xml:lang="de" text="Conceptual Systematic Review (CSR)" />
+    </category>
+    <category ID="6512fdcc-2cc2-4dc5-8db9-df659569aae9">
+      <label xml:lang="de" text="Demokratie in Schule und Lehrer:innenbildung (Demo)" />
+    </category>
+    <category ID="81eaf4c1-e9dd-4b2f-90c1-ca8a04694b8d">
+      <label xml:lang="de" text="DiKoLAN-CH - Digitale Kompetenzen für den Lehrberuf in den Naturwissenschaften in der Schweiz" />
+    </category>
+    <category ID="ccbe8cbc-92f8-4756-a29f-072d1c0c66b1">
+      <label xml:lang="de" text="Diversität wertschätzen, Akzeptanz leben, Chancen eröffnen" />
+    </category>
+    <category ID="9afad296-1233-4a36-ba57-c7ac5dfbe134">
+      <label xml:lang="de" text="Durchgängige Sprachbildung für alle mit Fokus auf den Kindergarten (DSBaK)" />
+    </category>
+    <category ID="a541f1fc-37e4-4219-9ba3-f03609d3aa96">
+      <label xml:lang="de" text="Erwerbsunterstützung mündlicher Textfähigkeiten im Kindergarten (EmTiK)" />
+    </category>
+    <category ID="e37fc6c9-77b4-43ba-aedf-faccead9452e">
       <label xml:lang="de" text="Geschichte der Bildungsgerechtigkeit" />
     </category>
-    <category ID="EmTiK">
-      <label xml:lang="de" text="Erwerbsunterstützung mündlicher Textfähigkeiten im Kindergarten (EmTiK)" />
+    <category ID="ddb28f32-035d-44c9-b176-ff329e616b88">
+      <label xml:lang="de" text="Geschichte des Kindergärtnerinnenseminars Amriswil" />
+    </category>
+    <category ID="8f7739a9-eba6-4d6b-acbc-a97f95fc5a9e">
+      <label xml:lang="de" text="Handbuch Digitalität und Nachhaltigkeit in der Bildung" />
+    </category>
+    <category ID="540f26b4-cf28-44ad-ae0f-26baaa51109d">
+      <label xml:lang="de" text="Hausaufgabenunterstützung durch Eltern (MPCK-ElPro)" />
+    </category>
+    <category ID="12efaf01-e608-412e-8507-ec94876c6c8b">
+      <label xml:lang="de" text="Interaktionsqualität in Kitas und Spielgruppen (LEAPS-FBBE)" />
+    </category>
+    <category ID="f3c30c91-16a1-40f8-9447-7417a15605fa">
+      <label xml:lang="de" text="Mathematisches Tun in der Schuleingangsstufe (MaTiES)" />
+    </category>
+    <category ID="208ccd10-f4e3-46fe-ae94-22fb2aa7d003">
+      <label xml:lang="de" text="Meta-Reflexivität und Professionalität (MR)" />
+    </category>
+    <category ID="e3e45c11-f9bc-4be5-8984-303f97ca595f">
+      <label xml:lang="de" text="OrChemSTAR - Organic Chemistry Science Teaching and Learning with Augmented Reality" />
+    </category>
+    <category ID="611c9f07-352c-4dd0-97cd-8c3e926c0e15">
+      <label xml:lang="de" text="Orientierungswissen für Lehrpersonen der Zukunft (OWiss)" />
+    </category>
+    <category ID="912247ff-f0b5-4cc5-b8d8-fc3d4a2b14b4">
+      <label xml:lang="de" text="Peer Influence on Preschool Children's Emotion Regulation (EmU)" />
+    </category>
+    <category ID="58f91531-8542-41e9-a0ee-8f5787b0ba0c">
+      <label xml:lang="de" text="Soziale Argumente der Expansion der Sekundarstufe II in der Schweiz 1960 bis 1980 (EvoSEC)" />
+    </category>
+    <category ID="e96e933d-c8d8-4c26-8ee2-5ad47e1117d7">
+      <label xml:lang="de" text="Soziologie des Lernens" />
+    </category>
+    <category ID="84d7b5d7-e484-489b-b08c-6511dabc9c6e">
+      <label xml:lang="de" text="Systematization of Research on Teachers and Teacher Education (SYSTEM)" />
+    </category>
+    <category ID="e8caf649-29a6-45f0-881b-3d326ca15a82">
+      <label xml:lang="de" text="Wissenschaftsorientierung in der berufspraktischen Lehrerinnen- und Lehrerbildung" />
+    </category>
+    <category ID="918836d0-a7e8-448a-acfd-9e68358325d1">
+      <label xml:lang="de" text="Zürcher Lernverlaufserhebung (LEAPS)" />
+    </category>
+    <category ID="ab22bfb2-53fd-4df6-8f4f-64b5bd505067">
+      <label xml:lang="de" text="Schulleitungsmonitor (SLM)" />
+    </category>
+    <category ID="0e6d5b68-46b7-4174-857d-a416edce73b5">
+      <label xml:lang="de" text="Zusammenspiel motorischer und sozial-emotionaler Entwicklung bei Kindern im frühen Schulalter (MOSAIK)" />
     </category>
   </categories>
 </mycoreclass>

@@ -3,6 +3,12 @@
   <label xml:lang="de" text="Studiengänge" />
   <label xml:lang="x-uri" text="https://publikationsserver.phtg.ch/classifications/courses" />
   <categories>
+    <category ID="bisva_kgu">
+      <label xml:lang="de" text="Berufsintegrierte Studienvariante Kindergarten-Unterstufe (BiSVa KGU)" />
+    </category>
+    <category ID="bisva_ps">
+      <label xml:lang="de" text="Berufsintegrierte Studienvariante Primarstufe (BiSVa PS)" />
+    </category>
     <category ID="kgu">
       <label xml:lang="de" text="Kindergarten-Unterstufe (KGU)" />
     </category>

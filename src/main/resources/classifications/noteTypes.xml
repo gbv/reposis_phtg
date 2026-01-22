@@ -5,74 +5,75 @@
   <label xml:lang="x-uri" text="http://www.mycore.org/classifications/noteTypes" />
   <categories>
     <category ID="bestand_phtg">
-      <label xml:lang="de" text="Bestand Campus-Bibliothek" />
-      <label xml:lang="en" text="Campus library inventory" />
+      <label xml:lang="de" text="Verfügbarkeit" />
+      <label xml:lang="en" text="Availability" />
       <label xml:lang="x-access" text="guest" />
+      <url xlink:type="locator" xlink:href="https://netbiblio.tg.ch/kreu-ph/search/notice?noticeNr=" />
     </category>
     <category ID="peerReviewed">
+      <label xml:lang="de" text="Peer Reviewed" />
       <label xml:lang="en" text="Peer Reviewed" />
       <label xml:lang="x-access" text="guest" />
-      <label xml:lang="de" text="Peer Reviewed" />
     </category>
     <category ID="ageRange">
       <label xml:lang="de" text="Altersstufe" />
-      <label xml:lang="x-access" text="guest" />
       <label xml:lang="en" text="Age range" />
+      <label xml:lang="x-access" text="guest" />
     </category>
     <category ID="version_identification">
+      <label xml:lang="de" text="Versionskennzeichen" />
       <label xml:lang="en" text="version identification" />
       <label xml:lang="x-access" text="guest" />
-      <label xml:lang="de" text="Versionskennzeichen" />
     </category>
     <category ID="venue">
       <label xml:lang="de" text="Veranstaltungsort" />
-      <label xml:lang="x-access" text="guest" />
       <label xml:lang="en" text="venue" />
+      <label xml:lang="x-access" text="guest" />
     </category>
     <category ID="thesis">
+      <label xml:lang="de" text="Hochschulvermerk" />
       <label xml:lang="en" text="Dissertation note" />
       <label xml:lang="x-access" text="guest" />
-      <label xml:lang="de" text="Hochschulvermerk" />
     </category>
     <category ID="system_details">
-      <label xml:lang="x-access" text="guest" />
-      <label xml:lang="en" text="system details" />
       <label xml:lang="de" text="System Angaben" />
+      <label xml:lang="en" text="system details" />
+      <label xml:lang="x-access" text="guest" />
     </category>
     <category ID="subject_completeness">
-      <label xml:lang="x-access" text="guest" />
       <label xml:lang="de" text="Vollständigkeit" />
       <label xml:lang="en" text="subject completeness" />
+      <label xml:lang="x-access" text="guest" />
     </category>
     <category ID="statement_of_responsibility">
-      <label xml:lang="x-access" text="guest" />
-      <label xml:lang="en" text="statement of responsibility" />
       <label xml:lang="de" text="Verfasserangabe" />
+      <label xml:lang="en" text="statement of responsibility" />
+      <label xml:lang="x-access" text="guest" />
     </category>
     <category ID="source_type">
       <label xml:lang="de" text="Quellentyp" />
-      <label xml:lang="x-access" text="guest" />
       <label xml:lang="en" text="source type" />
+      <label xml:lang="x-access" text="guest" />
     </category>
     <category ID="source_note">
-      <label xml:lang="x-access" text="guest" />
       <label xml:lang="de" text="Quellenkommentar" />
       <label xml:lang="en" text="source_note" />
+      <label xml:lang="x-access" text="guest" />
     </category>
     <category ID="source_identifier">
-      <label xml:lang="x-access" text="guest" />
       <label xml:lang="de" text="Quellenkennzeichen" />
       <label xml:lang="en" text="source identifier" />
+      <label xml:lang="x-access" text="guest" />
     </category>
     <category ID="source_dimensions">
-      <label xml:lang="x-access" text="guest" />
       <label xml:lang="de" text="Quellenausmaße" />
       <label xml:lang="en" text="source dimensions" />
+      <label xml:lang="x-access" text="guest" />
     </category>
     <category ID="source_characteristics">
-      <label xml:lang="x-access" text="guest" />
       <label xml:lang="de" text="Quelleneigenschaften" />
       <label xml:lang="en" text="source characteristics" />
+      <label xml:lang="x-access" text="guest" />
     </category>
     <category ID="restriction">
       <label xml:lang="de" text="Restriktion" />
@@ -81,58 +82,58 @@
     </category>
     <category ID="reproduction">
       <label xml:lang="de" text="Reproduktion" />
-      <label xml:lang="x-access" text="guest" />
       <label xml:lang="en" text="reproduction" />
+      <label xml:lang="x-access" text="guest" />
     </category>
     <category ID="publications">
       <label xml:lang="de" text="Veröffentlichungen" />
-      <label xml:lang="x-access" text="guest" />
       <label xml:lang="en" text="publications" />
+      <label xml:lang="x-access" text="guest" />
     </category>
     <category ID="preferred_citation">
       <label xml:lang="de" text="bevorzugte Erwähnung" />
-      <label xml:lang="x-access" text="guest" />
       <label xml:lang="en" text="preferred citation" />
+      <label xml:lang="x-access" text="guest" />
     </category>
     <category ID="performers">
+      <label xml:lang="de" text="Beteiligte" />
       <label xml:lang="en" text="performers" />
       <label xml:lang="x-access" text="guest" />
-      <label xml:lang="de" text="Beteiligte" />
     </category>
     <category ID="ownership">
-      <label xml:lang="x-access" text="guest" />
-      <label xml:lang="en" text="ownership" />
       <label xml:lang="de" text="Eigentümer" />
+      <label xml:lang="en" text="ownership" />
+      <label xml:lang="x-access" text="guest" />
     </category>
     <category ID="original_version">
-      <label xml:lang="x-access" text="guest" />
       <label xml:lang="de" text="Version der Originale" />
       <label xml:lang="en" text="original version" />
+      <label xml:lang="x-access" text="guest" />
     </category>
     <category ID="original_location">
       <label xml:lang="de" text="Standort der Originale" />
-      <label xml:lang="x-access" text="guest" />
       <label xml:lang="en" text="original location" />
+      <label xml:lang="x-access" text="guest" />
     </category>
     <category ID="date/sequential_designation">
+      <label xml:lang="de" text="Datierte / Nummerierte Veröffentlichungen" />
       <label xml:lang="en" text="date/sequential designation" />
       <label xml:lang="x-access" text="guest" />
-      <label xml:lang="de" text="Datierte / Nummerierte Veröffentlichungen" />
     </category>
     <category ID="numbering">
-      <label xml:lang="x-access" text="guest" />
       <label xml:lang="de" text="Nummerierung" />
       <label xml:lang="en" text="numbering" />
+      <label xml:lang="x-access" text="guest" />
     </category>
     <category ID="language">
-      <label xml:lang="x-access" text="guest" />
       <label xml:lang="de" text="Sprache" />
       <label xml:lang="en" text="language" />
+      <label xml:lang="x-access" text="guest" />
     </category>
     <category ID="handwritten">
       <label xml:lang="de" text="Identifikationsmerkmale" />
-      <label xml:lang="x-access" text="guest" />
       <label xml:lang="en" text="handwritten" />
+      <label xml:lang="x-access" text="guest" />
     </category>
     <category ID="funding">
       <label xml:lang="de" text="Finanzierung" />
@@ -140,9 +141,9 @@
       <label xml:lang="x-access" text="guest" />
     </category>
     <category ID="exhibitions">
-      <label xml:lang="x-access" text="guest" />
       <label xml:lang="de" text="Ausstellungen" />
       <label xml:lang="en" text="exhibitions" />
+      <label xml:lang="x-access" text="guest" />
     </category>
     <category ID="date">
       <label xml:lang="de" text="Datum" />
@@ -150,73 +151,73 @@
       <label xml:lang="x-access" text="guest" />
     </category>
     <category ID="creation/production_credits">
-      <label xml:lang="x-access" text="guest" />
-      <label xml:lang="en" text="creation/production credits" />
       <label xml:lang="de" text="Erstellungs / Produktions Erwähnung" />
+      <label xml:lang="en" text="creation/production credits" />
+      <label xml:lang="x-access" text="guest" />
     </category>
     <category ID="content">
-      <label xml:lang="x-access" text="guest" />
       <label xml:lang="de" text="Inhalt" />
       <label xml:lang="en" text="content" />
+      <label xml:lang="x-access" text="guest" />
     </category>
     <category ID="conservation_history">
+      <label xml:lang="de" text="OA-Status" />
       <label xml:lang="en" text="open_access_status" />
       <label xml:lang="x-access" text="guest" />
-      <label xml:lang="de" text="OA-Status" />
     </category>
     <category ID="citation/reference">
-      <label xml:lang="x-access" text="guest" />
-      <label xml:lang="en" text="citation/reference" />
       <label xml:lang="de" text="Zitierungen / Referenzen" />
+      <label xml:lang="en" text="citation/reference" />
+      <label xml:lang="x-access" text="guest" />
     </category>
     <category ID="biographical/historical">
       <label xml:lang="de" text="Biografische / Historische Informationen" />
-      <label xml:lang="x-access" text="guest" />
       <label xml:lang="en" text="biographical/historical" />
+      <label xml:lang="x-access" text="guest" />
     </category>
     <category ID="bibliography">
-      <label xml:lang="x-access" text="guest" />
-      <label xml:lang="en" text="bibliography" />
       <label xml:lang="de" text="Bibliografie" />
+      <label xml:lang="en" text="bibliography" />
+      <label xml:lang="x-access" text="guest" />
     </category>
     <category ID="bibliographic_history">
-      <label xml:lang="x-access" text="guest" />
-      <label xml:lang="en" text="bibliographic history" />
       <label xml:lang="de" text="Bibliographische Geschichte" />
+      <label xml:lang="en" text="bibliographic history" />
+      <label xml:lang="x-access" text="guest" />
     </category>
     <category ID="additional_physical_form">
-      <label xml:lang="x-access" text="guest" />
-      <label xml:lang="en" text="additional physical form" />
       <label xml:lang="de" text="Zusätzliche physikalische Formen" />
+      <label xml:lang="en" text="additional physical form" />
+      <label xml:lang="x-access" text="guest" />
     </category>
     <category ID="action">
       <label xml:lang="de" text="Arbeitsgang" />
-      <label xml:lang="x-access" text="guest" />
       <label xml:lang="en" text="action" />
+      <label xml:lang="x-access" text="guest" />
     </category>
     <category ID="acquisition">
-      <label xml:lang="x-access" text="guest" />
-      <label xml:lang="en" text="acquisition" />
       <label xml:lang="de" text="Beschaffung" />
+      <label xml:lang="en" text="acquisition" />
+      <label xml:lang="x-access" text="guest" />
     </category>
     <category ID="accrual_policy">
       <label xml:lang="de" text="Abgrenzungspolitik" />
-      <label xml:lang="x-access" text="guest" />
       <label xml:lang="en" text="accrual policy" />
+      <label xml:lang="x-access" text="guest" />
     </category>
     <category ID="accrual_method">
-      <label xml:lang="en" text="accrual method" />
+      <label xml:lang="de" text="Klasse" />
+      <label xml:lang="en" text="class" />
       <label xml:lang="x-access" text="guest" />
-      <label xml:lang="de" text="Periodenrechnung" />
     </category>
     <category ID="comment">
-      <label xml:lang="en" text="comment" />
       <label xml:lang="de" text="Kommentar" />
+      <label xml:lang="en" text="comment" />
       <label xml:lang="x-access" text="guest" />
     </category>
     <category ID="admin">
-      <label xml:lang="en" text="intern comment" />
       <label xml:lang="de" text="interner Kommentar" />
+      <label xml:lang="en" text="intern comment" />
       <label xml:lang="x-access" text="editor admin" />
     </category>
   </categories>
