@@ -97,7 +97,7 @@ function ignoreEmptyFieldsOnSubmit(event) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('project-searchMainPage')
+  document.querySelector('form.searchfield_box')
     ?.addEventListener('submit', ignoreEmptyFieldsOnSubmit);
   replaceMaskedEmails();
   setDefaultInstitutionValues();
