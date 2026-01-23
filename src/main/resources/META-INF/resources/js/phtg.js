@@ -30,8 +30,10 @@ function setDefaultInstitutionValues() {
     return;
   }
 
-  const placeSelector = "input[name='/mycoreobject/metadata[1]/def.modsContainer[1]/modsContainer[1]/mods:mods[1]/mods:originInfo[2]/mods:place[1]/mods:placeTerm[1]']";
-  const publisherSelector = "input[name='/mycoreobject/metadata[1]/def.modsContainer[1]/modsContainer[1]/mods:mods[1]/mods:originInfo[2]/mods:publisher[1]']";
+  const placeSelector = 'input[name="/mycoreobject/metadata[1]/def.modsContainer[1]/modsContainer[1]' +
+    '/mods:mods[1]/mods:originInfo[2]/mods:place[1]/mods:placeTerm[1]"]';
+  const publisherSelector = 'input[name="/mycoreobject/metadata[1]/def.modsContainer[1]/modsContainer[1]' +
+    '/mods:mods[1]/mods:originInfo[2]/mods:publisher[1]"]';
 
   const placeInput = document.querySelector(placeSelector);
   const publisherInput = document.querySelector(publisherSelector);
@@ -86,6 +88,8 @@ function ignoreEmptyFieldsOnSubmit(event) {
       input.removeAttribute('name');
     }
   });
+  // Restore field names after the form is submitted
+  // setTimeout ensures this runs after the submit event completes
   setTimeout(() => {
     inputs.forEach(input => {
       if (input.dataset.nameBackup) {
@@ -97,8 +101,7 @@ function ignoreEmptyFieldsOnSubmit(event) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelector('form.searchfield_box')
-    ?.addEventListener('submit', ignoreEmptyFieldsOnSubmit);
+  document.querySelector('form.searchfield_box')?.addEventListener('submit', ignoreEmptyFieldsOnSubmit);
   replaceMaskedEmails();
   setDefaultInstitutionValues();
   expandPersonDetails();

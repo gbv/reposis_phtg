@@ -1,12 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
   let documentsDefault = 0;
-
-  const searchInput = document.getElementById('project-searchInput');
-  const switchSpeech = document.getElementById('switchSpeech');
-  const switchThesis = document.getElementById('switchThesis');
-
-  const filterSpeech = document.getElementById('filterSpeech');
-  const filterThesis = document.getElementById('filterThesis');
+  const form = document.getElementById('project-searchMainPage');
+  const searchInput = form.querySelector('#project-searchInput');
+  const switchSpeech = form.querySelector('#switchSpeech');
+  const switchThesis = form.querySelector('#switchThesis');
+  const filterSpeech = form.querySelector('#filterSpeech');
+  const filterThesis = form.querySelector('#filterThesis');
 
   function formatNumber(num) {
     return num.toLocaleString();
@@ -67,6 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  form.addEventListener('submit', ignoreEmptyFieldsOnSubmit);
   switchSpeech.addEventListener('change', handleSwitchChange);
   switchThesis.addEventListener('change', handleSwitchChange);
 });
