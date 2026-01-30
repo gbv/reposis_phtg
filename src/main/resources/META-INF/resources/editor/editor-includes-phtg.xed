@@ -172,12 +172,12 @@
         <xed:include ref="project.rvk.required" />
       </xed:when>
       <xed:otherwise>
-        <xed:include ref="project.rvk.not_required" />
+        <xed:include ref="project.rvk.optional" />
       </xed:otherwise>
     </xed:choose>
   </xed:template>
 
-  <xed:template id="project.rvk">
+  <xed:template id="project.rvk.optional">
     <xed:repeat xpath="mods:classification[@authority='rvk'][@displayLabel='rvk']" min="1" max="10" method="build">
       <div class="form-group row">
         <label class="col-md-3 col-form-label text-right">
