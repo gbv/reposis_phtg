@@ -105,5 +105,5 @@ document.addEventListener('DOMContentLoaded', () => {
   replaceMaskedEmails();
   setDefaultInstitutionValues();
   expandPersonDetails();
-  observeAndSetDefaultHost();
+  observeAndSetDefaultHost('journal');
 });
