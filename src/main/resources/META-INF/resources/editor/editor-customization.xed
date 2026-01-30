@@ -17,7 +17,7 @@
 
   <xed:template id="genres.article">
     <xed:include ref="title.original" />
-    <xed:include ref="name.extended.repeated" />
+    <xed:include ref="name.extended.full.repeated" />
     <xed:include ref="project.research_areas" />
     <xed:include ref="project.research_projects" />
     <xed:if test="$host='standalone'">
@@ -39,7 +39,7 @@
 
   <xed:template id="genres.chapter">
     <xed:include ref="title.original" />
-    <xed:include ref="name.extended.repeated" />
+    <xed:include ref="name.extended.full.repeated" />
     <xed:include ref="project.research_areas" />
     <xed:include ref="project.research_projects" />
     <xed:if test="$host='standalone'">
