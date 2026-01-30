@@ -23,7 +23,7 @@
             <div class="input-group w-100">
               <input
                 name="condQuery"
-                placeholder="Suche in 3.000 Dokumenten"
+                placeholder="Suche in 2.000 Dokumenten"
                 class="form-control search-query"
                 id="project-searchInput"
                 type="text"
