@@ -166,56 +166,6 @@
     <xed:validate xpath="//mods:nameIdentifier[@type='viaf']" matches="^\d{8}[\d-]?[\dxX]?$" i18n="mir.validation.viaf" display="global" />
   </xed:template>
 
-  <xed:template id="project.author.repeated.required2">
-    <xed:repeat xpath="mods:name[@type='personal' or not(@type) or (@type='corporate' and not(@authorityURI='https://publikationsserver.phtg.ch/classifications/identifier'))][mods:role/mods:roleTerm[@type='code'][@authority='marcrelator']='aut']" min="1" max="10">
-      <xed:bind xpath="@type" initially="personal" />
-      <xed:bind xpath="@simpleEditor" default="true" />
-      <fieldset class="personExtended_box">
-        <legend class="mir-fieldset-legend">
-          <xed:bind xpath="mods:displayForm">
-            <div class="form-group required row {$xed-validation-marker} ">
-              <xed:bind xpath="..">
-                <label class="col-md-3 col-form-label text-right">
-                  <xed:output i18n="mir.role.author" />
-                </label>
-                <div class="col-md-6 center-vertical">
-                  <xed:include ref="person.fields" />
-                  <span class="fas fa-chevron-up expand-item" title="{i18n:translate('mir.help.expand')}" aria-hidden="true"></span>
-                </div>
-                <mir:help-pmud help-text="{i18n:mir.help.role.author}" pmud="true" />
-              </xed:bind>
-            </div>
-          </xed:bind>
-        </legend>
-        <div class="mir-fieldset-content personExtended-container">
-          <!-- diese Includes funktionieren in der Form nicht, da sie einen Fehler bei der Wiederholung verursachen  -->
-          <!-- <xed:include ref="nameType" />-->
-          <!-- <xed:include ref="namePart.repeated" />-->
-          <!-- <xed:include ref="person.affiliation" />-->
-          <!-- <xed:include ref="nameIdentifier.repeated" />-->
-          <div class="form-group row {$xed-validation-marker} ">
-            <!-- <div class="form-group required row {$xed-validation-marker} "> -->
-            <!-- Unklar, ob es das Kürzel obligatorisch ist, deswegen erst einmal deaktiviert -->
-            <xed:bind xpath="mods:nameIdentifier[@type='phtg']">
-              <label class="col-md-3 col-form-label text-right">
-                <xed:output i18n="project.form.label.employee_abbreviation" />
-              </label>
-              <div class="col-md-6">
-                <input type="text" size="20" class="form-control form-control-inline {$xed-validation-marker} nameIdentifier" />
-              </div>
-              <mir:help-pmud help-text="{i18n:project.help.employee_abbreviation}" pmud="false" />
-            </xed:bind>
-          </div>
-        </div>
-      </fieldset>
-    </xed:repeat>
-    <xed:validate
-      xpath="//mods:mods/mods:name[mods:role/mods:roleTerm[@authority='marcrelator'][@type='code']='aut']/mods:displayForm"
-      i18n="mir.validation.author" required="true" display="global" />
-    <xed:validate xpath="//mods:nameIdentifier[@type='phtg']" matches="[öÖäÄüÜßA-Za-z]{3}"
-      i18n="project.validation.employee_abbreviation" display="global" />
-  </xed:template>
-
   <xed:template id="project.rvk">
     <xed:choose>
       <xed:when test="xed:call-java('org.mycore.common.xml.MCRXMLFunctions','isCurrentUserInRole','admin') or xed:call-java('org.mycore.common.xml.MCRXMLFunctions','isCurrentUserInRole','editor')">
