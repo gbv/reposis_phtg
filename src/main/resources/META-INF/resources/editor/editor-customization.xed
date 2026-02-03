@@ -4,7 +4,7 @@
 
   <!-- ========== extend editor-genres.xed ========== -->
   <xed:modify ref="admin.fields">
-    <xed:include ref="project.rvk.optional" before="sdnb.repeat" />
+    <xed:include ref="project.rvk" before="sdnb.repeat" />
     <xed:include ref="project.ddc" after="sdnb.repeat" />
     <xed:remove ref="sdnb.repeat" />
     <xed:remove ref="institutes.repeat" />
