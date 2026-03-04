@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet version="1.0"
+  xmlns:mcracl="xalan://org.mycore.common.xml.MCRXMLFunctions"
+  xmlns:mcri18n="xalan://org.mycore.services.i18n.MCRTranslation"
+  xmlns:mcrversion="xalan://org.mycore.common.MCRCoreVersion"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  exclude-result-prefixes="mcracl mcri18n mcrversion">
 
   <xsl:import href="resource:xsl/layout/mir-common-layout.xsl" />
 
@@ -25,8 +30,7 @@
       <div class="row align-items-center">
         <div class="col-4">
           <div id="project_logo_box">
-            <a href="https://www.phtg.ch/"
-              class="">
+            <a href="https://www.phtg.ch/" class="">
               <img src="{$WebApplicationBaseURL}images/logo-phtg24-cut.svg" class="img-fluid" />
             </a>
           </div>
@@ -64,7 +68,7 @@
               role="search">
               <input
                 name="condQuery"
-                placeholder="{document('i18n:mir.navsearch.placeholder')/i18n/text()}"
+                placeholder="{mcri18n:translate('mir.navsearch.placeholder')}"
                 class="form-control mr-sm-2 search-query"
                 id="searchInput"
                 type="text"
@@ -73,7 +77,7 @@
                 <xsl:when test="contains($isSearchAllowedForCurrentUser, 'true')">
                   <input name="owner" type="hidden" value="createdby:*" />
                 </xsl:when>
-                <xsl:when test="not($CurrentUser='guest')">
+                <xsl:when test="not(mcracl:isCurrentUserGuestUser())">
                   <input name="owner" type="hidden" value="createdby:{$CurrentUser}" />
                 </xsl:when>
               </xsl:choose>
@@ -90,16 +94,17 @@
   <xsl:template name="mir.jumbotwo">
     <!-- show only on startpage -->
     <xsl:if test="//div/@class='jumbotwo'">
+      <!-- ignore -->
     </xsl:if>
   </xsl:template>
 
   <xsl:template name="project.generate_single_menu_entry">
     <xsl:param name="menuID" />
-    <xsl:variable name="menuItem" select="$loaded_navigation_xml/menu[@id=$menuID]/item" />
+    <xsl:variable name="menu-item" select="$loaded_navigation_xml/menu[@id=$menuID]/item" />
     <li class="nav-item">
-      <xsl:variable name="activeClass">
+      <xsl:variable name="active-class">
         <xsl:choose>
-          <xsl:when test="$menuItem/@href = $browserAddress">
+          <xsl:when test="$menu-item/@href = $browserAddress">
             <xsl:text>active</xsl:text>
           </xsl:when>
           <xsl:otherwise>
@@ -107,45 +112,46 @@
           </xsl:otherwise>
         </xsl:choose>
       </xsl:variable>
-      <xsl:variable name="fullUrl">
-        <xsl:call-template name="resolveFullUrl">
-          <xsl:with-param name="link" select="$menuItem/@href" />
+      <xsl:variable name="full-url">
+        <xsl:call-template name="resolve-full-url">
+          <xsl:with-param name="link" select="$menu-item/@href" />
         </xsl:call-template>
       </xsl:variable>
-      <a id="{$menuID}" href="{$fullUrl}" class="nav-link {$activeClass}">
-        <xsl:apply-templates select="$menuItem" mode="linkText" />
+      <a id="{$menuID}" href="{$full-url}" class="nav-link {$active-class}">
+        <xsl:apply-templates select="$menu-item" mode="linkText" />
       </a>
     </li>
   </xsl:template>
 
-  <xsl:template name="resolveFullUrl">
+  <xsl:template name="resolve-full-url">
     <xsl:param name="link" />
-    <xsl:param name="appBaseUrl" select="$WebApplicationBaseURL" />
+    <xsl:param name="base-url" select="$WebApplicationBaseURL" />
     <xsl:choose>
-      <xsl:when test="starts-with($link,'http:')
-                      or starts-with($link,'https:')
-                      or starts-with($link,'mailto:')
-                      or starts-with($link,'ftp:')">
+      <xsl:when test="
+        starts-with($link,'http:')
+        or starts-with($link,'https:')
+        or starts-with($link,'mailto:')
+        or starts-with($link,'ftp:')
+      ">
         <xsl:value-of select="$link" />
       </xsl:when>
       <xsl:when test="starts-with($link,'/')">
         <xsl:choose>
-          <xsl:when test="substring($appBaseUrl, string-length($appBaseUrl), 1) = '/'">
-            <xsl:value-of
-              select="concat(substring($appBaseUrl, 1, string-length($appBaseUrl) - 1), $link)" />
+          <xsl:when test="substring($base-url, string-length($base-url), 1) = '/'">
+            <xsl:value-of select="concat(substring($base-url, 1, string-length($base-url) - 1), $link)" />
           </xsl:when>
           <xsl:otherwise>
-            <xsl:value-of select="concat($appBaseUrl, $link)" />
+            <xsl:value-of select="concat($base-url, $link)" />
           </xsl:otherwise>
         </xsl:choose>
       </xsl:when>
       <xsl:otherwise>
         <xsl:choose>
-          <xsl:when test="substring($appBaseUrl, string-length($appBaseUrl), 1) = '/'">
-            <xsl:value-of select="concat($appBaseUrl, $link)" />
+          <xsl:when test="substring($base-url, string-length($base-url), 1) = '/'">
+            <xsl:value-of select="concat($base-url, $link)" />
           </xsl:when>
           <xsl:otherwise>
-            <xsl:value-of select="concat($appBaseUrl, '/', $link)" />
+            <xsl:value-of select="concat($base-url, '/', $link)" />
           </xsl:otherwise>
         </xsl:choose>
       </xsl:otherwise>
@@ -168,12 +174,12 @@
   </xsl:template>
 
   <xsl:template name="mir.powered_by">
-    <xsl:variable name="mcr_version" select="document('version:full')/version/text()" />
+    <xsl:variable name="version" select="concat('MyCoRe ', mcrversion:getCompleteVersion())" />
     <div id="powered_by">
-      <a href="http://www.mycore.de"><!-- mycore_logo_powered_120x30_blaue_schrift_frei.png -->
+      <a href="https://www.mycore.de">
         <img
           src="{$WebApplicationBaseURL}mir-layout/images/mycore_logo_small_invert.png"
-          title="{$mcr_version}"
+          title="{$version}"
           alt="powered by MyCoRe" />
       </a>
     </div>
