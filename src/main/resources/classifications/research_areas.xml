@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="research_areas">
+<mycoreclass ID="research_areas"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="MCRClassification.xsd">
   <label xml:lang="de" text="Forschungsbereiche" description="Liste der Forschungsbereiche" />
   <label xml:lang="en" text="research areas" description="List of research areas" />
   <label xml:lang="x-uri" text="https://www.publikationsserver.phtg.ch/classifications/research_areas" />

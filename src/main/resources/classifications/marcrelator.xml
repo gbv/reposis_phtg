@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="marcrelator">
+<mycoreclass ID="marcrelator"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="MCRClassification.xsd">
   <label xml:lang="de" text="MARC-Relator-Rollen" />
   <label xml:lang="en" text="MARC relator roles" />
   <label xml:lang="x-auth" text="marcrelator" description="A list of possible contributor roles" />

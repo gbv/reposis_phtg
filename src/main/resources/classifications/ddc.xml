@@ -2,8 +2,9 @@
 <!-- DDC Klassifikation -->
 <!-- DINI DDC-Zuordnung nach "DDC in der Deutschen Nationalbiographie" (http://www.d-nb.de/service/pdf/ddc_wv_aktuell.pdf) -->
 
-<mycoreclass ID="DDC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-             xsi:noNamespaceSchemaLocation="MCRClassification.xsd">
+<mycoreclass ID="DDC"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="MCRClassification.xsd">
   <label xml:lang="de" text="Dewey Dezimal-Klassifikation (DDC)" />
   <label xml:lang="x-auth" text="ddc" />
   <label xml:lang="x-uri" text="http://www.mycore.org/classifications/DDC" />
