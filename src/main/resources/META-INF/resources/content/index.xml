@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE MyCoReWebPage>
 <MyCoReWebPage>
-
   <section xml:lang="de" title="Publikationsserver der PHTG">
     <head>
-      <meta name="title" content="Publikationsserver der PHTG"/>
+      <meta name="title" content="Publikationsserver der PHTG" />
       <meta name='description' content="Der Publikationsserver der PHTG ist das institutionelle Repositorium der
                                         Pädagogischen Hochschule Thurgau. Darüber werden wissenschaftliche und
                                         anwendungsbezogene Publikationen von Autor:innen der PHTG im Sinne von
                                         Open-Access veröffentlicht." />
     </head>
-
     <div class="jumbotwo" id="phtg-index-search" style="margin-top:50px;">
       <div class="row">
         <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2" lang="de">
@@ -25,119 +23,32 @@
             <div class="input-group w-100">
               <input
                 name="condQuery"
-                placeholder="Suche in 16.000 Dokumenten"
+                placeholder="Suche in 2.000 Dokumenten"
                 class="form-control search-query"
                 id="project-searchInput"
                 type="text"
                 aria-label=""
                 aria-describedby="" />
               <div class="input-group-append">
-                <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
+                <button type="submit" class="btn btn-primary">
+                  <i class="fas fa-search"></i>
+                </button>
               </div>
             </div>
             <div class="custom-control custom-switch mt-3">
-              <input type="checkbox" class="custom-control-input" id="switchPaper" />
-              <label class="custom-control-label" for="switchPaper">Referate einbeziehen</label>
+              <input type="checkbox" class="custom-control-input" id="switchSpeech" />
+              <label class="custom-control-label" for="switchSpeech">Referate einbeziehen</label>
             </div>
             <div class="custom-control custom-switch mt-3 ml-4">
               <input type="checkbox" class="custom-control-input" id="switchThesis" />
               <label class="custom-control-label" for="switchThesis">Qualifikationsarbeiten einbeziehen</label>
             </div>
+            <input name="fq" type="hidden" value="NOT(category.top:&quot;mir_genres:speech&quot;)" id="filterSpeech" />
+            <input name="fq" type="hidden" value="NOT(category.top:&quot;mir_genres:thesis&quot;)" id="filterThesis" />
           </form>
         </div>
       </div>
     </div>
-    <script type="text/javascript" src="../js/jquery.number.js"/>
-    <script type="text/javascript" >
-       $( document ).ready(function() {
-        var documentsAll = 0;
-        var documentsFiltered = 0;
-
-        // not speech and not thesis (filtered)
-        $.ajax({
-          type: "GET",
-          url: '../api/v1/search?q=objectType:mods AND state:published AND NOT(category.top:&quot;mir_genres:speech&quot;) AND NOT(category.top:&quot;mir_genres:thesis&quot;)&amp;rows=0&amp;wt=json&amp;json.wrf=?',
-          dataType: "jsonp",
-          success: function (data) {
-            documentsFiltered = $.number(data.response.numFound,0, ',', '.');
-            if ( documentsFiltered ) {
-              $('#project-searchInput').attr('placeholder', 'Suche in ' + documentsFiltered + ' Dokumenten');
-            }
-          },
-        });
-
-        // not thesis
-        $.ajax({
-          type: "GET",
-          url: '../api/v1/search?q=objectType:mods AND state:published AND NOT(category.top:&quot;mir_genres:thesis&quot;)&amp;rows=0&amp;wt=json&amp;json.wrf=?',
-          dataType: "jsonp",
-          success: function (data) {
-            documentsNotThesis = $.number(data.response.numFound,0, ',', '.');
-          },
-        });
-
-        // not speech
-        $.ajax({
-          type: "GET",
-          url: '../api/v1/search?q=objectType:mods AND state:published AND NOT(category.top:&quot;mir_genres:speech&quot;)&amp;rows=0&amp;wt=json&amp;json.wrf=?',
-          dataType: "jsonp",
-          success: function (data) {
-            documentsNotSpeech = $.number(data.response.numFound,0, ',', '.');
-          },
-        });
-
-        // all
-        $.ajax({
-          type: "GET",
-          url: '../api/v1/search?q=objectType:mods AND state:published&amp;rows=0&amp;wt=json&amp;json.wrf=?',
-          dataType: "jsonp",
-          success: function (data) {
-            documentsAll = $.number(data.response.numFound,0, ',', '.');
-          },
-        });
-
-
-        var paperFilter = '<input name="fq" type="hidden" value="NOT(category.top:&quot;mir_genres:speech&quot;)" id="filterPaper" />';
-        $("#project-searchMainPage").append( paperFilter );
-
-        $("#switchPaper").change(function() {
-          if ( $("#switchPaper").prop("checked") === true &amp;&amp; $("#switchThesis").prop("checked") === false ) {
-            $("#filterPaper").remove();
-            if ( documentsNotThesis ) {
-              $('#project-searchInput').attr('placeholder', 'Suche in ' + documentsNotThesis + ' Dokumenten');
-            }
-          } else {
-            $("#project-searchMainPage").append( paperFilter );
-            if ( documentsFiltered ) {
-              $('#project-searchInput').attr('placeholder', 'Suche in ' + documentsFiltered + ' Dokumenten');
-            }
-          }
-        });
-
-        var thesisFilter = '<input name="fq" type="hidden" value="NOT(category.top:&quot;mir_genres:thesis&quot;)" id="filterThesis" />';
-        $("#project-searchMainPage").append( thesisFilter );
-
-        $("#switchThesis").change(function() {
-          if ( $("#switchThesis").prop("checked") === true &amp;&amp; $("#switchPaper").prop("checked") === false ) {
-            $("#filterThesis").remove();
-            if ( documentsNotSpeech ) {
-              $('#project-searchInput').attr('placeholder', 'Suche in ' + documentsNotSpeech + ' Dokumenten');
-            }
-          } else if ( $("#switchThesis").prop("checked") === true &amp;&amp; $("#switchPaper").prop("checked") === true ) {
-            $("#filterThesis").remove();
-            if ( documentsAll ) {
-              $('#project-searchInput').attr('placeholder', 'Suche in ' + documentsAll + ' Dokumenten');
-            }
-          } else {
-            $("#project-searchMainPage").append( thesisFilter );
-            if ( documentsFiltered ) {
-              $('#project-searchInput').attr('placeholder', 'Suche in ' + documentsFiltered + ' Dokumenten');
-            }
-          }
-        });
-      });
-    </script>
+    <script type="text/javascript" src="../js/index.js" />
   </section>
-  <meta>
-  </meta>
 </MyCoReWebPage>

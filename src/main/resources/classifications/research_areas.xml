@@ -1,23 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink"
+<mycoreclass ID="research_areas"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="research_areas">
+  xsi:noNamespaceSchemaLocation="MCRClassification.xsd">
   <label xml:lang="de" text="Forschungsbereiche" description="Liste der Forschungsbereiche" />
   <label xml:lang="en" text="research areas" description="List of research areas" />
-  <label xml:lang="x-uri"
-    text="https://www.publikationsserver.phtg.ch/classifications/research_areas" />
+  <label xml:lang="x-uri" text="https://www.publikationsserver.phtg.ch/classifications/research_areas" />
   <categories>
-    <category ID="frühe_sprachbildung">
-      <label xml:lang="de" text="Frühe Sprachbildung" />
+    <category ID="bildungsgeschichte_bildungssysteme">
+      <label xml:lang="de" text="Bildungsgeschichte und Bildungssysteme" />
     </category>
     <category ID="bildungssoziologie">
       <label xml:lang="de" text="Bildungssoziologie" />
     </category>
-    <category ID="päd_psychologie">
-      <label xml:lang="de" text="Pädagogische Psychologie" />
+    <category ID="eb_frühe_kindheit">
+      <label xml:lang="de" text="Brückenprofessur Entwicklung und Bildung in der Frühen Kindheit" />
     </category>
-    <category ID="allg_erziehungswissenschaft">
-      <label xml:lang="de" text="Allgemeine Erziehungswissenschaft" />
+    <category ID="erziehungswissenschaft">
+      <label xml:lang="de" text="Brückenprofessur Erziehungswissenschaft" />
+    </category>
+    <category ID="brueckenlehrstuhl_fd_naturwissenschaften">
+      <label xml:lang="de" text="Brückenprofessur Fachdidaktik der Naturwissenschaften" />
+    </category>
+    <category ID="fachdidaktik_fremdsprachen">
+      <label xml:lang="de" text="Fachdidaktik Fremdsprachen" />
+    </category>
+    <category ID="frühe_sprachbildung">
+      <label xml:lang="de" text="Frühe Sprachbildung" />
     </category>
     <category ID="math_didaktik">
       <label xml:lang="de" text="Mathematikdidaktik" />
@@ -26,13 +34,16 @@
       <label xml:lang="de" text="Medienpädagogik" />
     </category>
     <category ID="fd_naturwissenschaften">
-      <label xml:lang="de" text="Fachdidaktik Naturwissenschaften" />
+      <label xml:lang="de" text="Naturwissenschaftsdidaktik" />
     </category>
-    <category ID="eb_frühe_kindheit">
-      <label xml:lang="de" text="Entwicklung und Bildung in der Frühen Kindheit" />
+    <category ID="päd_psychologie">
+      <label xml:lang="de" text="Pädagogische Psychologie" />
     </category>
-    <category ID="erziehungswissenschaft">
-      <label xml:lang="de" text="Erziehungswissenschaft" />
+    <category ID="qualitative_schulforschung">
+      <label xml:lang="de" text="Qualitative Schulforschung" />
+    </category>
+    <category ID="forschung_andere">
+      <label xml:lang="de" text="Nicht zugewiesen" />
     </category>
   </categories>
 </mycoreclass>

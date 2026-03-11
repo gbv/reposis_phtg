@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mycoreclass xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="MCRClassification.xsd" ID="peer_review">
+<mycoreclass ID="peer_review"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="MCRClassification.xsd">
   <label xml:lang="de" text="Peer-Reviewed" />
   <label xml:lang="x-uri" text="https://publikationsserver.phtg.ch/classifications/peer_review" />
   <categories>

@@ -2,8 +2,9 @@
 <!-- DDC Klassifikation -->
 <!-- DINI DDC-Zuordnung nach "DDC in der Deutschen Nationalbiographie" (http://www.d-nb.de/service/pdf/ddc_wv_aktuell.pdf) -->
 
-<mycoreclass ID="DDC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-             xsi:noNamespaceSchemaLocation="MCRClassification.xsd">
+<mycoreclass ID="DDC"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="MCRClassification.xsd">
   <label xml:lang="de" text="Dewey Dezimal-Klassifikation (DDC)" />
   <label xml:lang="x-auth" text="ddc" />
   <label xml:lang="x-uri" text="http://www.mycore.org/classifications/DDC" />
@@ -1626,7 +1627,6 @@
           <label xml:lang="de" text="407 Ausbildung, Forschung, verwandte Themen" />
           <label xml:lang="x-mapping" text="SDNB:400" />
         </category>
-
         <category ID="408">
           <label xml:lang="de" text="408 Behandlung nach Personengruppen" />
           <label xml:lang="x-mapping" text="SDNB:400" />
@@ -2920,7 +2920,6 @@
           <label xml:lang="x-mapping" text="SDNB:610" />
         </category>
       </category>
-
       <category ID="62">
         <label xml:lang="de" text="620 Ingenieurwissenschaften" />
         <label xml:lang="x-mapping" text="SDNB:620" />
@@ -2931,10 +2930,10 @@
         <category ID="621">
           <label xml:lang="de" text="621 Angewandte Physik" />
           <label xml:lang="x-mapping" text="SDNB:620" />
-	        <category ID="621.3">
-	          <label xml:lang="de" text="621.3 Elekto-, magnetische, optische, Kommunikations- und Computertechnik, Elektronik, Beleuchtung" />
-	          <label xml:lang="x-mapping" text="SDNB:621.3" />
-	        </category>
+          <category ID="621.3">
+            <label xml:lang="de" text="621.3 Elekto-, magnetische, optische, Kommunikations- und Computertechnik, Elektronik, Beleuchtung" />
+            <label xml:lang="x-mapping" text="SDNB:621.3" />
+          </category>
         </category>
         <category ID="622">
           <label xml:lang="de" text="622 Bergbau und verwandte Tätigkeiten" />
@@ -4572,4 +4571,3 @@
     </category>
   </categories>
 </mycoreclass>
-
