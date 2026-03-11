@@ -101,6 +101,13 @@
       <label xml:lang="de" text="Tagungsband" />
       <label xml:lang="x-hosts" text="series standalone" />
     </category>
+    <category ID="audio">
+      <label xml:lang="en" text="Audio file" />
+      <label xml:lang="x-hosts" text="standalone lecture" />
+      <label xml:lang="x-mapping" text="marcgt:sound diniPublType:Sound diniPublType2022:Sound schemaOrg:MediaObject coarResourceTypes32:c_18cc openAIRE400resourceTypeGeneral:other_research_product" />
+      <label xml:lang="de" text="Tondokument" />
+      <label xml:lang="it" text="Registrazione audio" />
+    </category>
     <category ID="journal">
       <label xml:lang="de" text="Zeitschrift" />
       <label xml:lang="en" text="Journal" />
