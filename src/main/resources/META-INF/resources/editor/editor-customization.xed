@@ -603,6 +603,18 @@
     <xed:include ref="comment.complex" />
   </xed:template>
 
+  <!-- ========== Genre: Modifications ========== -->
+  <xed:modify ref="genres.av.common">
+    <xed:include ref="name.extended.repeated"     after="name.repeated" />
+    <xed:remove ref="name.repeated" />
+    <xed:include ref="project.research_areas"     after="name.extended.repeated" />
+    <xed:include ref="project.research_projects"  after="project.research_areas" />
+    <xed:include ref="project.rvk"                after="language" />
+    <xed:include ref="link.repeated"              after="doi.handle.urn.repeated" />
+    <xed:remove ref="sdnb.repeat" />
+    <xed:remove ref="institutes" />
+  </xed:modify>
+
   <!-- ========== General overrides ========== -->
   <xed:template id="comment.complex">
     <fieldset>
