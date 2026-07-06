@@ -29,6 +29,34 @@
     <xed:include ref="project.oa_status" after="rights" />
   </xed:modify>
 
+  <!-- ========== Host: New ========== -->
+  <xed:template id="hosts.editing">
+    <xed:bind xpath="mods:relatedItem[@type='host']">
+      <xed:bind xpath="@xlink:href" initially="{$MIR.projectid.default}_mods_00000000">
+        <input id="relItem-collection" type="hidden" />
+      </xed:bind>
+      <xed:include ref="title.collection.relItemsearch" />
+      <xed:include ref="subtitle" />
+      <xed:include ref="editor.repeated" />
+      <xed:include ref="hosts.collection.common.publisher" />
+      <xed:include ref="identifier.isbn.collection.relItemsearch" />
+      <xed:include ref="host.pages" />
+    </xed:bind>
+  </xed:template>
+
+  <xed:template id="hosts.teaching_material">
+    <xed:include ref="title.collection.relItemsearch" />
+    <xed:include ref="subtitle" />
+    <xed:include ref="editor.repeated" />
+    <xed:include ref="year.issued" />
+    <xed:include ref="place" />
+    <xed:include ref="publisher" />
+    <xed:include ref="edition" />
+    <xed:include ref="host.pages" />
+    <xed:include ref="identifier.isbn.collection.relItemsearch" />
+    <xed:include ref="project.ageRange" />
+  </xed:template>
+
   <!-- ========== Host: Overrides ========== -->
   <xed:template id="genres.article">
     <xed:include ref="title.original" />
@@ -52,6 +80,188 @@
     <xed:include ref="comment.complex" />
   </xed:template>
 
+  <xed:template id="hosts.proceedings">
+    <xed:bind xpath="mods:relatedItem[@type='host']">
+      <xed:bind xpath="@xlink:href" initially="{$MIR.projectid.default}_mods_00000000">
+        <input id="relItem-proceedings" type="hidden" />
+      </xed:bind>
+      <xed:include ref="project.title.proceedings.relItemsearch.required" />
+      <xed:include ref="subtitle" />
+      <xed:include ref="conference" />
+      <xed:include ref="editor.repeated" />
+      <xed:include ref="hosts.collection.common.publisher" />
+      <xed:include ref="identifier.isbn.proceedings.relItemsearch" />
+      <xed:include ref="host.pages" />
+    </xed:bind>
+  </xed:template>
+
+  <!-- ========== Host: Modifications ========== -->
+  <xed:modify ref="hosts.collection">
+    <xed:include ref="shelfmark.book.relItemsearch" />
+  </xed:modify>
+
+  <xed:modify ref="hosts.journal">
+    <xed:remove ref="identifier.isbn.journal.relItemsearch" />
+    <xed:remove ref="shelfmark.journal.relItemsearch" />
+  </xed:modify>
+
+  <xed:modify ref="hosts.newspaper">
+    <xed:remove ref="identifier.issn.newspaper.relItemsearch" />
+    <xed:remove ref="identifier.isbn.newspaper.relItemsearch" />
+  </xed:modify>
+
+  <xed:modify ref="hosts.series">
+    <xed:if test="
+      xed:call-java('org.mycore.common.xml.MCRXMLFunctions','isCurrentUserInRole','admin')
+      or xed:call-java('org.mycore.common.xml.MCRXMLFunctions','isCurrentUserInRole','editor')
+    ">
+      <xed:include ref="project.title.series.relItemsearch.required" after="title.series.relItemsearch" />
+      <xed:remove ref="title.series.relItemsearch" />
+    </xed:if>
+    <xed:remove ref="shelfmark.book.relItemsearch" />
+    <xed:remove ref="identifier.issn.series.relItemsearch" />
+  </xed:modify>
+
+  <!-- ========== Genre: New ========== -->
+  <xed:template id="genres.editing">
+    <xed:include ref="title.original" />
+    <xed:include ref="editor.repeated" />
+    <xed:include ref="year.issued" />
+    <xed:include ref="place" />
+    <xed:include ref="publisher" />
+    <xed:include ref="edition" />
+    <xed:include ref="extent" />
+    <xed:include ref="language" />
+    <xed:include ref="project.rvk" />
+    <xed:include ref="identifier.isbn" />
+    <xed:include ref="identifier.managed" />
+    <xed:include ref="doi.handle.urn.repeated" />
+    <xed:include ref="link.repeated" />
+    <xed:include ref="subject.simple" />
+    <xed:include ref="shelfmark" />
+    <xed:include ref="abstract.simple" />
+    <xed:include ref="embargo.datetimepicker" />
+    <xed:include ref="project.peerReviewed" />
+    <xed:include ref="rights" />
+    <xed:include ref="project.research_areas" />
+    <xed:include ref="project.research_projects" />
+    <xed:include ref="comment.complex" />
+  </xed:template>
+
+  <xed:template id="genres.cas">
+    <xed:include ref="titles.thesis" />
+    <xed:include ref="author.repeated" />
+    <xed:include ref="referent.repeated" />
+    <xed:include ref="coreferent.repeated" />
+    <xed:include ref="year.issued" />
+    <xed:include ref="project.courses" />
+    <xed:include ref="creator.place.college" />
+    <xed:include ref="creator.college" />
+    <xed:include ref="type.of.resource.repeated" />
+    <xed:include ref="language" />
+    <xed:include ref="rights.reserved" />
+    <xed:include ref="comment.complex" />
+  </xed:template>
+
+  <xed:template id="genres.mas">
+    <xed:include ref="titles.thesis" />
+    <xed:include ref="author.repeated" />
+    <xed:include ref="referent.repeated" />
+    <xed:include ref="coreferent.repeated" />
+    <xed:include ref="year.issued" />
+    <xed:include ref="project.courses" />
+    <xed:include ref="date.submitted.datetimepicker" />
+    <xed:include ref="date.accepted.datetimepicker" />
+    <xed:include ref="shelfmark" />
+    <xed:include ref="creator.place.college" />
+    <xed:include ref="creator.college" />
+    <xed:include ref="publisher" />
+    <xed:include ref="extent" />
+    <xed:include ref="type.of.resource.repeated" />
+    <xed:include ref="language" />
+    <xed:include ref="identifier.isbn" />
+    <xed:include ref="project.rvk" />
+    <xed:include ref="subject.simple" />
+    <xed:include ref="abstract.repeated" />
+    <xed:include ref="rights.reserved" />
+    <xed:include ref="embargo.datetimepicker" />
+    <xed:include ref="project.research_areas" />
+    <xed:include ref="project.research_projects" />
+    <xed:include ref="comment.complex" />
+  </xed:template>
+
+  <xed:template id="genres.matura">
+    <xed:include ref="title.original" />
+    <xed:include ref="author.repeated" />
+    <xed:include ref="referent.repeated" />
+    <xed:include ref="coreferent.repeated" />
+    <xed:include ref="year.issued" />
+    <xed:include ref="creator.place.college" />
+    <xed:include ref="creator.college" />
+    <xed:include ref="type.of.resource.repeated" />
+    <xed:include ref="language" />
+    <xed:include ref="rights.reserved" />
+    <xed:include ref="abstract.repeated" />
+    <xed:include ref="comment.complex" />
+  </xed:template>
+
+  <xed:template id="genres.other">
+    <xed:include ref="title.original" />
+    <xed:include ref="name.extended.repeated" />
+    <xed:include ref="project.research_areas" />
+    <xed:include ref="project.research_projects" />
+    <xed:include ref="editor.repeated" />
+    <xed:include ref="host.volume" />
+    <xed:include ref="year.issued" />
+    <xed:include ref="type.of.resource.repeated" />
+    <xed:include ref="language" />
+    <xed:include ref="identifier.managed" />
+    <xed:include ref="doi.handle.urn.repeated" />
+    <xed:include ref="link.repeated" />
+    <xed:include ref="project.rvk" />
+    <xed:include ref="subject.simple" />
+    <xed:include ref="abstract.simple" />
+    <xed:include ref="rights" />
+    <xed:include ref="comment.complex" />
+  </xed:template>
+
+  <xed:template id="genres.practice_material">
+    <xed:include ref="title.original" />
+    <xed:include ref="name.extended.repeated" />
+    <xed:include ref="project.research_areas" />
+    <xed:include ref="project.research_projects" />
+    <xed:include ref="editor.repeated" />
+    <xed:include ref="host.volume" />
+    <xed:include ref="year.issued" />
+    <xed:include ref="language" />
+    <xed:include ref="identifier.managed" />
+    <xed:include ref="doi.handle.urn.repeated" />
+    <xed:include ref="project.rvk" />
+    <xed:include ref="subject.simple" />
+    <xed:include ref="abstract.simple" />
+    <xed:include ref="rights" />
+    <xed:include ref="comment.complex" />
+  </xed:template>
+
+  <xed:template id="genres.research_material">
+    <xed:include ref="title.original" />
+    <xed:include ref="name.extended.repeated" />
+    <xed:include ref="project.research_areas" />
+    <xed:include ref="project.research_projects" />
+    <xed:include ref="editor.repeated" />
+    <xed:include ref="host.volume" />
+    <xed:include ref="year.issued" />
+    <xed:include ref="language" />
+    <xed:include ref="identifier.managed" />
+    <xed:include ref="doi.handle.urn.repeated" />
+    <xed:include ref="project.rvk" />
+    <xed:include ref="subject.simple" />
+    <xed:include ref="abstract.simple" />
+    <xed:include ref="rights" />
+    <xed:include ref="comment.complex" />
+  </xed:template>
+
+  <!-- ========== Genre: Overrides ========== -->
   <xed:template id="genres.bachelor_thesis">
     <xed:include ref="titles.thesis" />
     <xed:include ref="author.repeated" />
@@ -368,214 +578,6 @@
     <xed:include ref="comment.complex" />
   </xed:template>
 
-  <!-- ========== Genre: Modifications ========== -->
-  <xed:modify ref="hosts.collection">
-    <xed:include ref="shelfmark.book.relItemsearch" />
-  </xed:modify>
-
-  <xed:modify ref="hosts.journal">
-    <xed:remove ref="identifier.isbn.journal.relItemsearch" />
-    <xed:remove ref="shelfmark.journal.relItemsearch" />
-  </xed:modify>
-
-  <xed:modify ref="hosts.newspaper">
-    <xed:remove ref="identifier.issn.newspaper.relItemsearch" />
-    <xed:remove ref="identifier.isbn.newspaper.relItemsearch" />
-  </xed:modify>
-
-  <xed:template id="hosts.proceedings">
-    <xed:bind xpath="mods:relatedItem[@type='host']">
-      <xed:bind xpath="@xlink:href" initially="{$MIR.projectid.default}_mods_00000000">
-        <input id="relItem-proceedings" type="hidden" />
-      </xed:bind>
-      <xed:include ref="project.title.proceedings.relItemsearch.required" />
-      <xed:include ref="subtitle" />
-      <xed:include ref="conference" />
-      <xed:include ref="editor.repeated" />
-      <xed:include ref="hosts.collection.common.publisher" />
-      <xed:include ref="identifier.isbn.proceedings.relItemsearch" />
-      <xed:include ref="host.pages" />
-    </xed:bind>
-  </xed:template>
-
-  <xed:modify ref="hosts.series">
-    <xed:if test="
-      xed:call-java('org.mycore.common.xml.MCRXMLFunctions','isCurrentUserInRole','admin')
-      or xed:call-java('org.mycore.common.xml.MCRXMLFunctions','isCurrentUserInRole','editor')
-    ">
-      <xed:include ref="project.title.series.relItemsearch.required" after="title.series.relItemsearch" />
-      <xed:remove ref="title.series.relItemsearch" />
-    </xed:if>
-    <xed:remove ref="shelfmark.book.relItemsearch" />
-    <xed:remove ref="identifier.issn.series.relItemsearch" />
-  </xed:modify>
-
-  <!-- ========== Project specific templates ========== -->
-  <xed:template id="hosts.editing">
-    <xed:bind xpath="mods:relatedItem[@type='host']">
-      <xed:bind xpath="@xlink:href" initially="{$MIR.projectid.default}_mods_00000000">
-        <input id="relItem-collection" type="hidden" />
-      </xed:bind>
-      <xed:include ref="title.collection.relItemsearch" />
-      <xed:include ref="subtitle" />
-      <xed:include ref="editor.repeated" />
-      <xed:include ref="hosts.collection.common.publisher" />
-      <xed:include ref="identifier.isbn.collection.relItemsearch" />
-      <xed:include ref="host.pages" />
-    </xed:bind>
-  </xed:template>
-
-  <xed:template id="genres.editing">
-    <xed:include ref="title.original" />
-    <xed:include ref="editor.repeated" />
-    <xed:include ref="year.issued" />
-    <xed:include ref="place" />
-    <xed:include ref="publisher" />
-    <xed:include ref="edition" />
-    <xed:include ref="extent" />
-    <xed:include ref="language" />
-    <xed:include ref="project.rvk" />
-    <xed:include ref="identifier.isbn" />
-    <xed:include ref="identifier.managed" />
-    <xed:include ref="doi.handle.urn.repeated" />
-    <xed:include ref="link.repeated" />
-    <xed:include ref="subject.simple" />
-    <xed:include ref="shelfmark" />
-    <xed:include ref="abstract.simple" />
-    <xed:include ref="embargo.datetimepicker" />
-    <xed:include ref="project.peerReviewed" />
-    <xed:include ref="rights" />
-    <xed:include ref="project.research_areas" />
-    <xed:include ref="project.research_projects" />
-    <xed:include ref="comment.complex" />
-  </xed:template>
-
-  <xed:template id="genres.cas">
-    <xed:include ref="titles.thesis" />
-    <xed:include ref="author.repeated" />
-    <xed:include ref="referent.repeated" />
-    <xed:include ref="coreferent.repeated" />
-    <xed:include ref="year.issued" />
-    <xed:include ref="project.courses" />
-    <xed:include ref="creator.place.college" />
-    <xed:include ref="creator.college" />
-    <xed:include ref="type.of.resource.repeated" />
-    <xed:include ref="language" />
-    <xed:include ref="rights.reserved" />
-    <xed:include ref="comment.complex" />
-  </xed:template>
-
-  <xed:template id="genres.mas">
-    <xed:include ref="titles.thesis" />
-    <xed:include ref="author.repeated" />
-    <xed:include ref="referent.repeated" />
-    <xed:include ref="coreferent.repeated" />
-    <xed:include ref="year.issued" />
-    <xed:include ref="project.courses" />
-    <xed:include ref="date.submitted.datetimepicker" />
-    <xed:include ref="date.accepted.datetimepicker" />
-    <xed:include ref="shelfmark" />
-    <xed:include ref="creator.place.college" />
-    <xed:include ref="creator.college" />
-    <xed:include ref="publisher" />
-    <xed:include ref="extent" />
-    <xed:include ref="type.of.resource.repeated" />
-    <xed:include ref="language" />
-    <xed:include ref="identifier.isbn" />
-    <xed:include ref="project.rvk" />
-    <xed:include ref="subject.simple" />
-    <xed:include ref="abstract.repeated" />
-    <xed:include ref="rights.reserved" />
-    <xed:include ref="embargo.datetimepicker" />
-    <xed:include ref="project.research_areas" />
-    <xed:include ref="project.research_projects" />
-    <xed:include ref="comment.complex" />
-  </xed:template>
-
-  <xed:template id="genres.matura">
-    <xed:include ref="title.original" />
-    <xed:include ref="author.repeated" />
-    <xed:include ref="referent.repeated" />
-    <xed:include ref="coreferent.repeated" />
-    <xed:include ref="year.issued" />
-    <xed:include ref="creator.place.college" />
-    <xed:include ref="creator.college" />
-    <xed:include ref="type.of.resource.repeated" />
-    <xed:include ref="language" />
-    <xed:include ref="rights.reserved" />
-    <xed:include ref="abstract.repeated" />
-    <xed:include ref="comment.complex" />
-  </xed:template>
-
-  <xed:template id="genres.other">
-    <xed:include ref="title.original" />
-    <xed:include ref="name.extended.repeated" />
-    <xed:include ref="project.research_areas" />
-    <xed:include ref="project.research_projects" />
-    <xed:include ref="editor.repeated" />
-    <xed:include ref="host.volume" />
-    <xed:include ref="year.issued" />
-    <xed:include ref="type.of.resource.repeated" />
-    <xed:include ref="language" />
-    <xed:include ref="identifier.managed" />
-    <xed:include ref="doi.handle.urn.repeated" />
-    <xed:include ref="link.repeated" />
-    <xed:include ref="project.rvk" />
-    <xed:include ref="subject.simple" />
-    <xed:include ref="abstract.simple" />
-    <xed:include ref="rights" />
-    <xed:include ref="comment.complex" />
-  </xed:template>
-
-  <xed:template id="genres.practice_material">
-    <xed:include ref="title.original" />
-    <xed:include ref="name.extended.repeated" />
-    <xed:include ref="project.research_areas" />
-    <xed:include ref="project.research_projects" />
-    <xed:include ref="editor.repeated" />
-    <xed:include ref="host.volume" />
-    <xed:include ref="year.issued" />
-    <xed:include ref="language" />
-    <xed:include ref="identifier.managed" />
-    <xed:include ref="doi.handle.urn.repeated" />
-    <xed:include ref="project.rvk" />
-    <xed:include ref="subject.simple" />
-    <xed:include ref="abstract.simple" />
-    <xed:include ref="rights" />
-    <xed:include ref="comment.complex" />
-  </xed:template>
-
-  <xed:template id="genres.research_material">
-    <xed:include ref="title.original" />
-    <xed:include ref="name.extended.repeated" />
-    <xed:include ref="project.research_areas" />
-    <xed:include ref="project.research_projects" />
-    <xed:include ref="editor.repeated" />
-    <xed:include ref="host.volume" />
-    <xed:include ref="year.issued" />
-    <xed:include ref="language" />
-    <xed:include ref="identifier.managed" />
-    <xed:include ref="doi.handle.urn.repeated" />
-    <xed:include ref="project.rvk" />
-    <xed:include ref="subject.simple" />
-    <xed:include ref="abstract.simple" />
-    <xed:include ref="rights" />
-    <xed:include ref="comment.complex" />
-  </xed:template>
-
-  <xed:template id="hosts.teaching_material">
-    <xed:include ref="title.collection.relItemsearch" />
-    <xed:include ref="subtitle" />
-    <xed:include ref="editor.repeated" />
-    <xed:include ref="year.issued" />
-    <xed:include ref="place" />
-    <xed:include ref="publisher" />
-    <xed:include ref="edition" />
-    <xed:include ref="host.pages" />
-    <xed:include ref="identifier.isbn.collection.relItemsearch" />
-    <xed:include ref="project.ageRange" />
-  </xed:template>
-
   <xed:template id="genres.teaching_material">
     <xed:include ref="title.original" />
     <xed:include ref="name.extended.repeated" />
@@ -600,6 +602,18 @@
     <xed:include ref="rights" />
     <xed:include ref="comment.complex" />
   </xed:template>
+
+  <!-- ========== Genre: Modifications ========== -->
+  <xed:modify ref="genres.av.common">
+    <xed:include ref="name.extended.repeated"     after="name.repeated" />
+    <xed:remove ref="name.repeated" />
+    <xed:include ref="project.research_areas"     after="name.extended.repeated" />
+    <xed:include ref="project.research_projects"  after="project.research_areas" />
+    <xed:include ref="project.rvk"                after="language" />
+    <xed:include ref="link.repeated"              after="doi.handle.urn.repeated" />
+    <xed:remove ref="sdnb.repeat" />
+    <xed:remove ref="institutes" />
+  </xed:modify>
 
   <!-- ========== General overrides ========== -->
   <xed:template id="comment.complex">
