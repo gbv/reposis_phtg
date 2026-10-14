@@ -22,6 +22,7 @@
     <xed:include ref="project.ddc" after="sdnb.repeat" />
     <xed:remove ref="sdnb.repeat" />
     <xed:remove ref="institutes.repeat" />
+    <xed:remove ref="related.item.other.search.of.all.items" />
     <xed:include ref="project.research_areas" after="project.ddc" />
     <xed:include ref="project.research_projects" after="project.research_areas" />
     <xed:include ref="project.courses" after="project.research_projects" />
