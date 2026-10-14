@@ -3,7 +3,7 @@
 [MIR](https://github.com/MyCoRe-Org/mir) plugin with project-specific
 customizations for the PHTG Publication Server.
 
-Compatible with **MIR 2024.06.x**.
+Compatible with **MIR 2025.06.x**.
 
 ## Installation
 
