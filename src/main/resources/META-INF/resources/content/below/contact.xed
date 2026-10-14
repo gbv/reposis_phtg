@@ -116,7 +116,7 @@
         <!-- Hidden parameters for MCRMailer -->
         <input
           type="hidden"
-          value="../content/below/contact.xed?XSL.Status.Style=success&amp;XSL.Status.Message=project.contact.success"
+          value="../content/below/contact.xed?XSL.Status.Style=success&amp;XSL.Status.Message=phtg.contact.success"
           name="goto" />
         <input type="hidden" value="e-mail-contact" name="xsl" />
         <!-- Buttons -->

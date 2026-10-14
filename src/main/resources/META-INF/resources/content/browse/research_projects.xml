@@ -16,11 +16,11 @@
     </head>
   </section>
 
-  <section i18n="browse.research_projects.title" xml:lang="all">
+  <section i18n="phtg.browse.research_projects.title" xml:lang="all">
 
     <div class="row">
       <div class="col-md-8" lang="de">
-        <h3><i18n key="browse.research_projects.title" /></h3>
+        <h3><i18n key="phtg.browse.research_projects.title" /></h3>
         <classificationbrowser classification="research_projects"
                                    objecttype="mods"
                                   restriction="+category.top:&quot;state:published&quot;"

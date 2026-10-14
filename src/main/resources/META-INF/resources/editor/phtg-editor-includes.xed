@@ -6,29 +6,29 @@
   </xed:template>
 
   <xed:template id="coreferent.repeated">
-    <mir:role.repeated role="dgs" label="mir.role.coreferent" help-text="{i18n:mir.help.role.coreferent}" />
+    <mir:role.repeated role="dgs" label="phtg.role.coreferent" help-text="{i18n:phtg.help.role.coreferent}" />
   </xed:template>
 
   <xed:tempalte id="name-identifier-validation">
     <xed:validate
       xpath="//mods:nameIdentifier[@type='gnd']"
       matches="\d{8}[\d|\-]?[\dxX]?"
-      i18n="mir.validation.gnd"
+      i18n="phtg.validation.gnd"
       display="global" />
     <xed:validate
       xpath="//mods:nameIdentifier[@type='orcid']"
       matches="\d{4}\-\d{4}\-\d{4}\-\d{3}[\d|x|X]"
-      i18n="mir.validation.orcid"
+      i18n="phtg.validation.orcid"
       display="global" />
     <xed:validate
       xpath="//mods:nameIdentifier[@type='phtg']"
       matches="[äöüÄÖÜA-Za-z]{3,9}"
-      i18n="mir.validation.phtg"
+      i18n="phtg.validation.employee_abbreviation"
       display="global" />
     <xed:validate
       xpath="//mods:nameIdentifier[@type='viaf']"
       matches="^\d{8}[\d-]?[\dxX]?$"
-      i18n="mir.validation.viaf"
+      i18n="phtg.validation.viaf"
       display="global" />
   </xed:tempalte>
 
@@ -36,27 +36,27 @@
     <xed:bind xpath="mods:note[@type='ageRange']" initially="notSpecified">
       <div class="form-group row">
         <label class="col-md-3 col-form-label text-right">
-          <xed:output i18n="project.form.ageRange.label" />
+          <xed:output i18n="phtg.form.ageRange.label" />
         </label>
         <div class="col-md-6">
           <div class="controls">
             <select class="form-control form-control-inline nameType">
               <option value="notSpecified">
-                <xed:output i18n="project.form.notSpecified" />
+                <xed:output i18n="phtg.form.notSpecified" />
               </option>
               <option value="Zyklus 1">
-                <xed:output i18n="project.form.ageRange.1" />
+                <xed:output i18n="phtg.form.ageRange.1" />
               </option>
               <option value="Zyklus 2">
-                <xed:output i18n="project.form.ageRange.2" />
+                <xed:output i18n="phtg.form.ageRange.2" />
               </option>
               <option value="Zyklus 3">
-                <xed:output i18n="project.form.ageRange.3" />
+                <xed:output i18n="phtg.form.ageRange.3" />
               </option>
             </select>
           </div>
         </div>
-        <mir:help-pmud help-text="{i18n:project.form.help.ageRange}" />
+        <mir:help-pmud help-text="{i18n:phtg.form.help.ageRange}" />
       </div>
     </xed:bind>
   </xed:template>
@@ -65,7 +65,7 @@
     <xed:bind xpath="mods:classification[@authorityURI='https://publikationsserver.phtg.ch/classifications/courses'][@displayLabel='courses']/@valueURIxEditor">
       <div class="form-group row {$xed-validation-marker}">
         <label class="col-md-3 col-form-label text-right">
-          <xed:output i18n="project.form.label.courses" />
+          <xed:output i18n="phtg.form.label.courses" />
         </label>
         <div class="col-md-6">
           <select class="form-control form-control-inline">
@@ -75,7 +75,7 @@
             <xed:include uri="xslStyle:items2options:classification:editor:-1:children:courses" />
           </select>
         </div>
-        <mir:help-pmud help-text="{i18n:project.help.courses}" pmud="false" />
+        <mir:help-pmud help-text="{i18n:phtg.help.courses}" pmud="false" />
       </div>
     </xed:bind>
   </xed:template>
@@ -84,7 +84,7 @@
     <xed:bind xpath="mods:classification[@authorityURI='https://publikationsserver.phtg.ch/classifications/DDC'][@displayLabel='DDC']/@valueURIxEditor">
       <div class="form-group row {$xed-validation-marker}">
         <label class="col-md-3 col-form-label text-right">
-          <xed:output i18n="project.form.label.ddc" />
+          <xed:output i18n="phtg.form.label.ddc" />
         </label>
         <div class="col-md-6">
           <select class="form-control form-control-inline">
@@ -94,7 +94,7 @@
             <xed:include uri="xslStyle:items2options:classification:editor:-1:children:DDC" />
           </select>
         </div>
-        <mir:help-pmud help-text="{i18n:project.help.ddc}" pmud="false" />
+        <mir:help-pmud help-text="{i18n:phtg.help.ddc}" pmud="false" />
       </div>
     </xed:bind>
   </xed:template>
@@ -113,7 +113,7 @@
     <xed:bind xpath="mods:classification[@authority='oa'][@displayLabel='oa']">
       <div class="form-group row {$xed-validation-marker}">
         <label class="col-md-3 col-form-label text-right">
-          <xed:output i18n="project.form.label.oa_status" />
+          <xed:output i18n="phtg.form.label.oa_status" />
         </label>
         <div class="col-md-6">
           <select class="form-control form-control-inline">
@@ -123,7 +123,7 @@
             <xed:include uri="xslStyle:items2options:classification:editor:-1:children:oa" />
           </select>
         </div>
-        <mir:help-pmud help-text="{i18n:project.help.oa_status}" pmud="false" />
+        <mir:help-pmud help-text="{i18n:phtg.help.oa_status}" pmud="false" />
       </div>
     </xed:bind>
   </xed:template>
@@ -132,7 +132,7 @@
     <xed:bind xpath="mods:classification[@authorityURI='https://publikationsserver.phtg.ch/classifications/peer_review'][@displayLabel='peer_review']/@valueURIxEditor">
       <div class="form-group row {$xed-validation-marker}">
         <label class="col-md-3 col-form-label text-right">
-          <xed:output i18n="project.form.peerReviewed.label" />
+          <xed:output i18n="phtg.form.peerReviewed.label" />
         </label>
         <div class="col-md-6">
           <select class="form-control form-control-inline nameType">
@@ -142,7 +142,7 @@
             <xed:include uri="xslStyle:items2options:classification:editor:-1:children:peer_review" />
           </select>
         </div>
-        <mir:help-pmud help-text="{i18n:project.form.help.peerReviewed}" pmud="false" />
+        <mir:help-pmud help-text="{i18n:phtg.form.help.peerReviewed}" pmud="false" />
       </div>
     </xed:bind>
   </xed:template>
@@ -152,7 +152,7 @@
     <xed:bind xpath="mods:classification[@authorityURI='https://publikationsserver.phtg.ch/classifications/research_areas'][@displayLabel='research_areas']/@valueURIxEditor">
       <div class="form-group row {$xed-validation-marker}">
         <label class="col-md-3 col-form-label text-right">
-          <xed:output i18n="project.form.label.research_areas" />
+          <xed:output i18n="phtg.form.label.research_areas" />
         </label>
         <div class="col-md-6">
           <select class="form-control form-control-inline">
@@ -162,7 +162,7 @@
             <xed:include uri="xslStyle:items2options:classification:editor:-1:children:research_areas" />
           </select>
         </div>
-        <mir:help-pmud help-text="{i18n:project.help.research_areas}" pmud="false" />
+        <mir:help-pmud help-text="{i18n:phtg.help.research_areas}" pmud="false" />
       </div>
     </xed:bind>
   </xed:template>
@@ -171,7 +171,7 @@
     <xed:bind xpath="mods:classification[@authorityURI='https://publikationsserver.phtg.ch/classifications/research_projects'][@displayLabel='research_projects']/@valueURIxEditor">
       <div class="form-group row {$xed-validation-marker}">
         <label class="col-md-3 col-form-label text-right">
-          <xed:output i18n="project.form.label.research_projects" />
+          <xed:output i18n="phtg.form.label.research_projects" />
         </label>
         <div class="col-md-6">
           <select class="form-control form-control-inline">
@@ -181,7 +181,7 @@
             <xed:include uri="xslStyle:items2options:classification:editor:-1:children:research_projects" />
           </select>
         </div>
-        <mir:help-pmud help-text="{i18n:project.help.research_projects}" pmud="false" />
+        <mir:help-pmud help-text="{i18n:phtg.help.research_projects}" pmud="false" />
       </div>
     </xed:bind>
   </xed:template>
@@ -190,7 +190,7 @@
     <xed:repeat xpath="mods:classification[@authority='rvk'][@displayLabel='rvk']" min="1" max="10" method="build">
       <div class="form-group row">
         <label class="col-md-3 col-form-label text-right">
-          <xed:output i18n="project.form.label.rvk" />
+          <xed:output i18n="phtg.form.label.rvk" />
           :
         </label>
         <div class="col-md-6">
@@ -201,7 +201,7 @@
             <xed:include uri="xslStyle:items2options:classification:editor:-1:children:rvk" />
           </select>
         </div>
-        <mir:help-pmud help-text="{i18n:project.help.rvk}" pmud="true" />
+        <mir:help-pmud help-text="{i18n:phtg.help.rvk}" pmud="true" />
       </div>
     </xed:repeat>
   </xed:template>
@@ -210,7 +210,7 @@
     <xed:repeat xpath="mods:classification[@authority='rvk'][@displayLabel='rvk']" min="1" max="10" method="build">
       <div class="form-group row required {$xed-validation-marker}">
         <label class="col-md-3 col-form-label text-right">
-          <xed:output i18n="project.form.label.rvk" />
+          <xed:output i18n="phtg.form.label.rvk" />
           :
         </label>
         <div class="col-md-6">
@@ -221,12 +221,12 @@
             <xed:include uri="xslStyle:items2options:classification:editor:-1:children:rvk" />
           </select>
         </div>
-        <mir:help-pmud help-text="{i18n:project.help.rvk}" pmud="true" />
+        <mir:help-pmud help-text="{i18n:phtg.help.rvk}" pmud="true" />
       </div>
     </xed:repeat>
     <xed:validate
       xpath="//mods:mods/mods:classification[@authority='rvk'][@displayLabel='rvk']"
-      required="true" i18n="project.validation.rvk"
+      required="true" i18n="phtg.validation.rvk"
       display="global" />
   </xed:template>
 
@@ -256,7 +256,7 @@
   </xed:template>
 
   <xed:template id="referent.repeated">
-    <mir:role.repeated role="ths" label="mir.role.referent" help-text="{i18n:mir.help.role.referent}" />
+    <mir:role.repeated role="ths" label="phtg.role.referent" help-text="{i18n:phtg.help.role.referent}" />
   </xed:template>
 
   <xed:template id="rights.reserved">

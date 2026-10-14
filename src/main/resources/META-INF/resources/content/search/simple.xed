@@ -50,7 +50,7 @@
 														i18n="editor.search.derivate" tooltip="editor.search.derivate.tooltip"/>
 							<!-- Forschungsfeld -->
 							<mir:template name="selectInput" xpath="condition[@field='category.top'][1]/@value" id="inputResearchArea1"
-														i18n="editor.search.project.research_areas" tooltip="editor.search.project.research_areas.tooltip"
+														i18n="phtg.editor.search.research_areas" tooltip="phtg.editor.search.research_areas.tooltip"
 														uri="xslStyle:items2options:classification:editorComplete:-1:children:research_areas"/>
 							<!--Fulltext -->
 							<div class="form-group row">
@@ -96,7 +96,7 @@
 															initially="false" default="mir_genres:speech">
 											<input type="checkbox" value="true"/>
 											<span class="pl-1">
-												<xed:output i18n="project.editor.search.speech_filter"/>
+												<xed:output i18n="phtg.editor.search.speech_filter"/>
 											</span>
 										</xed:bind>
 									</div>
@@ -114,7 +114,7 @@
 															initially="false" default="mir_genres:thesis">
 											<input type="checkbox" value="true"/>
 											<span class="pl-1">
-												<xed:output i18n="project.editor.search.thesis_filter"/>
+												<xed:output i18n="phtg.editor.search.thesis_filter"/>
 											</span>
 										</xed:bind>
 									</div>

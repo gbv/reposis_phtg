@@ -16,11 +16,11 @@
         </head>
     </section>
 
-    <section i18n="browse.rvk.title" xml:lang="all">
+    <section i18n="phtg.browse.rvk.title" xml:lang="all">
         <div class="row">
             <div class="col-md-8" lang="de">
                 <h3>
-                    <i18n key="browse.rvk.title"/>
+                    <i18n key="phtg.browse.rvk.title"/>
                 </h3>
                 <classificationbrowser classification="rvk"
                                        objecttype="mods"
