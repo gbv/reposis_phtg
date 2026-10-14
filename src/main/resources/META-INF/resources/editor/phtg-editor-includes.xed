@@ -9,7 +9,7 @@
     <mir:role.repeated role="dgs" label="phtg.role.coreferent" help-text="{i18n:phtg.help.role.coreferent}" />
   </xed:template>
 
-  <xed:tempalte id="name-identifier-validation">
+  <xed:template id="name-identifier-validation">
     <xed:validate
       xpath="//mods:nameIdentifier[@type='gnd']"
       matches="\d{8}[\d|\-]?[\dxX]?"
@@ -30,7 +30,7 @@
       matches="^\d{8}[\d-]?[\dxX]?$"
       i18n="phtg.validation.viaf"
       display="global" />
-  </xed:tempalte>
+  </xed:template>
 
   <xed:template id="project.ageRange">
     <xed:bind xpath="mods:note[@type='ageRange']" initially="notSpecified">
@@ -239,7 +239,7 @@
       label="mir.title"
       class="required"
       required="true"
-      required-i18n="mir.validation.title.proceedings" />
+      required-i18n="phtg.validation.title.proceedings" />
   </xed:template>
 
   <xed:template id="project.title.series.relItemsearch.required">
