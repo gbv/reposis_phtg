@@ -8,10 +8,10 @@
 
   <xsl:import href="resource:xsl/layout/mir-common-layout.xsl" />
 
-  <xsl:param name="MIR.TestInstance" />
+  <xsl:param name="REP.ProductionMode" />
 
   <xsl:template name="mir.navigation">
-    <xsl:if test="contains($MIR.TestInstance, 'true')">
+    <xsl:if test="not($REP.ProductionMode = 'true')">
       <div id="watermark_testenvironment">Testumgebung</div>
     </xsl:if>
     <div id="header_box" class="clearfix container">
