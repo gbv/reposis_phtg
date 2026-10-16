@@ -66,7 +66,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  form.addEventListener('submit', ignoreEmptyFieldsOnSubmit);
   switchSpeech.addEventListener('change', handleSwitchChange);
   switchThesis.addEventListener('change', handleSwitchChange);
 });
