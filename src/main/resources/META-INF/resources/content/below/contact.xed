@@ -9,8 +9,8 @@
     <xed:form xmlns:xed="http://www.mycore.de/xeditor" method="post" role="form" class="form-horizontal">
       <xed:bind xpath="/contactMail">
         <h1>Kontakt</h1>
-        <div class="form-group row">
-          <div class="ml-3">
+        <div class="mir-form-group row">
+          <div class="ms-3">
             <p>
               <strong>Campus-Bibliothek</strong>
               <br />
@@ -25,10 +25,10 @@
         <h2>Kontaktformular</h2>
         <!-- Subject -->
         <xed:bind xpath="subject">
-          <div class="form-group row">
+          <div class="mir-form-group row">
             <label class="col-md-2 control-label">* Anliegen:</label>
             <div class="col-md-6">
-              <select class="form-control">
+              <select class="form-control form-select">
                 <option title="Frage" value="Frage">Frage</option>
                 <option title="Anregung" value="Anregung">Anregung</option>
                 <option title="Korrektur melden" value="Korrektur">Korrektur melden</option>
@@ -39,34 +39,34 @@
         </xed:bind>
         <!-- Message -->
         <xed:bind xpath="body">
-          <div class="form-group row">
+          <div class="mir-form-group row">
             <label class="col-md-2 control-label">* Nachricht:</label>
             <div class="col-md-6">
-              <textarea class="form-control input-md" rows="3" required="required" type="text" />
+              <textarea class="form-control" rows="3" required="required" type="text" />
             </div>
           </div>
         </xed:bind>
         <!-- Sender Name -->
         <xed:bind xpath="to_name">
-          <div class="form-group row">
+          <div class="mir-form-group row">
             <label class="col-md-2 control-label required">
               * Name:
             </label>
             <div class="col-md-6">
-              <input placeholder="Max Mustermann" class="form-control input-md" type="text" required="required" />
+              <input placeholder="Max Mustermann" class="form-control" type="text" required="required" />
             </div>
           </div>
         </xed:bind>
         <!-- Sender Mail Address -->
         <xed:bind xpath="to_mail">
-          <div class="form-group row">
+          <div class="mir-form-group row">
             <label class="col-md-2 control-label required">
               * E-Mail:
             </label>
             <div class="col-md-6">
               <input
                 placeholder="max.mustermann@phtg.de"
-                class="form-control input-md"
+                class="form-control"
                 type="email"
                 required="required" />
             </div>
@@ -74,8 +74,8 @@
         </xed:bind>
         <!-- Approvement -->
         <xed:bind xpath="approvement">
-          <div class="form-group row ">
-            <div class="ml-3">
+          <div class="mir-form-group row">
+            <div class="ms-3">
               *
               <input type="checkbox" value="true" required="required" />
               Ich habe die <a href="../below/rights.xml">Datenschutzerklärung</a> gelesen und erkenne sie an.
@@ -120,8 +120,8 @@
           name="goto" />
         <input type="hidden" value="e-mail-contact" name="xsl" />
         <!-- Buttons -->
-        <div class="form-group row ">
-          <div class="ml-3">
+        <div class="mir-form-group row">
+          <div class="ms-3">
             <button id="reset" class="btn btn-secondary" type="reset">Formular leeren</button>
             <button id="save" class="btn btn-primary" xed:target="servlet" xed:href="MCRMailer" type="submit">
               Nachricht senden

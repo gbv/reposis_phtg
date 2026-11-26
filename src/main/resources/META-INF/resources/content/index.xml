@@ -17,7 +17,7 @@
           </h1>
           <form
             id="project-searchMainPage"
-            class="form-inline mt-3 justify-content-center"
+            class="d-flex flex-wrap align-items-center mt-3 justify-content-center"
             action="../servlets/solr/find"
             role="search">
             <div class="input-group w-100">
@@ -29,19 +29,17 @@
                 type="text"
                 aria-label=""
                 aria-describedby="" />
-              <div class="input-group-append">
-                <button type="submit" class="btn btn-primary">
-                  <i class="fas fa-search"></i>
-                </button>
-              </div>
+              <button type="submit" class="btn btn-primary">
+                <i class="fas fa-search"></i>
+              </button>
             </div>
-            <div class="custom-control custom-switch mt-3">
-              <input type="checkbox" class="custom-control-input" id="switchSpeech" />
-              <label class="custom-control-label" for="switchSpeech">Referate einbeziehen</label>
+            <div class="form-check form-switch mt-3">
+              <input type="checkbox" class="form-check-input" id="switchSpeech" />
+              <label class="form-check-label" for="switchSpeech">Referate einbeziehen</label>
             </div>
-            <div class="custom-control custom-switch mt-3 ml-4">
-              <input type="checkbox" class="custom-control-input" id="switchThesis" />
-              <label class="custom-control-label" for="switchThesis">Qualifikationsarbeiten einbeziehen</label>
+            <div class="form-check form-switch mt-3 ms-4">
+              <input type="checkbox" class="form-check-input" id="switchThesis" />
+              <label class="form-check-label" for="switchThesis">Qualifikationsarbeiten einbeziehen</label>
             </div>
             <input name="fq" type="hidden" value="NOT(category.top:&quot;mir_genres:speech&quot;)" id="filterSpeech" />
             <input name="fq" type="hidden" value="NOT(category.top:&quot;mir_genres:thesis&quot;)" id="filterThesis" />

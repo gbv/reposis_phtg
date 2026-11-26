@@ -16,10 +16,10 @@
     </xsl:if>
     <div id="header_box" class="clearfix container">
       <div class="row">
-        <div class="col-12">
+        <div class="col-12 d-flex justify-content-end">
           <div id="options_nav_box" class="mir-prop-nav">
             <nav>
-              <ul class="navbar-nav ml-auto flex-row">
+              <ul class="navbar-nav ms-auto flex-row">
                 <xsl:call-template name="mir.loginMenu" />
                 <xsl:call-template name="mir.languageMenu" />
               </ul>
@@ -35,7 +35,7 @@
             </a>
           </div>
         </div>
-        <div class="col text-right">
+        <div class="col text-end">
           <a href="https://www.bibliothek.phtg.ch/" class="btn btn-primary">Campus-Bibliothek</a>
         </div>
       </div>
@@ -46,16 +46,16 @@
           <button
             class="navbar-toggler"
             type="button"
-            data-toggle="collapse"
-            data-target="#mir-main-nav__entries"
+            data-bs-toggle="collapse"
+            data-bs-target="#mir-main-nav__entries"
             aria-controls="mir-main-nav__entries"
             aria-expanded="false"
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div id="mir-main-nav__entries" class="collapse navbar-collapse mir-main-nav__entries">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-              <xsl:call-template name="project.generate_single_menu_entry">
+            <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+              <xsl:call-template name="mir.generate_single_menu_entry">
                 <xsl:with-param name="menuID" select="'brand'" />
               </xsl:call-template>
               <xsl:apply-templates select="$loaded_navigation_xml/menu[@id='search']" />
@@ -64,12 +64,12 @@
             </ul>
             <form
               action="{$WebApplicationBaseURL}servlets/solr/find"
-              class="searchfield_box form-inline my-2 my-lg-0"
+              class="searchfield_box d-flex my-2 my-lg-0"
               role="search">
               <input
                 name="condQuery"
                 placeholder="{mcri18n:translate('mir.navsearch.placeholder')}"
-                class="form-control mr-sm-2 search-query"
+                class="form-control me-sm-2 search-query"
                 id="searchInput"
                 type="text"
                 aria-label="Search" />
@@ -98,65 +98,7 @@
     </xsl:if>
   </xsl:template>
 
-  <xsl:template name="project.generate_single_menu_entry">
-    <xsl:param name="menuID" />
-    <xsl:variable name="menu-item" select="$loaded_navigation_xml/menu[@id=$menuID]/item" />
-    <li class="nav-item">
-      <xsl:variable name="active-class">
-        <xsl:choose>
-          <xsl:when test="$menu-item/@href = $browserAddress">
-            <xsl:text>active</xsl:text>
-          </xsl:when>
-          <xsl:otherwise>
-            <xsl:text>not-active</xsl:text>
-          </xsl:otherwise>
-        </xsl:choose>
-      </xsl:variable>
-      <xsl:variable name="full-url">
-        <xsl:call-template name="resolve-full-url">
-          <xsl:with-param name="link" select="$menu-item/@href" />
-        </xsl:call-template>
-      </xsl:variable>
-      <a id="{$menuID}" href="{$full-url}" class="nav-link {$active-class}">
-        <xsl:apply-templates select="$menu-item" mode="linkText" />
-      </a>
-    </li>
-  </xsl:template>
 
-  <xsl:template name="resolve-full-url">
-    <xsl:param name="link" />
-    <xsl:param name="base-url" select="$WebApplicationBaseURL" />
-    <xsl:choose>
-      <xsl:when test="
-        starts-with($link,'http:')
-        or starts-with($link,'https:')
-        or starts-with($link,'mailto:')
-        or starts-with($link,'ftp:')
-      ">
-        <xsl:value-of select="$link" />
-      </xsl:when>
-      <xsl:when test="starts-with($link,'/')">
-        <xsl:choose>
-          <xsl:when test="substring($base-url, string-length($base-url), 1) = '/'">
-            <xsl:value-of select="concat(substring($base-url, 1, string-length($base-url) - 1), $link)" />
-          </xsl:when>
-          <xsl:otherwise>
-            <xsl:value-of select="concat($base-url, $link)" />
-          </xsl:otherwise>
-        </xsl:choose>
-      </xsl:when>
-      <xsl:otherwise>
-        <xsl:choose>
-          <xsl:when test="substring($base-url, string-length($base-url), 1) = '/'">
-            <xsl:value-of select="concat($base-url, $link)" />
-          </xsl:when>
-          <xsl:otherwise>
-            <xsl:value-of select="concat($base-url, '/', $link)" />
-          </xsl:otherwise>
-        </xsl:choose>
-      </xsl:otherwise>
-    </xsl:choose>
-  </xsl:template>
 
   <xsl:template name="mir.footer">
     <div class="container">

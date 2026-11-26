@@ -34,13 +34,13 @@
 
   <xed:template id="project.ageRange">
     <xed:bind xpath="mods:note[@type='ageRange']" initially="notSpecified">
-      <div class="form-group row">
-        <label class="col-md-3 col-form-label text-right">
+      <div class="mir-form-group row">
+        <label class="col-md-3 col-form-label text-end form-label">
           <xed:output i18n="phtg.form.ageRange.label" />
         </label>
         <div class="col-md-6">
           <div class="controls">
-            <select class="form-control form-control-inline nameType">
+            <select class="form-control form-control-inline nameType form-select">
               <option value="notSpecified">
                 <xed:output i18n="phtg.form.notSpecified" />
               </option>
@@ -64,11 +64,11 @@
   <xed:template id="project.courses">
     <xed:bind xpath="mods:classification[@authorityURI='https://publikationsserver.phtg.ch/classifications/courses'][@displayLabel='courses']/@valueURIxEditor">
       <div class="form-group row {$xed-validation-marker}">
-        <label class="col-md-3 col-form-label text-right">
+        <label class="col-md-3 col-form-label text-end form-label">
           <xed:output i18n="phtg.form.label.courses" />
         </label>
         <div class="col-md-6">
-          <select class="form-control form-control-inline">
+          <select class="form-control form-control-inline form-select">
             <option value="">
               <xed:output i18n="mir.select.optional" />
             </option>
@@ -83,11 +83,11 @@
   <xed:template id="project.ddc">
     <xed:bind xpath="mods:classification[@authorityURI='https://publikationsserver.phtg.ch/classifications/DDC'][@displayLabel='DDC']/@valueURIxEditor">
       <div class="form-group row {$xed-validation-marker}">
-        <label class="col-md-3 col-form-label text-right">
+        <label class="col-md-3 col-form-label text-end form-label">
           <xed:output i18n="phtg.form.label.ddc" />
         </label>
         <div class="col-md-6">
-          <select class="form-control form-control-inline">
+          <select class="form-control form-control-inline form-select">
             <option value="">
               <xed:output i18n="mir.select.optional" />
             </option>
@@ -112,11 +112,11 @@
   <xed:template id="project.oa_status">
     <xed:bind xpath="mods:classification[@authority='oa'][@displayLabel='oa']">
       <div class="form-group row {$xed-validation-marker}">
-        <label class="col-md-3 col-form-label text-right">
+        <label class="col-md-3 col-form-label text-end form-label">
           <xed:output i18n="phtg.form.label.oa_status" />
         </label>
         <div class="col-md-6">
-          <select class="form-control form-control-inline">
+          <select class="form-control form-control-inline form-select">
             <option value="">
               <xed:output i18n="mir.select.optional" />
             </option>
@@ -131,11 +131,11 @@
   <xed:template id="project.peerReviewed">
     <xed:bind xpath="mods:classification[@authorityURI='https://publikationsserver.phtg.ch/classifications/peer_review'][@displayLabel='peer_review']/@valueURIxEditor">
       <div class="form-group row {$xed-validation-marker}">
-        <label class="col-md-3 col-form-label text-right">
+        <label class="col-md-3 col-form-label text-end form-label">
           <xed:output i18n="phtg.form.peerReviewed.label" />
         </label>
         <div class="col-md-6">
-          <select class="form-control form-control-inline nameType">
+          <select class="form-control form-control-inline nameType form-select">
             <option value="">
               <xed:output i18n="mir.select.optional" />
             </option>
@@ -151,11 +151,11 @@
   <xed:template id="project.research_areas">
     <xed:bind xpath="mods:classification[@authorityURI='https://publikationsserver.phtg.ch/classifications/research_areas'][@displayLabel='research_areas']/@valueURIxEditor">
       <div class="form-group row {$xed-validation-marker}">
-        <label class="col-md-3 col-form-label text-right">
+        <label class="col-md-3 col-form-label text-end form-label">
           <xed:output i18n="phtg.form.label.research_areas" />
         </label>
         <div class="col-md-6">
-          <select class="form-control form-control-inline">
+          <select class="form-control form-control-inline form-select">
             <option value="">
               <xed:output i18n="mir.select.optional" />
             </option>
@@ -170,11 +170,11 @@
   <xed:template id="project.research_projects">
     <xed:bind xpath="mods:classification[@authorityURI='https://publikationsserver.phtg.ch/classifications/research_projects'][@displayLabel='research_projects']/@valueURIxEditor">
       <div class="form-group row {$xed-validation-marker}">
-        <label class="col-md-3 col-form-label text-right">
+        <label class="col-md-3 col-form-label text-end form-label">
           <xed:output i18n="phtg.form.label.research_projects" />
         </label>
         <div class="col-md-6">
-          <select class="form-control form-control-inline">
+          <select class="form-control form-control-inline form-select">
             <option value="">
               <xed:output i18n="mir.select.optional" />
             </option>
@@ -188,13 +188,13 @@
 
   <xed:template id="project.rvk">
     <xed:repeat xpath="mods:classification[@authority='rvk'][@displayLabel='rvk']" min="1" max="10" method="build">
-      <div class="form-group row">
-        <label class="col-md-3 col-form-label text-right">
+      <div class="mir-form-group row">
+        <label class="col-md-3 col-form-label text-end form-label">
           <xed:output i18n="phtg.form.label.rvk" />
           :
         </label>
         <div class="col-md-6">
-          <select class="form-control form-control-inline mir-form__js-select--large">
+          <select class="form-control form-control-inline mir-form__js-select--large form-select">
             <option value="">
               <xed:output i18n="mir.select" />
             </option>
@@ -209,12 +209,12 @@
   <xed:template id="project.rvk.required">
     <xed:repeat xpath="mods:classification[@authority='rvk'][@displayLabel='rvk']" min="1" max="10" method="build">
       <div class="form-group row required {$xed-validation-marker}">
-        <label class="col-md-3 col-form-label text-right">
+        <label class="col-md-3 col-form-label text-end form-label">
           <xed:output i18n="phtg.form.label.rvk" />
           :
         </label>
         <div class="col-md-6">
-          <select class="form-control form-control-inline mir-form__js-select--large">
+          <select class="form-control form-control-inline mir-form__js-select--large form-select">
             <option value="">
               <xed:output i18n="mir.select" />
             </option>
@@ -262,12 +262,12 @@
   <xed:template id="rights.reserved">
     <xed:bind xpath="mods:accessCondition[@type='use and reproduction']" initially="rights_reserved">
       <div class="form-group row required {$xed-validation-marker}">
-        <label class="col-md-3 col-form-label text-right">
+        <label class="col-md-3 col-form-label text-end form-label">
           <xed:output i18n="mir.rights" />
           :
         </label>
         <div class="col-md-6">
-          <select class="form-control form-control-inline">
+          <select class="form-control form-control-inline form-select">
             <option value="rights_reserved" />
             <xed:include uri="xslStyle:license-filter,items2options?genre={$genre_intern}:classification:editor:-1:children:mir_licenses" />
           </select>
@@ -279,13 +279,13 @@
 
   <xed:template id="sdnb.repeat">
     <xed:repeat xpath="mods:classification[@authority='sdnb'][@displayLabel='sdnb']" min="1" max="10" method="build">
-      <div class="form-group row">
-        <label class="col-md-3 col-form-label text-right">
+      <div class="mir-form-group row">
+        <label class="col-md-3 col-form-label text-end form-label">
           <xed:output i18n="editor.search.mir.sdnb" />
           :
         </label>
         <div class="col-md-6">
-          <select class="form-control form-control-inline mir-form__js-select--large">
+          <select class="form-control form-control-inline mir-form__js-select--large form-select">
             <option value="">
               <xed:output i18n="mir.select" />
             </option>
